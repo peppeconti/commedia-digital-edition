@@ -1,0 +1,89 @@
+aside.settings {
+    position: fixed;
+    width: auto;
+    top: 1.2rem;
+    right: 1.2rem;
+}
+
+/* BUTTON ICON */
+div.button {
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button.settings-icon {
+    border: none;
+    outline: none;
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.book-icon {
+    opacity: .2;
+    font-size: 2.2rem;
+}
+
+.book-icon:hover {
+    opacity: .5;
+}
+
+.book-open-icon {
+    opacity: .5;
+    font-size: 1.5rem;
+}
+
+/*CONTROL PANEL */
+.control-panel {
+    padding: 3rem 0;
+}
+
+/* CHECK BOX */
+div.switch {
+    padding: 0 4rem;
+    height: 5rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+}
+input[type=checkbox].toggle-switch {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    width: 3rem;
+    height: 1.5rem;
+    border-radius: 3rem;
+    background-color: #ddd;
+    outline: 0;
+    cursor: pointer;
+    transition: background-color 0.09s ease-in-out;
+    position: relative;
+}
+input[type=checkbox].toggle-switch:checked {
+    background-color: #3af;
+}
+input[type=checkbox].toggle-switch::after {
+    content: '';
+    width: 1.5em;
+    height: 1.5em;
+    background-color: white;
+    border-radius: 3em;
+    position: absolute;
+    transform: scale(0.7);
+    left: 0;
+    transition: left 0.09s ease-in-out;
+}
+input[type=checkbox].toggle-switch:checked::after {
+    left: 1.5rem;
+}

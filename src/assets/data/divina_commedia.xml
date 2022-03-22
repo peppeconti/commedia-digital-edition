@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>La Divina Commedia</title>
+            <respStmt>
+               <resp>cura del progetto:</resp>
+               <name>Giuseppe Conti</name>
+            </respStmt>
+            <respStmt>
+               <resp>design:</resp>
+               <name>Giuseppe Conti</name>
+            </respStmt>
+            <respStmt>
+               <resp>sviluppo:</resp>
+               <name>Giuseppe Conti</name>
+            </respStmt>
+            <respStmt>
+               <resp>illustrazioni di:</resp>
+               <name>Matteo Berton</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <p>Edizione Digitale della Divina Commedia, basata su una codifica del testo secondo le
+               direttive della <abbr>TEI</abbr> (Text Encoding Initiative). Sviluppo del software
+               basato sulla libreria React.js</p>
+         </publicationStmt>
+         <sourceDesc>
+            <list xml:id="rhetorical_figures" type="rhetorical_figures">
+               <item xml:id="allitterazione">
+                  <title>Allitterazione</title>
+                  <gloss>Ripetizione di una stessa consonante o sillaba in parole vicine.</gloss>
+               </item>
+               <item xml:id="polisindeto">
+                  <title>Polisindeto</title>
+                  <gloss>Figura sintattica consistente nel collegare varie proposizioni di un
+                     periodo con numerose ripetute congiunzioni.</gloss>
+               </item>
+               <item xml:id="figura_etimologica">
+                  <title>Figura etimologica</title>
+                  <gloss>La figura etimologica è una figura retorica che consiste nell'avvicinamento
+                     di due o più parole che hanno la stessa radice etimologica.</gloss>
+               </item>
+            </list>
+            <list xml:id="notes" type="notes">
+               <item xml:id="nota-1">
+                  <hi rend="bold">Nel mezzo ... vita</hi>: il poema dantesco si apre con una
+                  indicazione cronologica e autobiografica: la vicenda comincia quando il
+                  personaggio Dante ha 35 anni, e cioè nel 1300. Il poeta ritiene infatti che il
+                  punto centrale della vita umana sia da collocare tra il trentesimo e il
+                  quarantesimo anno e più precisamente, per i <hi rend="quote">perfettamente
+                     naturati</hi> (<hi rend="italic">Cv</hi>. IV, 23, 9), è il trentacinquesimo
+                  anno. Il convincimento di Dante si basa sulla Bibbia stessa: nel salmo 89, 10 si
+                  legge: <hi rend="quote">La durata della nostra vita è, in sé, settant’anni</hi>.</item>
+               <item xml:id="nota-2">
+                  <hi rend="bold">Funcia di minchia</hi>: Cercherò di spiegarti questa espressione
+                  in maniera educata. Sotto c'è la foto di una funcia (labbra nella posizione
+                  bacio). Se però si parla di funcia di minchia si tratta del taglio - apertura al
+                  l'apice della suddetta minchia.</item>
+            </list>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text>
+      <group type="cantica">
+         <head type="head-cantica">Inferno</head>
+         <text>
+            <group type="single-cantus">
+               <head n="1" type="head-cantus">Canto I</head>
+               <text>
+                  <group type="main-text">
+                     <text>
+                        <body type="terzine">
+                           <lg xml:id="terzina-1" type="terzina">
+                              <l type="endecasillabo" n="1">Nel mezzo del cammin <caesura/> di nostra vita<note type="note" n="1" corresp="#nota-1"></note></l>
+                              <l type="endecasillabo" n="2">mi ritrovai <caesura/> per una selva oscura</l>
+                              <l type="endecasillabo" n="3">ché la diritta via <caesura/> era smarrita.</l>
+                           </lg>
+                           <lg xml:id="terzina-2" type="terzina">
+                              <l type="endecasillabo" n="4">Ahi, quanto a dir qual era <caesura/> è cosa dura</l>
+                              <l type="endecasillabo" n="5">esta selva selvaggia <caesura/> e aspra e forte</l>
+                              <l type="endecasillabo" n="6">che nel pensier <caesura/> rinova la paura!</l>
+                           </lg>
+                           <lg xml:id="terzina-3" type="terzina">
+                              <l type="endecasillabo" n="7">Tant’ è amara <caesura/> che poco è più morte;</l>
+                              <l type="endecasillabo" n="8">ma per trattar del ben <caesura/> ch’i’ vi trovai,</l>
+                              <l type="endecasillabo" n="9">dirò de l’altre cose <caesura/> ch’i’ v’ho scorte</l>
+                           </lg>
+                        </body>
+                     </text>
+                  </group>
+               </text>
+               <text>
+                  <group type="paraphrase">
+                     <text>
+                        <body type="terzine-paraphrase">
+                           <div xml:id="paraphrase-terzina-1" corresp="#terzina-1">
+                              <p type="terzina-paraphrase">A metà del corso medio della vita umana, <lb/> mi ritrovai in una
+                                 foresta buia, <lb/> perché avevo smarrito la giusta strada.</p>
+                           </div>
+                           <div xml:id="paraphrase-terzina-2" corresp="#terzina-2">
+                              <p type="terzina-paraphrase">Ahimè, quanto è difficile descrivere l’aspetto <lb/> di questa
+                                 foresta inospitale, intricata e <lb/> difficile <add>da
+                                    attraversare</add>, a tal punto che al <lb/> solo pensiero si
+                                 rinnova in me la paura.</p>
+                           </div>
+                           <div xml:id="paraphrase-terzina-3" corresp="#terzina-3">
+                              <p type="terzina-paraphrase"><add>la selva</add> È tanto angosciante che la morte lo <lb/> è
+                                 giusto poco di più; ma per descrivere il <lb/> bene che io trovai
+                                 in essa, parlerò <add>prima</add><lb/> delle altre cose che vi ho
+                                 visto.</p>
+                           </div>
+                        </body>
+                     </text>
+                  </group>
+               </text>
+            </group>
+         </text>
+      </group>
+      <back>
+         <div type="biblCompleta">
+            <listBibl>
+               <bibl xml:id="an"> ciccio </bibl>
+            </listBibl>
+         </div>
+      </back>
+   </text>
+</TEI>

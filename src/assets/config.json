@@ -1,0 +1,28 @@
+{
+    "rules": [
+      {
+        "match": "hi[rend=\"italic\"]",
+        "attributes": [["rend", "class"]],
+        "target": "i",
+        "before": "",
+        "after": "",
+        "content": ""
+      },
+      {
+        "match": "lg[type=\"terzina\"]",
+        "attributes": [["xml:id", "id"], ["type", "class"]],
+        "target": "div",
+        "before": "",
+        "after": "",
+        "content": ""
+      },
+      {
+        "match": "l",
+        "attributes": [["", "class=\"endecasillabo\""]],
+        "target": "p",
+        "before": "",
+        "after": "",
+        "content": ""
+      }
+    ]
+  }

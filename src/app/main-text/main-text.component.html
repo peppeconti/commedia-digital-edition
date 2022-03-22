@@ -1,0 +1,4 @@
+    <span class="{{terzine.tagName}}" appAddAttr appReplaceEl *ngFor="let terzine of terzine?.childNodes" [data]="terzine">
+        {{ terzine.text }}
+       <app-main-text [terzine]="terzine"></app-main-text>
+    </span>

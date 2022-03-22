@@ -1,0 +1,4 @@
+<span appAddAttr appReplaceEl *ngFor="let paraphrase of paraphrase?.childNodes" [data]="paraphrase">
+    {{ paraphrase.text }}
+   <app-paraphrase [paraphrase]="paraphrase"></app-paraphrase>
+</span>

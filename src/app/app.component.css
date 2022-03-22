@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+div.text {
+    padding: 1.2rem;
+    display: flex;
+    justify-content: center;
+}
+
+div.text section {
+    padding: 0 2rem;
+}
+
+section.main-text {
+    display: flex;
+    justify-content: center;
+}
+
+section.paraphrase {
+    display: flex;
+    justify-content: center;
+}
+aside.note-container {
+    position: absolute;
+    height: 20vh;
+    width: 100%;
+    border: 1px solid black;
+    bottom: 0;
+}
