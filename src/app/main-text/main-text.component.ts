@@ -7,7 +7,7 @@ import { JsonNode } from './jsonNode.model';
   styleUrls: ['./main-text.component.css']
 })
 export class MainTextComponent implements OnInit {
-  @Input() main_text?: JsonNode;
+  @Input() main_text: JsonNode | undefined;
   @Input() rules: any;
   
   constructor() {
