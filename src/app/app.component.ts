@@ -1,9 +1,8 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { CustomNode } from './main-text/customNode.model';
+import { JsonNode } from './main-text/jsonNode.model';
 import { parseNode } from 'src/functions/parseNode';
 import transform_rules from '../assets/trasform-rules';
-// import data from '../assets/config.json';
 
 @Component({
   selector: 'app-root',
@@ -12,15 +11,8 @@ import transform_rules from '../assets/trasform-rules';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
-  terzine?: CustomNode;
-  paraphrase?: CustomNode;
-  paraphraseActive = false;
-  showNote = true;
+  main_text?: JsonNode;
   rules = transform_rules;
-
-  paraphraseHandler(event: boolean) {
-    this.paraphraseActive = event;
-  }
 
   constructor(private http: HttpClient) {
 
@@ -37,11 +29,7 @@ export class AppComponent {
         const xml = parser.parseFromString(res, "application/xml");
         const lineGroups = xml.querySelectorAll('[type=main-text] body');
         const mainJson = Array.from(lineGroups).map(e => parseNode(e));
-        const paraphrase = xml.querySelectorAll('[type=paraphrase] body');
-        const paraphraseJson = Array.from(paraphrase).map(e => parseNode(e));
-        this.terzine = mainJson[0];
-        this.paraphrase = paraphraseJson[0];
-        // console.log(terzineJS);
+        this.main_text = mainJson[0];
       })
   }
 }

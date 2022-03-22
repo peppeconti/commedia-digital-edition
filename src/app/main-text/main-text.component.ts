@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CustomNode } from './customNode.model';
+import { JsonNode } from './jsonNode.model';
 
 @Component({
   selector: 'app-main-text',
@@ -7,7 +7,7 @@ import { CustomNode } from './customNode.model';
   styleUrls: ['./main-text.component.css']
 })
 export class MainTextComponent implements OnInit {
-  @Input() terzine: CustomNode | undefined;
+  @Input() main_text?: JsonNode;
   @Input() rules: any;
   
   constructor() {

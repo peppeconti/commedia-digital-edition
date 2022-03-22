@@ -3,16 +3,3 @@ p.endecasillabo {
     font-size: 1.1rem;
     position: relative;
 }
-.note {
-    position: absolute;
-    right: -.4rem;
-    top: -.1rem;
-    width: .6rem;
-    height: .6rem;
-    border-radius: 50%;
-    background-color: #2d2d2d;
-    cursor: pointer;
-}
-.note:hover {
-    opacity: .8;
-}

@@ -1,11 +1,5 @@
 <div class="text">
    <section class="main-text">
-      <app-main-text [terzine]="terzine" [rules]="rules"></app-main-text>
+      <app-main-text [main_text]="main_text" [rules]="rules"></app-main-text>
    </section>
-   <section class="paraphrase">
-      <app-paraphrase [paraphrase]="paraphrase" [paraphraseActive]="paraphraseActive" *ngIf="paraphraseActive">
-      </app-paraphrase>
-   </section>
-   <app-settings [paraphraseActive]="paraphraseActive" (toggleParaphrase)="paraphraseHandler($event)"></app-settings>
-   <aside class="note-container" *ngIf="showNote"></aside>
 </div>

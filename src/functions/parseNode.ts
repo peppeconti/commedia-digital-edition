@@ -1,4 +1,4 @@
-import { CustomNode } from "src/app/main-text/customNode.model";
+import { JsonNode } from "src/app/main-text/jsonNode.model";
 
 interface NodeToJson {
     text: string | null
@@ -33,5 +33,5 @@ export const parseNode = (node: Node) => {
             };
         }
     }
-    return <CustomNode>nodeObj;
+    return <JsonNode>nodeObj;
 }
