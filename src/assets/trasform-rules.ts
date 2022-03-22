@@ -4,25 +4,57 @@ let rules =
   [
     {
       element: "lg",
-      select: [{ attribute: 'type', value: 'terzina' }],
-      attributes: [["xml:id", "id"], ["type", "class"]],
-      target: "div", // default span
-      before: "",
-      after: "",
-      content: "",
-      hasEvent: false,
+      select: [
+        {
+          attribute: 'type',
+          value: 'terzina'
+        }
+      ],
+      attributes_transform: [
+        {
+          start: 'xml:id',
+          target: 'id'
+        },
+        {
+          start: 'type',
+          target: 'class'
+        }
+      ],
+      attributes: null,
+      target: "div",
+      before: null,
+      after: null,
+      content: [
+        {
+          type: 'attr',
+          name: 'xml:id'
+        },
+        {
+          type: 'text',
+          name: 'ciao'
+        },
+      ],
       events: null,
       function: null
     },
     {
       element: "l",
       select: [],
-      attributes: [["type", "class"], ["n", "data-line"]],
-      target: "p", // default span
-      before: "",
-      after: "",
-      content: "",
-      hasEvent: false,
+      attributes_transform: [
+        {
+          start: 'n',
+          target: 'data-line'
+        },
+        {
+          start: 'type',
+          target: 'class'
+        }
+      ],
+      attributes: null,
+      target: "p",
+      before: null,
+      after: null,
+      content: null,
       events: null,
       function: (renderer: Renderer2, elRef: ElementRef,) => {
         const lineNumber: string = elRef.nativeElement.dataset.line;
@@ -34,55 +66,7 @@ let rules =
         }
         renderer.insertBefore(elRef.nativeElement, numberToLine, elRef.nativeElement.firstChild);
       }
-    },
-    {
-      element: "div",
-      select: [{ attribute: 'type', value: 'terzina' }],
-      attributes: [["xml:id", "id"]],
-      target: "div", // default span
-      before: "",
-      after: "",
-      content: "",
-      hasEvent: false,
-      events: undefined,
-      function: undefined
-    },
-    {
-      element: "p",
-      select: [{ attribute: 'type', value: 'terzina' }],
-      attributes: [["type", "class"]],
-      target: "p", // default span
-      before: "",
-      after: "",
-      content: "",
-      hasEvent: false,
-      events: undefined,
-      function: undefined
-    },
-    {
-      element: "lb",
-      select: [{ attribute: 'type', value: 'terzina' }],
-      attributes: [],
-      target: "br", // default span
-      before: "",
-      after: "",
-      content: "",
-      hasEvent: false,
-      events: undefined,
-      function: undefined
-    },
-    {
-      element: "note",
-      select: [],
-      attributes: [['type', 'class'], ['corresp', 'data-note']],
-      target: "i", // default span
-      before: "",
-      after: "",
-      content: "",
-      hasEvent: true,
-      events: [{event: 'click', execute: () => {console.log('ciccio')}}],
-      function: undefined
-    },
+    }
   ]
 
 export default rules;
