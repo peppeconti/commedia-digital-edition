@@ -10,13 +10,12 @@ import { JsonNode } from './jsonNode.model';
 export class MainTextComponent implements OnInit {
   @Input() main_text: JsonNode | undefined;
   @Input() rules: any;
-  @Input() rule: any;
-
+  
   constructor() {
-
   }
 
   findRule(data: any) {
+<<<<<<< HEAD
     const cc = (e: any) => {
       return e.select_attr.every((e: any) => {
       })
@@ -24,8 +23,12 @@ export class MainTextComponent implements OnInit {
     return this.rules.find((e: any) => {
       (data?.tagName === e.element && cc(e))
     });
+=======
+    this.rules.find((e: any) => data === e.element);
+>>>>>>> parent of 36c6609 (added find transform rule)
   }
 
   ngOnInit(): void {
+    console.log(this.main_text?.tagName);
   }
 }
