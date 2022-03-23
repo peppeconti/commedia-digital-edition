@@ -27,7 +27,7 @@
          <publicationStmt>
             <p>Edizione Digitale della Divina Commedia, basata su una codifica del testo secondo le
                direttive della <abbr>TEI</abbr> (Text Encoding Initiative). Sviluppo del software
-               basato sulla libreria React.js</p>
+               basato su Angular</p>
          </publicationStmt>
          <sourceDesc>
             <list xml:id="rhetorical_figures" type="rhetorical_figures">

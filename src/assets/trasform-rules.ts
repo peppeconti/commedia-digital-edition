@@ -4,9 +4,9 @@ let rules =
   [
     {
       element: "lg",
-      select: [
+      select_attr: [
         {
-          attribute: 'type',
+          name: 'type',
           value: 'terzina'
         }
       ],
@@ -39,7 +39,7 @@ let rules =
     },
     {
       element: "l",
-      select: [],
+      select_attr: [],
       attributes_transform: [
         {
           start: 'n',
