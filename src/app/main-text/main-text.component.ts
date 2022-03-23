@@ -26,13 +26,19 @@ export class MainTextComponent implements OnInit {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ba4da12318c61abd01422f1d9f74b0c1e8077b65
 =======
 <<<<<<< HEAD
 >>>>>>> parent of ebbc1fb (revert commit)
 =======
 >>>>>>> parent of ebbc1fb (revert commit)
+<<<<<<< HEAD
 =======
 >>>>>>> parent of e998666 (Update main-text.component.ts)
+=======
+>>>>>>> ba4da12318c61abd01422f1d9f74b0c1e8077b65
       (data?.tagName === e.element && cc(e))
 =======
       (data?.tagName === e.element)
@@ -44,6 +50,11 @@ export class MainTextComponent implements OnInit {
       (data?.tagName === e.element)
 >>>>>>> parent of a9e0ac4 (update)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of ebbc1fb (revert commit)
+=======
+>>>>>>> ba4da12318c61abd01422f1d9f74b0c1e8077b65
 >>>>>>> parent of ebbc1fb (revert commit)
 =======
 >>>>>>> parent of ebbc1fb (revert commit)
@@ -71,6 +82,9 @@ export class MainTextComponent implements OnInit {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ba4da12318c61abd01422f1d9f74b0c1e8077b65
     console.log(this.main_text?.tagName);
 >>>>>>> parent of 36c6609 (added find transform rule)
 =======
@@ -85,6 +99,11 @@ export class MainTextComponent implements OnInit {
     console.log(this.findRule(this.main_text));
 >>>>>>> parent of a9e0ac4 (update)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of ebbc1fb (revert commit)
+=======
+>>>>>>> ba4da12318c61abd01422f1d9f74b0c1e8077b65
 >>>>>>> parent of ebbc1fb (revert commit)
 =======
 >>>>>>> parent of ebbc1fb (revert commit)
