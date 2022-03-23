@@ -27,6 +27,8 @@ export class MainTextComponent implements OnInit {
   }
 }
 
+// VERSION BY ME OF isSubset
+
 /*compare(arg_1: any, arg_2: any) {
   return arg_1.map((a: any) => {
     return arg_2.some((b: any) => {
