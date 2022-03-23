@@ -21,7 +21,11 @@ export class MainTextComponent implements OnInit {
       })
     }
     return this.rules.find((e: any) => {
+<<<<<<< HEAD
       (data?.tagName === e.element && cc(e))
+=======
+      (data?.tagName === e.element)
+>>>>>>> parent of a9e0ac4 (update)
     });
 =======
     this.rules.find((e: any) => data === e.element);
@@ -29,6 +33,12 @@ export class MainTextComponent implements OnInit {
   }
 
   ngOnInit(): void {
+<<<<<<< HEAD
     console.log(this.main_text?.tagName);
+=======
+    console.log(this.rules);
+    console.log(this.main_text)
+    console.log(this.findRule(this.main_text));
+>>>>>>> parent of a9e0ac4 (update)
   }
 }
