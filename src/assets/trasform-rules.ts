@@ -66,18 +66,7 @@ let rules =
         }
         renderer.insertBefore(elRef.nativeElement, numberToLine, elRef.nativeElement.firstChild);
       }
-    },
-    {
-      element: "lb",
-      select: [],
-      attributes: null,
-      target: "br",
-      before: null,
-      after: null,
-      content: [],
-      events: null,
-      function: null
-    },
+    }
   ]
 
 export default rules;
