@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { faAmericanSignLanguageInterpreting } from '@fortawesome/free-solid-svg-icons';
 import { JsonNode } from './jsonNode.model';
 
 @Component({
@@ -25,13 +26,13 @@ export class MainTextComponent implements OnInit {
 
   findRule(data: any) {
     return this.rules.find((e: any) => {
-       (e.element === data?.tagName)
+      (data?.tagName === e.element)
     });
   }
 
   ngOnInit(): void {
-    //console.log(this.rules);
-    //console.log(this.main_text)
-    //console.log('rule: ' + this.findRule(this.main_text));
+    console.log(this.rules);
+    console.log(this.main_text)
+    console.log(this.findRule(this.main_text));
   }
 }
