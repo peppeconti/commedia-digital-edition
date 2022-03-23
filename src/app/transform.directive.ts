@@ -17,12 +17,11 @@ export class TransformDirective implements OnInit {
 
   ngOnInit() {
     if (this.rule) {
-      if (this.rule.attributes_transform) {
+      if (this.rule.attributes_transform && this.rule.attributes_transform.length > 0) {
         this.rule.attributes_transform.forEach((attr: any) => {
           return this.renderer.setAttribute(this.elRef.nativeElement, attr.target, this.findAttributeValue(this.data?.attributes, attr.start) || 'no-attr-found');
         });
       }
     }
   }
-
 }
