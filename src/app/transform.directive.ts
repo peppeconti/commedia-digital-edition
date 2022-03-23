@@ -9,9 +9,7 @@ export class TransformDirective implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    if (this.rule) {
-      console.log(this.rule);
-    }
+    console.log(this.rule);
   }
 
 }
