@@ -30,7 +30,6 @@ export class AppComponent {
         const lineGroups = xml.querySelectorAll('[type=main-text] body');
         const mainJson = Array.from(lineGroups).map(e => parseNode(e));
         this.main_text = mainJson[0];
-        console.log(mainJson);
       })
   }
 }

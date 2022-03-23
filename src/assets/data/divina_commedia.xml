@@ -73,7 +73,7 @@
                      <text>
                         <body type="terzine">
                            <lg xml:id="terzina-1" type="terzina">
-                              <l type="endecasillabo" n="1">Nel mezzo del cammin <caesura/> di nostra vita<note type="note" n="1" corresp="#nota-1">Ciao</note></l>
+                              <l type="endecasillabo" n="1">Nel mezzo del cammin <caesura/> di nostra vita<note type="note" n="1" corresp="#nota-1"></note></l>
                               <l type="endecasillabo" n="2">mi ritrovai <caesura/> per una selva oscura</l>
                               <l type="endecasillabo" n="3">ché la diritta via <caesura/> era smarrita.</l>
                            </lg>

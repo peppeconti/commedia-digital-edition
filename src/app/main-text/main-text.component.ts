@@ -9,15 +9,16 @@ import { JsonNode } from './jsonNode.model';
 export class MainTextComponent implements OnInit {
   @Input() main_text: JsonNode | undefined;
   @Input() rules: any;
-  
+  @Input() rule: any;
+
   constructor() {
+
   }
 
   findRule(data: any) {
-    this.rules.find((e: any) => data === e.element);
+    return this.rules.find((e: any) => data?.tagName === e.element);
   }
 
   ngOnInit(): void {
-    console.log(this.main_text?.tagName);
   }
 }
