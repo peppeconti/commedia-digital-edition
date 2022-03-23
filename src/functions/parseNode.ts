@@ -30,7 +30,6 @@ export const parseNode = (node: Node) => {
             for (let n = 0; n < node.childNodes.length; n++) {
                 if (!(<Text>node.childNodes[n]).wholeText?.includes('\n')) {
                     nodeObj.childNodes.push(parseNode(node.childNodes[n]));
-                    // console.log(node.childNodes[n]);
                 }
             };
         }
