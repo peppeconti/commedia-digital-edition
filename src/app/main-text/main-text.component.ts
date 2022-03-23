@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { faAmericanSignLanguageInterpreting } from '@fortawesome/free-solid-svg-icons';
 import { JsonNode } from './jsonNode.model';
 
 @Component({
@@ -24,6 +23,7 @@ export class MainTextComponent implements OnInit {
     return this.rules.find((e: any) => {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       (data?.tagName === e.element && cc(e))
 =======
       (data?.tagName === e.element)
@@ -31,6 +31,9 @@ export class MainTextComponent implements OnInit {
 =======
       (data?.tagName === e.element)
 >>>>>>> parent of a9e0ac4 (update)
+=======
+       (e.element === data?.tagName)
+>>>>>>> parent of fee441b (Revert "update")
     });
 =======
     this.rules.find((e: any) => data === e.element);
@@ -51,6 +54,7 @@ export class MainTextComponent implements OnInit {
 
   ngOnInit(): void {
 <<<<<<< HEAD
+<<<<<<< HEAD
     console.log(this.main_text?.tagName);
 >>>>>>> parent of 36c6609 (added find transform rule)
 =======
@@ -58,5 +62,10 @@ export class MainTextComponent implements OnInit {
     console.log(this.main_text)
     console.log(this.findRule(this.main_text));
 >>>>>>> parent of a9e0ac4 (update)
+=======
+    //console.log(this.rules);
+    //console.log(this.main_text)
+    //console.log('rule: ' + this.findRule(this.main_text));
+>>>>>>> parent of fee441b (Revert "update")
   }
 }
