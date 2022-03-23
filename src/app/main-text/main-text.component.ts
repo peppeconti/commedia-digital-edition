@@ -24,8 +24,11 @@ export class MainTextComponent implements OnInit {
     return this.rules.find((e: any) => {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+>>>>>>> parent of ebbc1fb (revert commit)
+=======
 >>>>>>> parent of ebbc1fb (revert commit)
       (data?.tagName === e.element && cc(e))
 =======
@@ -36,6 +39,9 @@ export class MainTextComponent implements OnInit {
 =======
       (data?.tagName === e.element)
 >>>>>>> parent of a9e0ac4 (update)
+<<<<<<< HEAD
+>>>>>>> parent of ebbc1fb (revert commit)
+=======
 >>>>>>> parent of ebbc1fb (revert commit)
     });
 =======
@@ -57,10 +63,13 @@ export class MainTextComponent implements OnInit {
 
   ngOnInit(): void {
 <<<<<<< HEAD
+<<<<<<< HEAD
     console.log(this.main_text?.tagName);
 >>>>>>> parent of 36c6609 (added find transform rule)
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> parent of ebbc1fb (revert commit)
     console.log(this.main_text?.tagName);
 >>>>>>> parent of 36c6609 (added find transform rule)
 =======
@@ -68,6 +77,9 @@ export class MainTextComponent implements OnInit {
     console.log(this.main_text)
     console.log(this.findRule(this.main_text));
 >>>>>>> parent of a9e0ac4 (update)
+<<<<<<< HEAD
+>>>>>>> parent of ebbc1fb (revert commit)
+=======
 >>>>>>> parent of ebbc1fb (revert commit)
   }
 }
