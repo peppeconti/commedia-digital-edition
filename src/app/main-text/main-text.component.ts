@@ -18,5 +18,6 @@ export class MainTextComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.main_text?.tagName);
   }
 }
