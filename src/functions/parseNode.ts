@@ -8,15 +8,14 @@ interface NodeToJson {
 }
 
 export const parseNode = (node: Node) => {
+
     const nodeObj: NodeToJson = {
         text: null,
         attributes: null,
         tagName: null,
         childNodes: null
     };
-    if (node.nodeType === 3 && node.textContent != '') {
-        nodeObj.text = node.textContent;
-    } else {
+    
         nodeObj.tagName = (<Element>node).tagName;
         nodeObj.attributes = [];
         if ((<Element>node).attributes && (<Element>node).attributes.length > 0) {
@@ -29,9 +28,11 @@ export const parseNode = (node: Node) => {
         } else {
             nodeObj.childNodes = [];
             for (let n = 0; n < node.childNodes.length; n++) {
-                nodeObj.childNodes.push(parseNode(node.childNodes[n]));
+                if (!(<Text>node.childNodes[n]).wholeText?.includes('\n')) {
+                    nodeObj.childNodes.push(parseNode(node.childNodes[n]));
+                    // console.log(node.childNodes[n]);
+                }
             };
         }
-    }
     return <JsonNode>nodeObj;
 }

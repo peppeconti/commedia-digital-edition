@@ -1,4 +1,4 @@
     <span *ngFor="let terzina of main_text?.childNodes">
-        {{ terzina.text }}
+        {{ terzina.text != "\n" ? terzina.text : null }}
        <app-main-text [main_text]="terzina"></app-main-text>
     </span>
