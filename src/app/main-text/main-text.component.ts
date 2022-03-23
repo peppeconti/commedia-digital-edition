@@ -16,6 +16,7 @@ export class MainTextComponent implements OnInit {
 
   findRule(data: any) {
 <<<<<<< HEAD
+<<<<<<< HEAD
     const cc = (e: any) => {
       return e.select_attr.every((e: any) => {
       })
@@ -40,5 +41,12 @@ export class MainTextComponent implements OnInit {
     console.log(this.main_text)
     console.log(this.findRule(this.main_text));
 >>>>>>> parent of a9e0ac4 (update)
+=======
+    this.rules.find((e: any) => data === e.element);
+  }
+
+  ngOnInit(): void {
+    console.log(this.main_text?.tagName);
+>>>>>>> parent of 36c6609 (added find transform rule)
   }
 }
