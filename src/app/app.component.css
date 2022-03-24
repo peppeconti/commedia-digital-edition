@@ -8,12 +8,17 @@
     src: url(../assets/font/FontsFree-Net-artifex-hand-cf-bold.ttf);
 }
 
+@font-face {
+    font-family: FellGreatPrimer;
+    src: url(../assets/font/IMFellGreatPrimer-Regular.ttf);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-size: 100%;
-    font-family: Humanistic;
+    font-family: FellGreatPrimer;
 }
 
 div.text {

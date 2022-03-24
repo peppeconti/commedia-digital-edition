@@ -1,6 +1,6 @@
 p.endecasillabo {
     margin-bottom: .8rem;
-    font-size: 1.3rem;
+    font-size: 1.15rem;
     position: relative;
 }
 p.endecasillabo span.line-number {
@@ -10,7 +10,7 @@ p.endecasillabo span.line-number {
 .note {
     position: absolute;
     transform: translateX(-.4rem);
-    top: -.5rem;
+    top: -.35rem;
     width: .5rem;
     height: .5rem;
     border-radius: 50%;
