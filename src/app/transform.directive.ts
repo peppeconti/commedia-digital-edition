@@ -18,8 +18,17 @@ export class TransformDirective implements OnInit {
   ngOnInit() {
     if (this.rule) {
       if (this.rule.attributes_transform && this.rule.attributes_transform.length > 0 && (this.data?.attributes && this.data!.attributes.length > 0)) {
-        this.rule.attributes_transform.forEach((attr: any) => {
+        this.rule.attributes_transform.forEach((attr: { start: string, target: string }) => {
           return this.renderer.setAttribute(this.elRef.nativeElement, attr.target, this.findAttributeValue(this.data?.attributes, attr.start) || '404');
+        });
+      }
+      if (this.rule.attributes) {
+        this.rule.attributes.forEach((attr: { name: string, value: string }) => {
+          if (attr.name === 'class') {
+            return this.renderer.addClass(this.elRef.nativeElement, attr.value);
+          } else {
+            return this.renderer.setAttribute(this.elRef.nativeElement, attr.name, attr.value);
+          }
         });
       }
     }
