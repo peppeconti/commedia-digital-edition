@@ -1,11 +1,12 @@
-import { Directive, OnInit, Input, Renderer2, ElementRef } from '@angular/core';
+import { Directive, OnInit, Input, Renderer2, ElementRef, AfterViewInit } from '@angular/core';
 import { JsonNode } from './main-text/jsonNode.model';
+import { Rule } from './main-text/rule.model';
 
 @Directive({
   selector: '[appTransform]'
 })
-export class TransformDirective implements OnInit {
-  @Input() rule: any;
+export class TransformDirective implements OnInit, AfterViewInit {
+  @Input() rule?: Rule;
   @Input() data?: JsonNode;
 
   findAttributeValue(attributes: [{ name: string, value: string }] | null | undefined, attribute: string) {
@@ -31,6 +32,38 @@ export class TransformDirective implements OnInit {
           }
         });
       }
+    }
+  }
+  ngAfterViewInit() {
+    if (this.rule) {
+      // execute single function for every element, if present
+      if (this.rule?.ex_function) {
+        this.rule?.ex_function(this.renderer, this.elRef)
+      }
+      // replace span element copyng attributes and adding event to new element
+      const replaceElement = (source: ElementRef<any>, newType: string) => {
+        // Create the document fragment 
+        const frag = document.createDocumentFragment();
+        // Fill it with what's in the source element 
+        while (source.nativeElement.firstChild) {
+          frag.appendChild(source.nativeElement.firstChild);
+        }
+        // Create the new element 
+        const newElem = document.createElement(newType);
+        // Add events from rule
+        if (this.rule?.events) {
+          this.rule.events.forEach((e: { event: string, execute: Function }) =>
+            this.renderer.listen(newElem, e.event, (event) => { e.execute(event) })
+          )
+        };
+        [...source.nativeElement.attributes].forEach(attr => { newElem.setAttribute(attr.nodeName, attr.nodeValue) });
+        // Empty the document fragment into it 
+        newElem.appendChild(frag);
+        // Replace the source element with the new element on the page 
+        source.nativeElement.parentNode.replaceChild(newElem, source.nativeElement);
+      }
+      // calling the replacing function
+      replaceElement(this.elRef, this.rule?.target || 'span')
     }
   }
 }

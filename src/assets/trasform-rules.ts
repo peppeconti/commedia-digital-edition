@@ -25,16 +25,7 @@ let rules: Array<Rule> =
       target: "div",
       before: null,
       after: null,
-      content: [
-        {
-          type: 'attr',
-          name: 'xml:id'
-        },
-        {
-          type: 'text',
-          name: 'ciao'
-        },
-      ],
+      content: null,
       events: null,
       ex_function: null
     },
@@ -60,14 +51,43 @@ let rules: Array<Rule> =
       ex_function: (renderer: Renderer2, elRef: ElementRef,) => {
         const lineNumber: string = elRef.nativeElement.dataset.line;
         const numberToLine = renderer.createElement('span');
+        renderer.addClass(numberToLine, 'line-number');
         if ((+lineNumber + 2) % 3 === 0) {
-          numberToLine.innerHTML = lineNumber;
+          numberToLine.innerHTML = `${lineNumber}.`;
         } else {
           numberToLine.innerHTML = '&nbsp';
         }
         renderer.insertBefore(elRef.nativeElement, numberToLine, elRef.nativeElement.firstChild);
       }
-    }
+    },
+    {
+      element: "note",
+      select_attr: [],
+      attributes_transform: [
+        {
+          start: 'corresp',
+          target: 'data-note'
+        },
+        {
+          start: 'type',
+          target: 'class'
+        }
+      ],
+      attributes: null,
+      target: "span",
+      before: null,
+      after: null,
+      content: null,
+      events: [
+        {
+          event: 'click',
+          execute: (event: Event) => { 
+            event.stopPropagation();
+            console.log('ciccio') }
+        }
+      ],
+      ex_function: null
+    },
   ]
 
 export default rules;

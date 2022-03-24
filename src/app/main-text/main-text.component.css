@@ -1,5 +1,22 @@
 p.endecasillabo {
-    margin-bottom: .7rem;
-    font-size: 1.1rem;
+    margin-bottom: .8rem;
+    font-size: 1.3rem;
     position: relative;
+}
+p.endecasillabo span.line-number {
+    position: absolute;
+    transform: translateX(-2.5rem);
+}
+.note {
+    position: absolute;
+    transform: translateX(-.4rem);
+    top: -.5rem;
+    width: .5rem;
+    height: .5rem;
+    border-radius: 50%;
+    background-color: #2d2d2d;
+    cursor: pointer;
+}
+.note:hover {
+    opacity: .8;
 }
