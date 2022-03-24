@@ -14,6 +14,7 @@ import transform_rules from '../assets/trasform-rules';
 export class AppComponent {
   main_text?: JsonNode;
   rules: Array<Rule> = transform_rules;
+  showNote: boolean = true;
 
   constructor(private http: HttpClient) {
 

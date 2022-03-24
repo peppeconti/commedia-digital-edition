@@ -9,6 +9,7 @@ import { Rule } from './rule.model';
 })
 export class MainTextComponent implements OnInit {
   @Input() main_text: JsonNode | undefined;
+  @Input() showNote!: boolean;
   @Input() rules!: Array<Rule>;
   @Input() rule?: Rule;
 

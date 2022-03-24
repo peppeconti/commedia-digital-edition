@@ -1,5 +1,6 @@
 <div class="text">
    <section class="main-text">
-      <app-main-text [main_text]="main_text" [rules]="rules"></app-main-text>
+      <app-main-text [main_text]="main_text" [rules]="rules" [showNote]="showNote"></app-main-text>
    </section>
+   <aside class="note-container" *ngIf="showNote"></aside>
 </div>
