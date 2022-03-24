@@ -87,6 +87,11 @@
                               <l type="endecasillabo" n="8">ma per trattar del ben <caesura/> ch’i’ vi trovai,</l>
                               <l type="endecasillabo" n="9">dirò de l’altre cose <caesura/> ch’i’ v’ho scorte</l>
                            </lg>
+                            <lg xml:id="terzina-4" type="terzina">
+                              <l type="endecasillabo" n="10">Io non so ben ridir <caesura/> com’ i’ v’intrai,</l>
+                              <l type="endecasillabo" n="11">tant’ era pien di sonno <caesura/> a quel punto</l>
+                              <l type="endecasillabo" n="12">che la verace via <caesura/> abbandonai.</l>
+                           </lg>
                         </body>
                      </text>
                   </group>
