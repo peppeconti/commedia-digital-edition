@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { JsonNode } from './jsonNode.model';
-
+import { Rule } from './rule.model';
+ 
 @Component({
   selector: 'app-main-text',
   templateUrl: './main-text.component.html',
@@ -8,19 +9,25 @@ import { JsonNode } from './jsonNode.model';
 })
 export class MainTextComponent implements OnInit {
   @Input() main_text: JsonNode | undefined;
-  @Input() rules: any;
-  @Input() rule: any;
+  @Input() rules!: Array<Rule>;
+  @Input() rule?: Rule;
 
   constructor() {
 
   }
 
-  isSubset(arr1: any, arr2: any) {
-    return arr1.every((a: any) => arr2.find((b: any) => a.name === b.name && a.value === b.value))
+  isSubset(arr1: Array<{name: string, value: string}> | null, arr2: Array<{name: string, value: string}> | null) {
+    if (arr1 && arr2) {
+      return arr1.every((a: {name: string, value: string}) => arr2.find((b: {name: string, value: string}) => a.name === b.name && a.value === b.value))
+    } else if (arr1 && (!arr2 || arr2.length < 1)) {
+      return false;
+    } else {
+      return true;
+    }
   }
 
-  findRule(data: any) {
-    return this.rules.find((e: any) => (data?.tagName === e.element && this.isSubset(e.select_attr, data?.attributes)));
+  findRule(data: JsonNode) {
+    return this.rules.find((e: Rule ) => (data?.tagName === e.element && this.isSubset(e.select_attr, data?.attributes)));
   }
 
   ngOnInit(): void {

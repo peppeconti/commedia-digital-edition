@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { JsonNode } from './main-text/jsonNode.model';
+import { Rule } from './main-text/rule.model';
 import { parseNode } from 'src/functions/parseNode';
 import transform_rules from '../assets/trasform-rules';
 
@@ -12,7 +13,7 @@ import transform_rules from '../assets/trasform-rules';
 })
 export class AppComponent {
   main_text?: JsonNode;
-  rules = transform_rules;
+  rules: Array<Rule> = transform_rules;
 
   constructor(private http: HttpClient) {
 

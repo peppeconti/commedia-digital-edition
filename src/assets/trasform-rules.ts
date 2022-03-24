@@ -1,6 +1,7 @@
 import { ElementRef, Renderer2 } from "@angular/core";
+import { Rule } from '../app/main-text/rule.model';
 
-let rules =
+let rules: Array<Rule> =
   [
     {
       element: "lg",
@@ -35,7 +36,7 @@ let rules =
         },
       ],
       events: null,
-      function: null
+      ex_function: null
     },
     {
       element: "l",
@@ -56,7 +57,7 @@ let rules =
       after: null,
       content: null,
       events: null,
-      function: (renderer: Renderer2, elRef: ElementRef,) => {
+      ex_function: (renderer: Renderer2, elRef: ElementRef,) => {
         const lineNumber: string = elRef.nativeElement.dataset.line;
         const numberToLine = renderer.createElement('span');
         if ((+lineNumber + 2) % 3 === 0) {
