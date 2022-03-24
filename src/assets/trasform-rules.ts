@@ -81,9 +81,11 @@ let rules: Array<Rule> =
       events: [
         {
           event: 'click',
-          execute: (event: Event, showNote: boolean) => { 
+          execute: (event: Event, showNote: boolean) => {
             event.stopPropagation();
-            showNote = !showNote }
+            showNote = !showNote
+            console.log(showNote)
+          }
         }
       ],
       ex_function: null

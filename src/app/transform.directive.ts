@@ -8,6 +8,7 @@ import { Rule } from './main-text/rule.model';
 export class TransformDirective implements OnInit, AfterViewInit {
   @Input() rule?: Rule;
   @Input() data?: JsonNode;
+  @Input() showNote!: boolean ;
 
   findAttributeValue(attributes: [{ name: string, value: string }] | null | undefined, attribute: string) {
     const val = attributes?.find(e => e.name === attribute);
@@ -53,7 +54,7 @@ export class TransformDirective implements OnInit, AfterViewInit {
         // Add events from rule
         if (this.rule?.events) {
           this.rule.events.forEach((e: { event: string, execute: Function }) =>
-            this.renderer.listen(newElem, e.event, (event) => { e.execute(event) })
+            this.renderer.listen(newElem, e.event, (event) => { e.execute(event, this.showNote) })
           )
         };
         [...source.nativeElement.attributes].forEach(attr => { newElem.setAttribute(attr.nodeName, attr.nodeValue) });
