@@ -2,6 +2,9 @@
    <section class="main-text">
       <app-main-text [main_text]="main_text"></app-main-text>
    </section>
+   <section class="paraphrase">
+      <app-paraphrase [paraphrase]="paraphrase"></app-paraphrase>
+   </section>
    <aside class="note-container" *ngIf="this.settings.showNote">
       <button (click)="hideNote()">close</button>
    </aside>

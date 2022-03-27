@@ -1,6 +1,6 @@
 import { Directive, OnInit, Input, Renderer2, ElementRef, AfterViewInit } from '@angular/core';
-import { JsonNode } from './main-text/jsonNode.model';
-import { Rule } from './main-text/rule.model';
+import { JsonNode } from './jsonNode.model';
+import { Rule } from './rule.model';
 
 @Directive({
   selector: '[appTransform]'

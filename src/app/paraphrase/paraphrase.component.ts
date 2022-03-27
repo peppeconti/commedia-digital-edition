@@ -1,16 +1,16 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { JsonNode } from '../jsonNode.model';
-import { Rule } from '../rule.model';
+import { Rule } from '../rule.model';;
 import { RulesServices } from '../rules.service';
- 
+
 @Component({
-  selector: 'app-main-text',
-  templateUrl: './main-text.component.html',
-  styleUrls: ['./main-text.component.css']
+  selector: 'app-paraphrase',
+  templateUrl: './paraphrase.component.html',
+  styleUrls: ['./paraphrase.component.css']
 })
-export class MainTextComponent implements OnInit {
+export class ParaphraseComponent implements OnInit {
   rules: Array<Rule> = this.rulesservice.rules;
-  @Input() main_text: JsonNode | undefined;
+  @Input() paraphrase: JsonNode | undefined;
 
   constructor(private rulesservice: RulesServices) { }
 
@@ -31,13 +31,3 @@ export class MainTextComponent implements OnInit {
   ngOnInit(): void {
   }
 }
-
-// VERSION BY ME OF isSubset
-
-/*compare(arg_1: any, arg_2: any) {
-  return arg_1.map((a: any) => {
-    return arg_2.some((b: any) => {
-      return a.name === b.name && a.value === b.value
-    })
-  }).every((e: boolean) => e === true);
-}*/

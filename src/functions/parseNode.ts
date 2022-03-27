@@ -1,4 +1,4 @@
-import { JsonNode } from "src/app/main-text/jsonNode.model";
+import { JsonNode } from "src/app/jsonNode.model";
 
 interface NodeToJson {
     isText: boolean,

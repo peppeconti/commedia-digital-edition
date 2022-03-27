@@ -1,6 +1,6 @@
 import { Renderer2, ElementRef, Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Rule } from "./main-text/rule.model";
+import { Rule } from "./rule.model";
 
 @Injectable()
 
@@ -72,6 +72,42 @@ export class RulesServices {
                 }
             },
             {
+                element: "lb",
+                select_attr: null,
+                attributes_transform: null,
+                attributes: null,
+                target: "br",
+                before: null,
+                after: null,
+                content: null,
+                events: null,
+                ex_function: null
+            },
+            {
+                element: "div",
+                select_attr: null,
+                attributes_transform: null,
+                attributes: null,
+                target: "div",
+                before: null,
+                after: null,
+                content: null,
+                events: null,
+                ex_function: null
+            },
+            {
+                element: "p",
+                select_attr: null,
+                attributes_transform: null,
+                attributes: null,
+                target: "p",
+                before: null,
+                after: null,
+                content: null,
+                events: null,
+                ex_function: null
+            },
+            {
                 element: "note",
                 select_attr: [],
                 attributes_transform: [
@@ -95,8 +131,6 @@ export class RulesServices {
                         execute: (event: Event) => {
                             event.stopPropagation();
                             this.settings.showNote = true;
-                            const el = this.renderer.selectRootElement('.note-container');
-                            el.innerHTML = 'ciccio';
                         }
                     }
                 ],

@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { MainTextComponent } from './main-text/main-text.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TransformDirective } from './transform.directive';
+import { ParaphraseComponent } from './paraphrase/paraphrase.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainTextComponent,
     TransformDirective,
+    ParaphraseComponent,
   ],
   imports: [
     BrowserModule,
