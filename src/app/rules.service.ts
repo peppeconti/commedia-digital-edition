@@ -15,6 +15,66 @@ export class RulesServices {
 
         [
             {
+                element: "div",
+                select_attr: [
+                    {
+                        name: 'rend',
+                        value: 'paraphrase-terzina'
+                    }
+                ],
+                attributes_transform: [
+                    {
+                        start: 'xml:id',
+                        target: 'id'
+                    },
+                    {
+                        start: 'rend',
+                        target: 'class'
+                    }
+                ],
+                attributes: null,
+                target: "div",
+                before: null,
+                after: null,
+                content: null,
+                events: null,
+                ex_function: null
+            },
+            {
+                element: "p",
+                select_attr: [
+                    {
+                        name: 'rend',
+                        value: 'terzina-paraphrase'
+                    }
+                ],
+                attributes_transform: [
+                    {
+                        start: 'rend',
+                        target: 'class'
+                    }
+                ],
+                attributes: null,
+                target: "p",
+                before: null,
+                after: null,
+                content: null,
+                events: null,
+                ex_function: null
+            },
+            {
+                element: "lb",
+                select_attr: [],
+                attributes_transform: [],
+                attributes: null,
+                target: "br",
+                before: null,
+                after: null,
+                content: null,
+                events: null,
+                ex_function: null
+            },
+            {
                 element: "lg",
                 select_attr: [
                     {
@@ -42,14 +102,19 @@ export class RulesServices {
             },
             {
                 element: "l",
-                select_attr: [],
+                select_attr: [
+                    {
+                        name: 'rend',
+                        value: 'endecasillabo'
+                    }
+                ],
                 attributes_transform: [
                     {
                         start: 'n',
                         target: 'data-line'
                     },
                     {
-                        start: 'type',
+                        start: 'rend',
                         target: 'class'
                     }
                 ],
@@ -70,42 +135,6 @@ export class RulesServices {
                     }
                     renderer.insertBefore(elRef.nativeElement, numberToLine, elRef.nativeElement.firstChild);
                 }
-            },
-            {
-                element: "lb",
-                select_attr: null,
-                attributes_transform: null,
-                attributes: null,
-                target: "br",
-                before: null,
-                after: null,
-                content: null,
-                events: null,
-                ex_function: null
-            },
-            {
-                element: "div",
-                select_attr: null,
-                attributes_transform: null,
-                attributes: null,
-                target: "div",
-                before: null,
-                after: null,
-                content: null,
-                events: null,
-                ex_function: null
-            },
-            {
-                element: "p",
-                select_attr: null,
-                attributes_transform: null,
-                attributes: null,
-                target: "p",
-                before: null,
-                after: null,
-                content: null,
-                events: null,
-                ex_function: null
             },
             {
                 element: "note",

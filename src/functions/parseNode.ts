@@ -1,23 +1,25 @@
-import { JsonNode } from "src/app/jsonNode.model";
+import { JsonNode } from "../app/jsonNode.model";
 
 interface NodeToJson {
-    isText: boolean,
     text: string | null
     attributes: Array<{ name: string, value: string }> | null,
     tagName: string | null
     childNodes: Array<NodeToJson> | null,
+    isText: boolean
 }
 
-export const parseNode: Function = (node: Node) => {
-
+export const parseNode = (node: Node) => {
     const nodeObj: NodeToJson = {
-        isText: false,
         text: null,
         attributes: null,
         tagName: null,
-        childNodes: null
+        childNodes: null,
+        isText: false
     };
-    
+    if (node.nodeType === 3 && node.textContent != '') {
+        nodeObj.text = node.textContent;
+        nodeObj.isText = true;
+    } else {
         nodeObj.tagName = (<Element>node).tagName;
         nodeObj.attributes = [];
         if ((<Element>node).attributes && (<Element>node).attributes.length > 0) {
@@ -25,16 +27,15 @@ export const parseNode: Function = (node: Node) => {
                 nodeObj.attributes.push({ name: (<Element>node).attributes[i].name, value: (<Element>node).attributes[i].value });
             }
         }
-        if (!node.childNodes || node.childNodes.length < 1 && node.nodeType === 3) {
+        if (!node.childNodes || node.childNodes.length < 1) {
             nodeObj.text = node.textContent;
             nodeObj.isText = true;
         } else {
             nodeObj.childNodes = [];
             for (let n = 0; n < node.childNodes.length; n++) {
-                if (!(<Text>node.childNodes[n]).wholeText?.includes('\n')) {
                     nodeObj.childNodes.push(parseNode(node.childNodes[n]));
-                }
             };
         }
+    }
     return <JsonNode>nodeObj;
 }
