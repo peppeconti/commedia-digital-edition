@@ -1,7 +1,15 @@
+import { Renderer2, ElementRef, Injectable } from "@angular/core";
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Rule } from "./main-text/rule.model";
-import { Renderer2, ElementRef } from "@angular/core";
+
+@Injectable()
 
 export class RulesServices {
+
+    settings: {showNote: boolean, showParaphrase: boolean} = {
+        showNote: false,
+        showParaphrase: false
+    }
 
     rules: Array<Rule> =
 
@@ -84,15 +92,30 @@ export class RulesServices {
                 events: [
                     {
                         event: 'click',
-                        execute: (event: Event, showNote: boolean) => {
+                        execute: (event: Event) => {
                             event.stopPropagation();
-                            showNote = !showNote
-                            console.log(showNote)
+                            this.settings.showNote = true;
+                            const el = this.renderer.selectRootElement('.note-container');
+                            el.innerHTML = 'ciccio';
                         }
                     }
                 ],
                 ex_function: null
             },
-        ]
+        ];
 
+    constructor(private http: HttpClient, private renderer: Renderer2) {
+
+    }
+
+    fetchData(){
+        return this.http.get('assets/data/divina_commedia.xml', {
+            headers: new HttpHeaders()
+                .set('Content-Type', 'text/xml')
+                .append('Access-Control-Allow-Methods', 'GET')
+                .append('Access-Control-Allow-Origin', '*')
+                .append('Access-Control-Allow-Headers', "Access-Control-Allow-Headers, Access-Control-Allow-Origin, Access-Control-Request-Method"),
+            responseType: 'text'
+        })
+    }
 }

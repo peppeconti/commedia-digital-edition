@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { MainTextComponent } from './main-text/main-text.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TransformDirective } from './transform.directive';
-import { RulesServices } from '../app/rules.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +17,7 @@ import { RulesServices } from '../app/rules.service';
     HttpClientModule,
     FontAwesomeModule
   ],
-  providers: [RulesServices],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
