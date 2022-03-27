@@ -8,7 +8,7 @@ interface NodeToJson {
     childNodes: Array<NodeToJson> | null,
 }
 
-export const parseNode = (node: Node) => {
+export const parseNode: Function = (node: Node) => {
 
     const nodeObj: NodeToJson = {
         isText: false,
