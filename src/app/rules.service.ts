@@ -61,9 +61,9 @@ export class RulesServices {
                 events: null,
                 ex_function: (renderer: Renderer2, elRef: ElementRef,) => {
                     const lineNumber: string = elRef.nativeElement.dataset.line;
-                    const numberToLine = renderer.createElement('span');
+                    const numberToLine: Element = renderer.createElement('span');
                     renderer.addClass(numberToLine, 'line-number');
-                    if ((+lineNumber + 2) % 3 === 0) {
+                    if ((Number(lineNumber) + 2) % 3 === 0) {
                         numberToLine.innerHTML = `${lineNumber}.`;
                     } else {
                         numberToLine.innerHTML = '&nbsp';
