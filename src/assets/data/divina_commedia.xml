@@ -55,9 +55,14 @@
                   quarantesimo anno e più precisamente, per i <hi rend="quote">perfettamente
                      naturati</hi> (<hi rend="italic">Cv</hi>. IV, 23, 9), è il trentacinquesimo
                   anno. Il convincimento di Dante si basa sulla Bibbia stessa: nel salmo 89, 10 si
-                  legge: <hi rend="quote">La durata della nostra vita è, in sé, settant’anni</hi>.</item>
-               <item xml:id="nota-2">
-               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</item>
+                  legge: <hi rend="quote">La durata della nostra vita è, in sé,
+                  settant’anni</hi>.</item>
+               <item xml:id="nota-2"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                  sunt in culpa qui officia deserunt mollit anim id est laborum.</item>
             </list>
          </sourceDesc>
       </fileDesc>
@@ -73,24 +78,37 @@
                      <text>
                         <body rend="terzine">
                            <lg xml:id="terzina-1" type="terzina">
-                              <l rend="endecasillabo" n="1">Nel mezzo<note type="note" n="1" corresp="#nota-2"/> del cammin <caesura/> di nostra vita<note type="note" n="1" corresp="#nota-1"/></l>
-                              <l rend="endecasillabo" n="2">mi ritrovai <caesura/> per una selva oscura</l>
-                              <l rend="endecasillabo" n="3">ché la diritta<note type="note" n="1" corresp="#nota-2"/> via <caesura/> era smarrita.</l>
+                              <l rend="endecasillabo" n="1">Nel mezzo<note type="note" n="1"
+                                    corresp="#nota-2"/> del cammin <caesura/> di nostra vita<note
+                                    type="note" n="1" corresp="#nota-1"/></l>
+                              <l rend="endecasillabo" n="2">mi ritrovai <caesura/> per una selva
+                                 oscura</l>
+                              <l rend="endecasillabo" n="3">ché la diritta<note type="note" n="1"
+                                    corresp="#nota-2"/> via <caesura/> era smarrita.</l>
                            </lg>
                            <lg xml:id="terzina-2" type="terzina">
-                              <l rend="endecasillabo" n="4">Ahi, quanto a dir qual era <caesura/> è cosa<note type="note" n="1" corresp="#nota-2"/> dura</l>
-                              <l rend="endecasillabo" n="5">esta selva<note type="note" n="1" corresp="#nota-2"/> selvaggia <caesura/> e aspra e forte</l>
-                              <l rend="endecasillabo" n="6">che nel pensier <caesura/> rinova la paura!</l>
+                              <l rend="endecasillabo" n="4">Ahi, quanto a dir qual era <caesura/> è
+                                    cosa<note type="note" n="1" corresp="#nota-2"/> dura</l>
+                              <l rend="endecasillabo" n="5">esta selva<note type="note" n="1"
+                                    corresp="#nota-2"/> selvaggia <caesura/> e aspra e forte</l>
+                              <l rend="endecasillabo" n="6">che nel pensier <caesura/> rinova la
+                                 paura!</l>
                            </lg>
                            <lg xml:id="terzina-3" type="terzina">
-                              <l rend="endecasillabo" n="7">Tant’ è amara <caesura/> che<note type="note" n="1" corresp="#nota-2"/> poco è più morte;</l>
-                              <l rend="endecasillabo" n="8">ma per trattar del ben <caesura/> ch’i’ vi trovai,</l>
-                              <l rend="endecasillabo" n="9">dirò de l’altre cose <caesura/> ch’i’ v’ho scorte</l>
+                              <l rend="endecasillabo" n="7">Tant’ è amara <caesura/> che<note
+                                    type="note" n="1" corresp="#nota-2"/> poco è più morte;</l>
+                              <l rend="endecasillabo" n="8">ma per trattar del ben <caesura/> ch’i’
+                                 vi trovai,</l>
+                              <l rend="endecasillabo" n="9">dirò de l’altre cose <caesura/> ch’i’
+                                 v’ho scorte</l>
                            </lg>
-                            <lg xml:id="terzina-4" type="terzina">
-                              <l rend="endecasillabo" n="10">Io non so ben ridir <caesura/> com’ i’ v’intrai,</l>
-                              <l rend="endecasillabo" n="11">tant’ era pien di sonno <caesura/> a quel punto</l>
-                              <l rend="endecasillabo" n="12">che la verace via <caesura/> abbandonai.</l>
+                           <lg xml:id="terzina-4" type="terzina">
+                              <l rend="endecasillabo" n="10">Io non so ben ridir <caesura/> com’ i’
+                                 v’intrai,</l>
+                              <l rend="endecasillabo" n="11">tant’ era pien di sonno <caesura/> a
+                                 quel punto</l>
+                              <l rend="endecasillabo" n="12">che la verace via <caesura/>
+                                 abbandonai.</l>
                            </lg>
                         </body>
                      </text>
@@ -100,21 +118,42 @@
                   <group type="paraphrase">
                      <text>
                         <body rend="terzine-paraphrase">
-                           <div xml:id="paraphrase-terzina-1" rend="paraphrase-terzina" corresp="#terzina-1">
-                              <p rend="terzina-paraphrase">A metà del corso medio della vita umana, <lb /> mi ritrovai in una
-                                 foresta buia, <lb /> perché avevo smarrito la giusta strada.</p>
+                           <div xml:id="paraphrase-terzina-1" rend="paraphrase-terzina"
+                              corresp="#terzina-1">
+                              <p rend="terzina-paraphrase"><span rend="paraphrase-fragment">A metà
+                                    del corso medio della vita umana,</span>
+                                 <lb/>
+                                 <span rend="paraphrase-fragment">mi ritrovai in una foresta
+                                    buia,</span>
+                                 <lb/>
+                                 <span rend="paraphrase-fragment">perché avevo smarrito la giusta
+                                    strada.</span></p>
                            </div>
-                           <div xml:id="paraphrase-terzina-2" rend="paraphrase-terzina" corresp="#terzina-2">
-                              <p rend="terzina-paraphrase">Ahimè, quanto è difficile descrivere l’aspetto <lb/> di questa
-                                 foresta inospitale, intricata e <lb/> difficile <add>da
-                                    attraversare</add>, a tal punto che al <lb/> solo pensiero si
-                                 rinnova in me la paura.</p>
+                           <div xml:id="paraphrase-terzina-2" rend="paraphrase-terzina"
+                              corresp="#terzina-2">
+                              <p rend="terzina-paraphrase"><span rend="paraphrase-fragment">Ahimè,
+                                    quanto è difficile descrivere l’aspetto</span>
+                                 <lb/>
+                                 <span rend="paraphrase-fragment">di questa foresta inospitale,
+                                    intricata e</span>
+                                 <lb/>
+                                 <span rend="paraphrase-fragment">difficile, a tal punto che al</span>
+                                 <lb/>
+                                 <span rend="paraphrase-fragment">solo pensiero si rinnova in me la
+                                    paura.</span></p>
                            </div>
-                           <div xml:id="paraphrase-terzina-3" rend="paraphrase-terzina" corresp="#terzina-3">
-                              <p rend="terzina-paraphrase">È tanto angosciante che la morte lo <lb/> è
-                                 giusto poco di più; ma per descrivere il <lb/> bene che io trovai
-                                 in essa, parlerò <add>prima</add><lb/> delle altre cose che vi ho
-                                 visto.</p>
+                           <div xml:id="paraphrase-terzina-3" rend="paraphrase-terzina"
+                              corresp="#terzina-3">
+                              <p rend="terzina-paraphrase"><span rend="paraphrase-fragment">È tanto
+                                    angosciante che la morte lo</span>
+                                 <lb/>
+                                 <span rend="paraphrase-fragment">è giusto poco di più; ma per
+                                    descrivere il</span>
+                                 <lb/>
+                                 <span rend="paraphrase-fragment">bene che io trovai in essa,
+                                    parlerò</span>
+                                 <span rend="paraphrase-fragment">prima</span><lb/> <span rend="paraphrase-fragment">delle altre
+                                    cose che vi ho visto.</span></p>
                            </div>
                         </body>
                      </text>

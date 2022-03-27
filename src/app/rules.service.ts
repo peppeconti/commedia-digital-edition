@@ -15,6 +15,28 @@ export class RulesServices {
 
         [
             {
+                element: "span",
+                select_attr: [
+                    {
+                        name: 'rend',
+                        value: 'paraphrase-fragment'
+                    }
+                ],
+                attributes_transform: [
+                    {
+                        start: 'rend',
+                        target: 'class'
+                    }
+                ],
+                attributes: null,
+                target: "span",
+                before: null,
+                after: null,
+                content: null,
+                events: null,
+                ex_function: null
+            },
+            {
                 element: "div",
                 select_attr: [
                     {
