@@ -6,6 +6,7 @@ import { MainTextComponent } from './main-text/main-text.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TransformDirective } from './transform.directive';
 import { ParaphraseComponent } from './paraphrase/paraphrase.component';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { ParaphraseComponent } from './paraphrase/paraphrase.component';
     MainTextComponent,
     TransformDirective,
     ParaphraseComponent,
+    SettingsComponent,
   ],
   imports: [
     BrowserModule,
