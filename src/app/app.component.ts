@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { JsonNode } from './jsonNode.model';
 import { RulesServices } from './rules.service';
 import { parseNode } from '../functions/parseNode';
