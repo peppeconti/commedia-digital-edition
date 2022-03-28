@@ -1,4 +1,6 @@
 <span appTransform *ngFor="let terzina of main_text?.childNodes" [rule]="findRule(terzina)" [data]="terzina">
-    {{ terzina.text }}
-   <app-main-text *ngIf="!terzina.isText" [main_text]="terzina"></app-main-text>
+    <ng-container>
+        {{ terzina.text }}
+        <app-main-text [main_text]="terzina"></app-main-text>
+    </ng-container>
 </span>

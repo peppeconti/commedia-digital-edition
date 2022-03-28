@@ -7,6 +7,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TransformDirective } from './transform.directive';
 import { ParaphraseComponent } from './paraphrase/paraphrase.component';
 import { SettingsComponent } from './settings/settings.component';
+import { ShowConditionallyDirective } from './show-conditionally.directive';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { SettingsComponent } from './settings/settings.component';
     TransformDirective,
     ParaphraseComponent,
     SettingsComponent,
+    ShowConditionallyDirective,
   ],
   imports: [
     BrowserModule,

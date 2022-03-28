@@ -37,8 +37,15 @@ export class TransformDirective implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     if (this.rule) {
       // execute single function for every element, if present
-      if (this.rule?.ex_function) {
-        this.rule?.ex_function(this.renderer, this.elRef)
+      if (this.rule.ex_function) {
+        this.rule.ex_function(this.renderer, this.elRef)
+      }
+      if (this.rule.content) {
+        this.rule.content.forEach(e => {
+          if (e.type === 'text') {
+            this.elRef.nativeElement.innerHTML = e.content;
+          }
+        })
       }
       // replace span element copyng attributes and adding event to new element
       const replaceElement = (source: ElementRef<any>, newType: string) => {

@@ -9,8 +9,10 @@ import { RulesServices } from '../rules.service';
   styleUrls: ['./main-text.component.css']
 })
 export class MainTextComponent implements OnInit {
+  @Input() data?: JsonNode;
   rules: Array<Rule> = this.rulesservice.rules;
   @Input() main_text: JsonNode | undefined;
+  @Input() rule: Rule | undefined;
 
   constructor(private rulesservice: RulesServices) { }
 
@@ -29,6 +31,7 @@ export class MainTextComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // console.log(this.rule)
   }
 }
 

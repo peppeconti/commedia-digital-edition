@@ -6,14 +6,43 @@ import { Rule } from "./rule.model";
 
 export class RulesServices {
 
-    settings: {showNote: boolean, showParaphrase: boolean} = {
+    settings: { showNote: boolean, showParaphrase: boolean, showMetric: boolean } = {
         showNote: false,
-        showParaphrase: false
+        showParaphrase: false,
+        showMetric: false
     }
 
     rules: Array<Rule> =
 
         [
+            {
+                element: "caesura",
+                select_attr: [
+                    {
+                        name: 'rend',
+                        value: 'switch'
+                    }
+                ],
+                attributes_transform: [
+                    {
+                        start: 'rend',
+                        target: 'class'
+                    }
+                ],
+                attributes: null,
+                target: "span",
+                before: null,
+                after: null,
+                content: [
+                    {
+                        type: 'text',
+                        content: ' || '
+                    }
+                ],
+                events: null,
+                ex_function: null,
+                condition: this.settings.showMetric
+            },
             {
                 element: "span",
                 select_attr: [
@@ -34,7 +63,8 @@ export class RulesServices {
                 after: null,
                 content: null,
                 events: null,
-                ex_function: null
+                ex_function: null,
+                condition: true
             },
             {
                 element: "div",
@@ -60,7 +90,8 @@ export class RulesServices {
                 after: null,
                 content: null,
                 events: null,
-                ex_function: null
+                ex_function: null,
+                condition: true
             },
             {
                 element: "p",
@@ -82,7 +113,8 @@ export class RulesServices {
                 after: null,
                 content: null,
                 events: null,
-                ex_function: null
+                ex_function: null,
+                condition: true
             },
             {
                 element: "lb",
@@ -94,7 +126,8 @@ export class RulesServices {
                 after: null,
                 content: null,
                 events: null,
-                ex_function: null
+                ex_function: null,
+                condition: true
             },
             {
                 element: "lg",
@@ -120,7 +153,8 @@ export class RulesServices {
                 after: null,
                 content: null,
                 events: null,
-                ex_function: null
+                ex_function: null,
+                condition: true
             },
             {
                 element: "l",
@@ -156,7 +190,8 @@ export class RulesServices {
                         numberToLine.innerHTML = '&nbsp';
                     }
                     renderer.insertBefore(elRef.nativeElement, numberToLine, elRef.nativeElement.firstChild);
-                }
+                },
+                condition: true
             },
             {
                 element: "note",
@@ -185,7 +220,8 @@ export class RulesServices {
                         }
                     }
                 ],
-                ex_function: null
+                ex_function: null,
+                condition: true
             },
         ];
 
@@ -193,7 +229,7 @@ export class RulesServices {
 
     }
 
-    fetchData(){
+    fetchData() {
         return this.http.get('assets/data/divina_commedia.xml', {
             headers: new HttpHeaders()
                 .set('Content-Type', 'text/xml')

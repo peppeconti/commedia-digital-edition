@@ -79,36 +79,38 @@
                         <body rend="terzine">
                            <lg xml:id="terzina-1" type="terzina">
                               <l rend="endecasillabo" n="1">Nel mezzo<note type="note" n="1"
-                                    corresp="#nota-2"/> del cammin <caesura/> di nostra vita<note
-                                    type="note" n="1" corresp="#nota-1"/></l>
-                              <l rend="endecasillabo" n="2">mi ritrovai <caesura/> per una selva
-                                 oscura</l>
-                              <l rend="endecasillabo" n="3">ché la diritta<note type="note" n="1"
-                                    corresp="#nota-2"/> via <caesura/> era smarrita.</l>
+                                    corresp="#nota-2"/> del cammin <caesura rend="switch"/> di
+                                 nostra vita</l>
+                              <l rend="endecasillabo" n="2">mi ritrovai <caesura rend="switch"/> per
+                                 una selva oscura</l>
+                              <l rend="endecasillabo" n="3">ché la diritta via <caesura rend="switch"/> era
+                                 smarrita.<note type="note" n="2"
+                                    corresp="#nota-2"/></l>
                            </lg>
                            <lg xml:id="terzina-2" type="terzina">
-                              <l rend="endecasillabo" n="4">Ahi, quanto a dir qual era <caesura/> è
-                                    cosa<note type="note" n="1" corresp="#nota-2"/> dura</l>
-                              <l rend="endecasillabo" n="5">esta selva<note type="note" n="1"
-                                    corresp="#nota-2"/> selvaggia <caesura/> e aspra e forte</l>
-                              <l rend="endecasillabo" n="6">che nel pensier <caesura/> rinova la
-                                 paura!</l>
+                              <l rend="endecasillabo" n="4">Ahi, quanto a dir qual era <caesura
+                                    rend="switch"/> è cosa dura</l>
+                              <l rend="endecasillabo" n="5">esta selva selvaggia <caesura rend="switch"/> e aspra e
+                                 forte</l>
+                              <l rend="endecasillabo" n="6">che nel pensier <caesura rend="switch"/>
+                                 rinova la paura!</l>
                            </lg>
                            <lg xml:id="terzina-3" type="terzina">
-                              <l rend="endecasillabo" n="7">Tant’ è amara <caesura/> che<note
-                                    type="note" n="1" corresp="#nota-2"/> poco è più morte;</l>
-                              <l rend="endecasillabo" n="8">ma per trattar del ben <caesura/> ch’i’
-                                 vi trovai,</l>
-                              <l rend="endecasillabo" n="9">dirò de l’altre cose <caesura/> ch’i’
-                                 v’ho scorte</l>
+                              <l rend="endecasillabo" n="7">Tant’ è amara <caesura rend="switch"/>
+                                    che poco è più
+                                 morte;</l>
+                              <l rend="endecasillabo" n="8">ma per trattar del ben <caesura
+                                    rend="switch"/> ch’i’ vi trovai,</l>
+                              <l rend="endecasillabo" n="9">dirò de l’altre cose <caesura
+                                    rend="switch"/> ch’i’ v’ho scorte</l>
                            </lg>
                            <lg xml:id="terzina-4" type="terzina">
-                              <l rend="endecasillabo" n="10">Io non so ben ridir <caesura/> com’ i’
-                                 v’intrai,</l>
-                              <l rend="endecasillabo" n="11">tant’ era pien di sonno <caesura/> a
-                                 quel punto</l>
-                              <l rend="endecasillabo" n="12">che la verace via <caesura/>
-                                 abbandonai.</l>
+                              <l rend="endecasillabo" n="10">Io non so ben ridir <caesura
+                                    rend="switch"/> com’ i’ v’intrai,</l>
+                              <l rend="endecasillabo" n="11">tant’ era pien di sonno <caesura
+                                    rend="switch"/> a quel punto</l>
+                              <l rend="endecasillabo" n="12">che la verace via <caesura
+                                    rend="switch"/> abbandonai.</l>
                            </lg>
                         </body>
                      </text>
@@ -137,7 +139,8 @@
                                  <span rend="paraphrase-fragment">di questa foresta inospitale,
                                     intricata e</span>
                                  <lb/>
-                                 <span rend="paraphrase-fragment">difficile, a tal punto che al</span>
+                                 <span rend="paraphrase-fragment">difficile, a tal punto che
+                                    al</span>
                                  <lb/>
                                  <span rend="paraphrase-fragment">solo pensiero si rinnova in me la
                                     paura.</span></p>
@@ -152,8 +155,9 @@
                                  <lb/>
                                  <span rend="paraphrase-fragment">bene che io trovai in essa,
                                     parlerò</span>
-                                 <span rend="paraphrase-fragment">prima</span><lb/> <span rend="paraphrase-fragment">delle altre
-                                    cose che vi ho visto.</span></p>
+                                 <span rend="paraphrase-fragment">prima</span><lb/>
+                                 <span rend="paraphrase-fragment">delle altre cose che vi ho
+                                    visto.</span></p>
                            </div>
                         </body>
                      </text>
