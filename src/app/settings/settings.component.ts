@@ -11,13 +11,21 @@ export class SettingsComponent implements OnInit {
   faBook = faBook;
   faBookOpen = faBookOpen;
   controlActive = true;
-  settings: { showParaphrase: boolean } = { showParaphrase: this.rulesservice.settings.showParaphrase };
+  settings!: { showParaphrase: boolean, showMetric: boolean };
 
   constructor(private rulesservice: RulesServices) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+    this.settings = { showParaphrase: this.rulesservice.settings.showParaphrase, showMetric: this.rulesservice.settings.showMetric }
+  }
 
   paraphraseHandler() {
-    this.rulesservice.settings.showParaphrase = !this.rulesservice.settings.showParaphrase
+    this.rulesservice.settings.showParaphrase = !this.rulesservice.settings.showParaphrase;
+    this.settings = { showParaphrase: this.rulesservice.settings.showParaphrase, showMetric: this.rulesservice.settings.showMetric }
+  }
+  hideMetricalStructure() {
+    this.rulesservice.settings.showMetric = !this.rulesservice.settings.showMetric;
+    this.settings = { showParaphrase: this.rulesservice.settings.showParaphrase, showMetric: this.rulesservice.settings.showMetric }
+    console.log(this.rulesservice.settings.showMetric);
   }
 }

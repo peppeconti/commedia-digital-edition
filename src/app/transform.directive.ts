@@ -1,4 +1,4 @@
-import { Directive, OnInit, Input, Renderer2, ElementRef, AfterViewInit } from '@angular/core';
+import { Directive, OnInit, Input, Renderer2, ElementRef, AfterViewInit, ViewContainerRef, TemplateRef } from '@angular/core';
 import { JsonNode } from './jsonNode.model';
 import { Rule } from './rule.model';
 
@@ -70,7 +70,7 @@ export class TransformDirective implements OnInit, AfterViewInit {
         source.nativeElement.parentNode.replaceChild(newElem, source.nativeElement);
       }
       // calling the replacing function
-      replaceElement(this.elRef, this.rule?.target || 'span')
+      replaceElement(this.elRef, this.rule?.target || 'span');
     }
   }
 }

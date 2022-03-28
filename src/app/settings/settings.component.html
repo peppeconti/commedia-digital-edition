@@ -15,7 +15,7 @@
         </div>
         <div class="switch">
             <label for="metric">Metrica</label>
-            <input id="metric" type="checkbox" class="toggle-switch"/>
+            <input id="metric" type="checkbox" class="toggle-switch" [checked]="this.settings.showMetric" (change)="hideMetricalStructure()"/>
         </div>
         <div class="switch">
             <label for="notes">Note</label>

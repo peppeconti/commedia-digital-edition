@@ -1,4 +1,28 @@
 import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
+import { JsonNode } from './jsonNode.model';
+
+@Directive({
+  selector: '[appShowConditionally]'
+})
+export class ShowConditionallyDirective {
+  @Input() data: JsonNode | undefined;
+  @Input() set appShowConditionally(condition: boolean | null | undefined) {
+      if (condition) {
+        this.vcRef.createEmbeddedView(this.templateRef);
+      } else {
+        this.vcRef.clear();
+      }
+  }
+
+  constructor(private templateRef: TemplateRef<any>, private vcRef: ViewContainerRef) { 
+    console.log(this.data);
+  }
+}
+
+
+
+/*
+import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 import { RulesServices } from './rules.service';
 import { Rule } from './rule.model';
 import { JsonNode } from './jsonNode.model';
@@ -11,10 +35,14 @@ export class ShowConditionallyDirective {
   @Input() set appShowConditionally(data: JsonNode) {
       let rule = this.findRule(data);
       // console.log(rule);
-      if (rule?.condition) {
+      if (!rule?.condition && !data.isText) {
         this.vcRef.createEmbeddedView(this.templateRef);
-      } else {
+      } else if (!rule?.condition && data.isText && !data.tagName) {
+        this.vcRef.createEmbeddedView(this.templateRef);
+      } else if (!rule?.condition && data.isText && data.tagName) {
         this.vcRef.clear();
+      } else if (rule?.condition && data.isText && data.tagName) {
+        this.vcRef.createEmbeddedView(this.templateRef);
       }
   }
 
@@ -35,5 +63,6 @@ export class ShowConditionallyDirective {
   findRule(data: JsonNode) {
     return this.rules.find((e: Rule ) => (data?.tagName === e.element && this.isSubset(e.select_attr, data?.attributes)));
   }
-
 }
+
+ */

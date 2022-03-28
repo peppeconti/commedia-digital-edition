@@ -13,7 +13,7 @@ export class MainTextComponent implements OnInit {
   @Input() main_text: JsonNode | undefined;
   @Input() rule: Rule | undefined;
 
-  constructor(private rulesservice: RulesServices) { }
+  constructor(private rulesservice: RulesServices) {}
 
   isSubset(arr1: Array<{name: string, value: string}> | null, arr2: Array<{name: string, value: string}> | null) {
     if (arr1 && arr2) {
@@ -30,7 +30,6 @@ export class MainTextComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // console.log(this.rule)
   }
 }
 

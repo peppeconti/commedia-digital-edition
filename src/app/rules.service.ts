@@ -41,7 +41,7 @@ export class RulesServices {
                 ],
                 events: null,
                 ex_function: null,
-                condition: this.settings.showMetric
+                condition: { showAt: this.settings.showMetric }
             },
             {
                 element: "span",
@@ -64,7 +64,7 @@ export class RulesServices {
                 content: null,
                 events: null,
                 ex_function: null,
-                condition: true
+                condition: null
             },
             {
                 element: "div",
@@ -91,7 +91,7 @@ export class RulesServices {
                 content: null,
                 events: null,
                 ex_function: null,
-                condition: true
+                condition: null
             },
             {
                 element: "p",
@@ -114,7 +114,7 @@ export class RulesServices {
                 content: null,
                 events: null,
                 ex_function: null,
-                condition: true
+                condition: null
             },
             {
                 element: "lb",
@@ -127,7 +127,7 @@ export class RulesServices {
                 content: null,
                 events: null,
                 ex_function: null,
-                condition: true
+                condition: null
             },
             {
                 element: "lg",
@@ -154,7 +154,7 @@ export class RulesServices {
                 content: null,
                 events: null,
                 ex_function: null,
-                condition: true
+                condition: null
             },
             {
                 element: "l",
@@ -191,7 +191,7 @@ export class RulesServices {
                     }
                     renderer.insertBefore(elRef.nativeElement, numberToLine, elRef.nativeElement.firstChild);
                 },
-                condition: true
+                condition: null
             },
             {
                 element: "note",
@@ -221,7 +221,7 @@ export class RulesServices {
                     }
                 ],
                 ex_function: null,
-                condition: true
+                condition: null
             },
         ];
 
