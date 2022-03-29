@@ -9,7 +9,7 @@ export class RulesServices {
     settings: { showNote: boolean, showParaphrase: boolean, showMetric: boolean } = {
         showNote: false,
         showParaphrase: false,
-        showMetric: false
+        showMetric: true
     }
 
     rules: Array<Rule> =
@@ -41,7 +41,7 @@ export class RulesServices {
                 ],
                 events: null,
                 ex_function: null,
-                condition: { showAt: this.settings.showMetric }
+                condition: this.settings.showMetric
             },
             {
                 element: "span",

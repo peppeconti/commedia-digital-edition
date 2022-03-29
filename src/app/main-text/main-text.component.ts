@@ -12,6 +12,7 @@ export class MainTextComponent implements OnInit {
   rules: Array<Rule> = this.rulesservice.rules;
   @Input() main_text: JsonNode | undefined;
   @Input() rule: Rule | undefined;
+  settings: {showNote: boolean, showParaphrase: boolean, showMetric: boolean} = this.rulesservice.settings;
 
   constructor(private rulesservice: RulesServices) {}
 
