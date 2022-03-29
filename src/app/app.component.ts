@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { JsonNode } from './jsonNode.model';
 import { RulesServices } from './rules.service';
+import { ThirdServices } from './third.service';
 import { parseNode } from '../functions/parseNode';
+import { Rule } from './rule.model';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +12,12 @@ import { parseNode } from '../functions/parseNode';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
+  rules: Array<Rule> = this.rulesservice.rules;
   main_text?: JsonNode;
   paraphrase?: JsonNode;
   settings: {showNote: boolean, showParaphrase: boolean} = this.rulesservice.settings;
 
-  constructor(private rulesservice: RulesServices) { }
+  constructor(private rulesservice: RulesServices, private third: ThirdServices) { }
 
   ngOnInit() {
     this.rulesservice.fetchData().subscribe(res => {

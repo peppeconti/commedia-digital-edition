@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { JsonNode } from '../jsonNode.model';
+import { ThirdServices } from '../third.service';
 import { Rule } from '../rule.model';
-import { RulesServices } from '../rules.service';
 
 @Component({
   selector: 'app-main-text',
@@ -9,12 +9,12 @@ import { RulesServices } from '../rules.service';
   styleUrls: ['./main-text.component.css']
 })
 export class MainTextComponent implements OnInit {
-  rules: Array<Rule> = this.rulesservice.rules;
+  @Input() rules!: Array<Rule>;
   @Input() main_text: JsonNode | undefined;
   @Input() rule: Rule | undefined;
-  settings: { showNote: boolean, showParaphrase: boolean, showMetric: boolean } = this.rulesservice.settings;
+  settings: { hideMetric: boolean } = this.thirdservice.settings;
 
-  constructor(private rulesservice: RulesServices) {}
+  constructor(private thirdservice: ThirdServices) {}
 
   isSubset(arr1: Array<{ name: string, value: string }> | null, arr2: Array<{ name: string, value: string }> | null) {
     if (arr1 && arr2) {

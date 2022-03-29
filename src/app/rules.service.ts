@@ -1,14 +1,14 @@
 import { Renderer2, ElementRef, Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { MainTextComponent } from "./main-text/main-text.component";
 import { Rule } from "./rule.model";
 
 @Injectable()
 
 export class RulesServices {
-    settings: { showNote: boolean, showParaphrase: boolean, showMetric: boolean } = {
+    settings: { showNote: boolean, showParaphrase: boolean } = {
         showNote: false,
         showParaphrase: false,
-        showMetric: true
     }
 
     rules: Array<Rule> =
@@ -40,7 +40,7 @@ export class RulesServices {
                 ],
                 events: null,
                 ex_function: null,
-                condition: this.settings.showMetric
+                condition: this.maintext.settings.hideMetric
             },
             {
                 element: "span",
@@ -224,7 +224,7 @@ export class RulesServices {
             },
         ];
 
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient, private maintext: MainTextComponent) {
 
     }
 
