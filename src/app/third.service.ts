@@ -4,7 +4,7 @@ import { Rule } from "./rule.model";
 
 @Injectable()
 
-export class RulesServices {
+export class ThirdServices {
 
     settings: { showNote: boolean, showParaphrase: boolean, showMetric: boolean } = {
         showNote: false,
@@ -41,7 +41,7 @@ export class RulesServices {
                 ],
                 events: null,
                 ex_function: null,
-                condition: this.settings.showMetric
+                condition: this.maintext.settings.showMetric
             },
             {
                 element: "span",
@@ -225,7 +225,7 @@ export class RulesServices {
             },
         ];
 
-    constructor() {
+    constructor(private maintext: MainTextComponent) {
 
     }
 }

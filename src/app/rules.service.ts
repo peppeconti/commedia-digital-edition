@@ -5,7 +5,6 @@ import { Rule } from "./rule.model";
 @Injectable()
 
 export class RulesServices {
-
     settings: { showNote: boolean, showParaphrase: boolean, showMetric: boolean } = {
         showNote: false,
         showParaphrase: false,
