@@ -8,6 +8,7 @@ import { TransformDirective } from './transform.directive';
 import { ParaphraseComponent } from './paraphrase/paraphrase.component';
 import { SettingsComponent } from './settings/settings.component';
 import { ShowConditionallyDirective } from './show-conditionally.directive';
+import { RulesServices } from './rules.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { ShowConditionallyDirective } from './show-conditionally.directive';
     HttpClientModule,
     FontAwesomeModule
   ],
-  providers: [],
+  providers: [RulesServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

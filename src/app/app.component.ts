@@ -7,7 +7,6 @@ import { parseNode } from '../functions/parseNode';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [RulesServices],
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {

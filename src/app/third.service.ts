@@ -1,5 +1,5 @@
 import { Renderer2, ElementRef, Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { MainTextComponent } from "./main-text/main-text.component";
 import { Rule } from "./rule.model";
 
 @Injectable()
@@ -225,18 +225,7 @@ export class RulesServices {
             },
         ];
 
-    constructor(private http: HttpClient) {
+    constructor() {
 
-    }
-
-    fetchData() {
-        return this.http.get('assets/data/divina_commedia.xml', {
-            headers: new HttpHeaders()
-                .set('Content-Type', 'text/xml')
-                .append('Access-Control-Allow-Methods', 'GET')
-                .append('Access-Control-Allow-Origin', '*')
-                .append('Access-Control-Allow-Headers', "Access-Control-Allow-Headers, Access-Control-Allow-Origin, Access-Control-Request-Method"),
-            responseType: 'text'
-        })
     }
 }

@@ -1,5 +1,5 @@
 <ng-container *ngFor="let terzina of main_text?.childNodes">
-    <span appTransform *ngIf="this.settings.showMetric" [rule]="findRule(terzina)" [data]="terzina">
+    <span appTransform *ngIf="!findRule(terzina)?.condition" [rule]="findRule(terzina)" [data]="terzina">
         {{ terzina.text }}
         <app-main-text [main_text]="terzina">
         </app-main-text>
