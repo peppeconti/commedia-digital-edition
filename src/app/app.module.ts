@@ -9,7 +9,6 @@ import { ParaphraseComponent } from './paraphrase/paraphrase.component';
 import { SettingsComponent } from './settings/settings.component';
 import { ShowConditionallyDirective } from './show-conditionally.directive';
 import { RulesServices } from './rules.service';
-import { ThirdServices } from './third.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +24,7 @@ import { ThirdServices } from './third.service';
     HttpClientModule,
     FontAwesomeModule
   ],
-  providers: [RulesServices, ThirdServices, MainTextComponent],
+  providers: [RulesServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
