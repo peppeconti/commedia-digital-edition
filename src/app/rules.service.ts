@@ -1,20 +1,91 @@
 import { Renderer2, ElementRef, Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Rule } from "./rule.model";
+import { Settings } from "./settings.model";
 
 @Injectable()
 
 export class RulesServices {
-
-    settings: { showNote: boolean, showParaphrase: boolean, showMetric: boolean } = {
+    settings: { showNote: boolean, showParaphrase: boolean } = {
         showNote: false,
         showParaphrase: false,
-        showMetric: true
+    }
+    inline_settings: Settings = {
+        noCondition: true, showMetric: false, noShowMetric: true
     }
 
     rules: Array<Rule> =
 
         [
+            {
+                element: "span",
+                select_attr: [
+                    {
+                        name: 'type',
+                        value: 'regular'
+                    }
+                ],
+                attributes_transform: [
+                    {
+                        start: 'type',
+                        target: 'class'
+                    }
+                ],
+                attributes: null,
+                target: "span",
+                before: null,
+                after: null,
+                content: null,
+                events: null,
+                ex_function: null,
+                condition: 'noShowMetric'
+            },
+            {
+                element: "span",
+                select_attr: [
+                    {
+                        name: 'type',
+                        value: 'primary-accent'
+                    }
+                ],
+                attributes_transform: [
+                    {
+                        start: 'type',
+                        target: 'class'
+                    }
+                ],
+                attributes: null,
+                target: "span",
+                before: null,
+                after: null,
+                content: null,
+                events: null,
+                ex_function: null,
+                condition: 'showMetric'
+            },
+            {
+                element: "span",
+                select_attr: [
+                    {
+                        name: 'type',
+                        value: 'secondary-accent'
+                    }
+                ],
+                attributes_transform: [
+                    {
+                        start: 'type',
+                        target: 'class'
+                    }
+                ],
+                attributes: null,
+                target: "span",
+                before: null,
+                after: null,
+                content: null,
+                events: null,
+                ex_function: null,
+                condition: 'showMetric'
+            },
             {
                 element: "caesura",
                 select_attr: [
@@ -41,7 +112,7 @@ export class RulesServices {
                 ],
                 events: null,
                 ex_function: null,
-                condition: this.settings.showMetric
+                condition: 'showMetric'
             },
             {
                 element: "span",
@@ -64,7 +135,7 @@ export class RulesServices {
                 content: null,
                 events: null,
                 ex_function: null,
-                condition: null
+                condition: 'noCondition'
             },
             {
                 element: "div",
@@ -91,7 +162,7 @@ export class RulesServices {
                 content: null,
                 events: null,
                 ex_function: null,
-                condition: null
+                condition: 'noCondition'
             },
             {
                 element: "p",
@@ -114,7 +185,7 @@ export class RulesServices {
                 content: null,
                 events: null,
                 ex_function: null,
-                condition: null
+                condition: 'noCondition'
             },
             {
                 element: "lb",
@@ -127,7 +198,7 @@ export class RulesServices {
                 content: null,
                 events: null,
                 ex_function: null,
-                condition: null
+                condition: 'noCondition'
             },
             {
                 element: "lg",
@@ -154,7 +225,7 @@ export class RulesServices {
                 content: null,
                 events: null,
                 ex_function: null,
-                condition: null
+                condition: 'noCondition'
             },
             {
                 element: "l",
@@ -191,7 +262,7 @@ export class RulesServices {
                     }
                     renderer.insertBefore(elRef.nativeElement, numberToLine, elRef.nativeElement.firstChild);
                 },
-                condition: null
+                condition: 'noCondition'
             },
             {
                 element: "note",
@@ -221,7 +292,7 @@ export class RulesServices {
                     }
                 ],
                 ex_function: null,
-                condition: null
+                condition: 'noCondition'
             },
         ];
 

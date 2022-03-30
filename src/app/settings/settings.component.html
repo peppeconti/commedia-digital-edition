@@ -11,11 +11,11 @@
     <div class="control-panel" *ngIf="controlActive">
         <div class="switch">
             <label for="paraphrase">Parafrasi</label>
-            <input id="paraphrase" type="checkbox" class="toggle-switch" [checked]="this.settings.showParaphrase" (change)="paraphraseHandler()"/>
+            <input id="paraphrase" type="checkbox" class="toggle-switch" (change)="paraphraseHandler()"/>
         </div>
         <div class="switch">
             <label for="metric">Metrica</label>
-            <input id="metric" type="checkbox" class="toggle-switch" [checked]="this.settings.showMetric" (change)="hideMetricalStructure()"/>
+            <input id="metric" type="checkbox" class="toggle-switch" (change)="hideMetricalStructure()"/>
         </div>
         <div class="switch">
             <label for="notes">Note</label>
