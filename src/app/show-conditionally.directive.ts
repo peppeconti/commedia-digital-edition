@@ -5,17 +5,19 @@ import { JsonNode } from './jsonNode.model';
   selector: '[appShowConditionally]'
 })
 export class ShowConditionallyDirective {
-  @Input() data: JsonNode | undefined;
+  //@Input() data: JsonNode | undefined;
   @Input() set appShowConditionally(condition: boolean | null | undefined) {
       if (condition) {
         this.vcRef.createEmbeddedView(this.templateRef);
       } else {
         this.vcRef.clear();
+        console.log(this)
       }
   }
 
   constructor(private templateRef: TemplateRef<any>, private vcRef: ViewContainerRef) { 
-    console.log(this.data);
+    //console.log(this.data);
+    // console.log(this.vcRef)
   }
 }
 

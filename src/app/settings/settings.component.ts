@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faBookOpen, faBook } from '@fortawesome/free-solid-svg-icons';
 import { RulesServices } from '../rules.service';
-import { ThirdServices } from '../third.service';
-import { MainTextComponent } from '../main-text/main-text.component';
 
 @Component({
   selector: 'app-settings',
@@ -16,7 +14,7 @@ export class SettingsComponent implements OnInit {
   //setting_par!: { showParaphrase: boolean};
   //setting_metr!: { showMetric: boolean };
 
-  constructor(private rulesservice: RulesServices, private thirdservice: ThirdServices, private maintext: MainTextComponent) { }
+  constructor(private rulesservice: RulesServices) { }
 
   ngOnInit(): void { 
     //this.setting_par = { showParaphrase: this.rulesservice.settings.showParaphrase }
@@ -28,9 +26,7 @@ export class SettingsComponent implements OnInit {
     //this.settings = { showParaphrase: this.rulesservice.settings.showParaphrase, showMetric: this.rulesservice.settings.showMetric }
   }
   hideMetricalStructure() {
-    this.thirdservice.settings.hideMetric = !this.thirdservice.settings.hideMetric;
+    this.rulesservice.inline_settings.showMetric = !this.rulesservice.inline_settings.showMetric;
     //this.settings = { showParaphrase: this.rulesservice.settings.showParaphrase, showMetric: this.rulesservice.settings.showMetric }
-    console.log(this.thirdservice.settings.hideMetric);
-    console.log(this.maintext.settings.hideMetric);
   }
 }

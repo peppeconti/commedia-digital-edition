@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { JsonNode } from '../jsonNode.model';
-import { ThirdServices } from '../third.service';
 import { Rule } from '../rule.model';
+import { Settings } from '../settings.model';
+import { RulesServices } from '../rules.service';
 
 @Component({
   selector: 'app-main-text',
@@ -9,12 +10,13 @@ import { Rule } from '../rule.model';
   styleUrls: ['./main-text.component.css']
 })
 export class MainTextComponent implements OnInit {
-  @Input() rules!: Array<Rule>;
+  rules: Array<Rule> = this.rulesservice.rules;
   @Input() main_text: JsonNode | undefined;
   @Input() rule: Rule | undefined;
-  settings: { hideMetric: boolean } = this.thirdservice.settings;
+  // noCondition = true;
+  settings: Settings = this.rulesservice.inline_settings;
 
-  constructor(private thirdservice: ThirdServices) {}
+  constructor(private rulesservice: RulesServices) {}
 
   isSubset(arr1: Array<{ name: string, value: string }> | null, arr2: Array<{ name: string, value: string }> | null) {
     if (arr1 && arr2) {
@@ -31,6 +33,7 @@ export class MainTextComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    //console.log(this.rule?.condition)
   }
 }
 
