@@ -27,6 +27,7 @@ export class SettingsComponent implements OnInit {
   }
   hideMetricalStructure() {
     this.rulesservice.inline_settings.showMetric = !this.rulesservice.inline_settings.showMetric;
+    this.rulesservice.inline_settings.noShowMetric = !this.rulesservice.inline_settings.noShowMetric;
     //this.settings = { showParaphrase: this.rulesservice.settings.showParaphrase, showMetric: this.rulesservice.settings.showMetric }
   }
 }

@@ -79,8 +79,8 @@
                         <body rend="terzine">
                            <lg xml:id="terzina-1" type="terzina">
                               <l rend="endecasillabo" n="1">Nel mezzo<note type="note" n="1"
-                                    corresp="#nota-2"/> del cammin <caesura rend="switch"/> di
-                                 nostra vita</l>
+                                 corresp="#nota-2"/> del camm<span type="regular">in</span><span type="accent">ìn</span> <caesura rend="switch"/> di
+                                 nostra <span type="regular">vi</span><span type="accent">vì</span>ta</l>
                               <l rend="endecasillabo" n="2">mi ritrovai <caesura rend="switch"/> per
                                  una selva oscura</l>
                               <l rend="endecasillabo" n="3">ché la diritta via <caesura rend="switch"/> era

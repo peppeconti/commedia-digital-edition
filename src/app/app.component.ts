@@ -25,11 +25,12 @@ export class AppComponent implements OnInit {
       const xml: Document = parser.parseFromString(res, "application/xml");
       const mainText: NodeListOf<Element> = xml.querySelectorAll('[type=main-text] body');
       const paraphrase: NodeListOf<Element> = xml.querySelectorAll('[type=paraphrase] body');
-      console.log(paraphrase);
+      // console.log(paraphrase);
       const mainJson: Array<JsonNode> = Array.from(mainText).map(e => parseNode(e));
       this.main_text = mainJson[0];
       const paraphraseJson: Array<JsonNode> = Array.from(paraphrase).map(e => parseNode(e));
-      //console.log(paraphraseJson);
+      console.log(mainText);
+      console.log(mainJson);
       this.paraphrase = paraphraseJson[0];
       //console.log(this.paraphrase);
     });

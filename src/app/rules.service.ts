@@ -11,12 +11,58 @@ export class RulesServices {
         showParaphrase: false,
     }
     inline_settings: Settings = {
-        noCondition: true, showMetric: false
+        noCondition: true, showMetric: false, noShowMetric: true
     }
 
     rules: Array<Rule> =
 
         [
+            {
+                element: "span",
+                select_attr: [
+                    {
+                        name: 'type',
+                        value: 'regular'
+                    }
+                ],
+                attributes_transform: [
+                    {
+                        start: 'type',
+                        target: 'class'
+                    }
+                ],
+                attributes: null,
+                target: "span",
+                before: null,
+                after: null,
+                content: null,
+                events: null,
+                ex_function: null,
+                condition: 'noShowMetric'
+            },
+            {
+                element: "span",
+                select_attr: [
+                    {
+                        name: 'type',
+                        value: 'accent'
+                    }
+                ],
+                attributes_transform: [
+                    {
+                        start: 'type',
+                        target: 'class'
+                    }
+                ],
+                attributes: null,
+                target: "span",
+                before: null,
+                after: null,
+                content: null,
+                events: null,
+                ex_function: null,
+                condition: 'showMetric'
+            },
             {
                 element: "caesura",
                 select_attr: [

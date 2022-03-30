@@ -66,7 +66,7 @@ export class TransformDirective implements OnInit, AfterViewInit {
         [...source.nativeElement.attributes].forEach(attr => { newElem.setAttribute(attr.nodeName, attr.nodeValue) });
         // Empty the document fragment into it 
         newElem.appendChild(frag);
-        // Replace the source element with the new element on the page 
+        // Replace the source element with the new element on the page
         source.nativeElement.parentNode.replaceChild(newElem, source.nativeElement);
       }
       // calling the replacing function
