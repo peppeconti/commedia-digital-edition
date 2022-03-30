@@ -21,6 +21,16 @@
     font-family: FellGreatPrimer;
 }
 
+div.main-container {
+    padding: 2rem;
+}
+
+div.main-container h1.cantus {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
 div.text {
     padding: 1.2rem;
     display: flex;
@@ -31,14 +41,11 @@ div.text section {
     padding: 0 2rem;
 }
 
-section.main-text {
-    display: flex;
-    justify-content: center;
-}
-
-section.paraphrase {
-    display: flex;
-    justify-content: center;
+div.text section h2 {
+    font-family: FellGreatPrimer;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
 }
 
 aside.note-container {
