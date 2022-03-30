@@ -1,7 +1,11 @@
 <ng-container *ngFor="let terzina of main_text?.childNodes">
-    <span appTransform *appShowConditionally="this.settings[findRule(terzina)?.condition || 'noCondition']" [rule]="findRule(terzina)" [data]="terzina">
-        {{ terzina.text }}
-        <app-main-text [main_text]="terzina" [rule]="findRule(terzina)">
-        </app-main-text>
+    <span *appShowConditionally="this.settings[findRule(terzina)?.condition || 'noCondition']">
+        <span appTransform [data]="terzina"
+            *appShowConditionally="this.settings[findRule(terzina)?.condition || 'noCondition']"
+            [rule]="findRule(terzina)">
+            {{ terzina.text }}
+            <app-main-text [main_text]="terzina" [rule]="findRule(terzina)">
+            </app-main-text>
+        </span>
     </span>
 </ng-container>
