@@ -78,11 +78,11 @@
                      <text>
                         <body rend="terzine">
                            <lg xml:id="terzina-1" type="terzina">
-                              <l rend="endecasillabo" n="1">Nel mezzo<note type="note" n="1"
-                                 corresp="#nota-2"/> del camm<span type="regular">in</span><span type="accent">ìn</span> <caesura rend="switch"/> di
-                                 nostra <span type="regular">vi</span><span type="accent">vì</span>ta</l>
-                              <l rend="endecasillabo" n="2">mi ritrovai <caesura rend="switch"/> per
-                                 una selva oscura</l>
+                              <l rend="endecasillabo" n="1">Nel <span type="regular">mez</span><span type="secondary-accent">mèz</span>zo<note type="note" n="1"
+                                 corresp="#nota-2"/> del cam<span type="regular">min</span><span type="primary-accent">mìn</span> <caesura rend="switch"/> di
+                                 <span type="regular">no</span><span type="secondary-accent">nò</span>stra <span type="regular">vi</span><span type="primary-accent">vì</span>ta</l>
+                              <l rend="endecasillabo" n="2">mi ritro<span type="regular">vai</span><span type="primary-accent">vài</span> <caesura rend="switch"/> per
+                                 una <span type="regular">sel</span><span type="secondary-accent">sél</span>va o<span type="regular">scu</span><span type="primary-accent">scù</span>ra</l>
                               <l rend="endecasillabo" n="3">ché la diritta via <caesura rend="switch"/> era
                                  smarrita.<note type="note" n="2"
                                     corresp="#nota-2"/></l>

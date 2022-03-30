@@ -45,7 +45,30 @@ export class RulesServices {
                 select_attr: [
                     {
                         name: 'type',
-                        value: 'accent'
+                        value: 'primary-accent'
+                    }
+                ],
+                attributes_transform: [
+                    {
+                        start: 'type',
+                        target: 'class'
+                    }
+                ],
+                attributes: null,
+                target: "span",
+                before: null,
+                after: null,
+                content: null,
+                events: null,
+                ex_function: null,
+                condition: 'showMetric'
+            },
+            {
+                element: "span",
+                select_attr: [
+                    {
+                        name: 'type',
+                        value: 'secondary-accent'
                     }
                 ],
                 attributes_transform: [
