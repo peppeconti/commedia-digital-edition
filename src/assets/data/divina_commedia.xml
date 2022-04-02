@@ -82,15 +82,15 @@
                                  corresp="#nota-2"/> del cam<span type="regular">min</span><span type="primary-accent">mìn</span> <caesura rend="switch"/> di
                                  <span type="regular">no</span><span type="secondary-accent">nò</span>stra <span type="regular">vi</span><span type="primary-accent">vì</span>ta</l>
                               <l rend="endecasillabo" n="2">mi ritro<span type="regular">vai</span><span type="primary-accent">vài</span> <caesura rend="switch"/> per
-                                 una <span type="regular">sel</span><span type="secondary-accent">sél</span>va o<span type="regular">scu</span><span type="primary-accent">scù</span>ra</l>
+                                 una <span type="regular">sel</span><span type="secondary-accent">sél</span><span type="regular">va o</span><span type="sinalefe">va&#x35C; o</span><span type="regular">scu</span><span type="primary-accent">scù</span>ra</l>
                               <l rend="endecasillabo" n="3">ché la diritta via <caesura rend="switch"/> era
                                  smarrita.<note type="note" n="2"
                                     corresp="#nota-2"/></l>
                            </lg>
                            <lg xml:id="terzina-2" type="terzina">
-                              <l rend="endecasillabo" n="4">Ahi, quanto a dir qual era <caesura
+                              <l rend="endecasillabo" n="4">Ahi, quan<span type="regular">to a</span><span type="sinalefe">to&#x35C; a</span> dir qual era <caesura
                                     rend="switch"/> è cosa dura</l>
-                              <l rend="endecasillabo" n="5">esta selva selvaggia <caesura rend="switch"/> e aspra e
+                              <l rend="endecasillabo" n="5">esta selva selvaggia <caesura rend="switch"/> <span type="regular">e a</span><span type="sinalefe">e&#x35C; a</span> spra e
                                  forte</l>
                               <l rend="endecasillabo" n="6">che nel pensier <caesura rend="switch"/>
                                  rinova la paura!</l>

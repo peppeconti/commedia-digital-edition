@@ -87,6 +87,29 @@ export class RulesServices {
                 condition: 'showMetric'
             },
             {
+                element: "span",
+                select_attr: [
+                    {
+                        name: 'type',
+                        value: 'sinalefe'
+                    }
+                ],
+                attributes_transform: [
+                    {
+                        start: 'type',
+                        target: 'class'
+                    }
+                ],
+                attributes: null,
+                target: "span",
+                before: null,
+                after: null,
+                content: null,
+                events: null,
+                ex_function: null,
+                condition: 'showMetric'
+            },
+            {
                 element: "caesura",
                 select_attr: [
                     {
