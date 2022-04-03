@@ -127,12 +127,7 @@ export class RulesServices {
                 target: "span",
                 before: null,
                 after: null,
-                content: [
-                    {
-                        type: 'text',
-                        content: ' || '
-                    }
-                ],
+                content: null,
                 events: null,
                 ex_function: null,
                 condition: 'showMetric'
