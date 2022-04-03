@@ -13,12 +13,32 @@
     src: url(../assets/font/IMFellGreatPrimer-Regular.ttf);
 }
 
+@font-face {
+    font-family: Artifika;
+    src: url(../assets/font/Artifika-Regular.ttf);
+}
+
+@font-face {
+    font-family: Junicode;
+    src: url(../assets/font/Junicode.ttf);
+}
+
+@font-face {
+    font-family: Palemonas;
+    src: url(../assets/font/PalemMUFI-reg.ttf);
+}
+
+@font-face {
+    font-family: Symbola;
+    src: url(../assets/font/Symbola.ttf);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-size: 100%;
-    font-family: FellGreatPrimer;
+    font-family: Palemonas;
 }
 
 div.main-container {

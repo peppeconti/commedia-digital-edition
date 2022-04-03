@@ -3,7 +3,7 @@ div.terzina {
 }
 p.endecasillabo {
     margin-bottom: .9rem;
-    font-size: 1.15rem;
+    font-size: 1.3rem;
     position: relative;
 }
 p.endecasillabo span.line-number {
@@ -29,6 +29,6 @@ p.endecasillabo span.secondary-accent {
 .note:hover {
     opacity: .8;
 }
-.switch {
+span.switch {
     
 }
