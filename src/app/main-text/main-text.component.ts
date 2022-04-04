@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { JsonNode } from '../jsonNode.model';
-import { Rule } from '../rule.model';
-import { Settings } from '../settings.model';
-import { RulesServices } from '../rules.service';
+import { JsonNode } from '../shared/jsonNode.model';
+import { Rule } from '../shared/rule.model';
+import { Settings } from '../shared/settings.model';
+import { RulesServices } from '../shared/rules.service';
 
 @Component({
   selector: 'app-main-text',
@@ -10,7 +10,7 @@ import { RulesServices } from '../rules.service';
   styleUrls: ['./main-text.component.css']
 })
 export class MainTextComponent implements OnInit {
-  rules: Array<Rule> = this.rulesservice.rules;
+  rules!: Array<Rule>;
   @Input() main_text: JsonNode | undefined;
   @Input() rule: Rule | undefined;
   // noCondition = true;
@@ -33,6 +33,7 @@ export class MainTextComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.rules = this.rulesservice.getRules();
     //console.log(this.rule?.condition)
   }
 }

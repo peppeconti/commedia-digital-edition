@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { JsonNode } from './jsonNode.model';
-import { RulesServices } from './rules.service';
+import { JsonNode } from './shared/jsonNode.model';
+import { RulesServices } from './shared/rules.service';
 import { parseNode } from '../functions/parseNode';
-import { Rule } from './rule.model';
+import { Rule } from './shared/rule.model';
 
 @Component({
   selector: 'app-root',
@@ -11,14 +11,15 @@ import { Rule } from './rule.model';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
-  rules: Array<Rule> = this.rulesservice.rules;
+  rules!: Array<Rule>;
   main_text?: JsonNode;
   paraphrase?: JsonNode;
-  settings: {showNote: boolean, showParaphrase: boolean} = this.rulesservice.settings;
+  settings: { showNote: boolean, showParaphrase: boolean } = this.rulesservice.general_settings;
 
   constructor(private rulesservice: RulesServices) { }
 
   ngOnInit() {
+    this.rules = this.rulesservice.getRules();
     this.rulesservice.fetchData().subscribe(res => {
       const parser: DOMParser = new DOMParser();
       const xml: Document = parser.parseFromString(res, "application/xml");
@@ -35,6 +36,6 @@ export class AppComponent implements OnInit {
     });
   }
   hideNote(){
-    this.rulesservice.settings.showNote = false;
+    this.rulesservice.general_settings.showNote = false;
   }
 }

@@ -4,10 +4,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { MainTextComponent } from './main-text/main-text.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { TransformDirective } from './transform.directive';
+import { TransformDirective } from './shared/transform.directive';
 import { ParaphraseComponent } from './paraphrase/paraphrase.component';
 import { SettingsComponent } from './settings/settings.component';
-import { RulesServices } from './rules.service';
+import { RulesServices } from './shared/rules.service';
 
 @NgModule({
   declarations: [

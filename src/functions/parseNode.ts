@@ -1,4 +1,4 @@
-import { JsonNode } from "../app/jsonNode.model";
+import { JsonNode } from "../app/shared/jsonNode.model";
 
 interface NodeToJson {
     text: string | null

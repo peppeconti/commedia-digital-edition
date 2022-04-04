@@ -6,7 +6,7 @@ import { Settings } from "./settings.model";
 @Injectable()
 
 export class RulesServices {
-    settings: { showNote: boolean, showParaphrase: boolean } = {
+    general_settings: { showNote: boolean, showParaphrase: boolean } = {
         showNote: false,
         showParaphrase: false,
     }
@@ -14,7 +14,7 @@ export class RulesServices {
         noCondition: true, showMetric: false, noShowMetric: true
     }
 
-    rules: Array<Rule> =
+    private rules: Array<Rule> =
 
         [
             {
@@ -308,7 +308,7 @@ export class RulesServices {
                         event: 'click',
                         execute: (event: Event) => {
                             event.stopPropagation();
-                            this.settings.showNote = true;
+                            this.general_settings.showNote = true;
                         }
                     }
                 ],
@@ -319,6 +319,10 @@ export class RulesServices {
 
     constructor(private http: HttpClient) {
 
+    }
+
+    getRules() {
+        return this.rules;
     }
 
     fetchData() {

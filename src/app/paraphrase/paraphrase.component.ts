@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { JsonNode } from '../jsonNode.model';
-import { Rule } from '../rule.model';;
-import { RulesServices } from '../rules.service';
+import { JsonNode } from '../shared/jsonNode.model';
+import { Rule } from '../shared/rule.model';;
+import { RulesServices } from '../shared/rules.service';
 
 @Component({
   selector: 'app-paraphrase',
@@ -9,7 +9,7 @@ import { RulesServices } from '../rules.service';
   styleUrls: ['./paraphrase.component.css']
 })
 export class ParaphraseComponent implements OnInit {
-  rules: Array<Rule> = this.rulesservice.rules;
+  rules!: Array<Rule>;
   @Input() paraphrase: JsonNode | undefined;
 
   constructor(private rulesservice: RulesServices) { }
@@ -29,5 +29,6 @@ export class ParaphraseComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.rules = this.rulesservice.getRules();
   }
 }

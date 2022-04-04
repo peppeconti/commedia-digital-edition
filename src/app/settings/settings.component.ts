@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faBookOpen, faBook } from '@fortawesome/free-solid-svg-icons';
-import { RulesServices } from '../rules.service';
+import { RulesServices } from '../shared/rules.service';
 
 @Component({
   selector: 'app-settings',
@@ -22,7 +22,7 @@ export class SettingsComponent implements OnInit {
   }
 
   paraphraseHandler() {
-    this.rulesservice.settings.showParaphrase = !this.rulesservice.settings.showParaphrase;
+    this.rulesservice.general_settings.showParaphrase = !this.rulesservice.general_settings.showParaphrase;
     //this.settings = { showParaphrase: this.rulesservice.settings.showParaphrase, showMetric: this.rulesservice.settings.showMetric }
   }
   hideMetricalStructure() {
