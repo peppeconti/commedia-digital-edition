@@ -79,38 +79,36 @@
                         <body rend="terzine">
                            <lg xml:id="terzina-1" type="terzina">
                               <l rend="endecasillabo" n="1">Nel <span type="regular">mez</span><span type="secondary-accent">mèz</span>zo<note type="note" n="1"
-                                 corresp="#nota-2"/> del cam<span type="regular">min</span><span type="primary-accent">mìn</span> <caesura rend="switch"/> di
+                                 corresp="#nota-2"/> del cam<span type="regular">min</span><span type="primary-accent">mìn</span><caesura rend="switch"/>di
                                  <span type="regular">no</span><span type="secondary-accent">nò</span>stra <span type="regular">vi</span><span type="primary-accent">vì</span>ta</l>
-                              <l rend="endecasillabo" n="2">mi ritro<span type="regular">vai</span><span type="primary-accent">vài</span> <caesura rend="switch"/> per
+                              <l rend="endecasillabo" n="2">mi ritro<span type="regular">vai</span><span type="primary-accent">vài</span><caesura rend="switch"/>per
                                  una <span type="regular">sel</span><span type="secondary-accent">sél</span><span type="regular">va o</span><span type="sinalefe">va&#x203F;o</span><span type="regular">scu</span><span type="primary-accent">scù</span>ra</l>
-                              <l rend="endecasillabo" n="3">ché la diritta via <caesura rend="switch"/> era
+                              <l rend="endecasillabo" n="3">ché la diritta via<caesura rend="switch"/>era
                                  smarrita.<note type="note" n="2"
                                     corresp="#nota-2"/></l>
                            </lg>
                            <lg xml:id="terzina-2" type="terzina">
-                              <l rend="endecasillabo" n="4">Ahi, quan<span type="regular">to a</span><span type="sinalefe">to&#x35C; a</span> dir qual era <caesura
-                                    rend="switch"/> è cosa dura</l>
+                              <l rend="endecasillabo" n="4">Ahi, quan<span type="regular">to a</span><span type="sinalefe">to&#x203F;a</span> dir qual era<caesura
+                                    rend="switch"/>è cosa dura</l>
                               <l rend="endecasillabo" n="5">esta selva selvaggi<span type="regular">a e</span><span type="sinalefe">a<caesura rend="switch"/>e</span> aspra e
                                  forte</l>
-                              <l rend="endecasillabo" n="6">che nel pensier <caesura rend="switch"/>
-                                 rinova la paura!</l>
+                              <l rend="endecasillabo" n="6">che nel pensier<caesura rend="switch"/>rinova la paura!</l>
                            </lg>
                            <lg xml:id="terzina-3" type="terzina">
-                              <l rend="endecasillabo" n="7">Tant’ è amara <caesura rend="switch"/>
-                                    che poco è più
+                              <l rend="endecasillabo" n="7">Tant’ è amara<caesura rend="switch"/>che poco è più
                                  morte;</l>
-                              <l rend="endecasillabo" n="8">ma per trattar del ben <caesura
-                                    rend="switch"/> ch’i’ vi trovai,</l>
-                              <l rend="endecasillabo" n="9">dirò de l’altre cose <caesura
-                                    rend="switch"/> ch’i’ v’ho scorte</l>
+                              <l rend="endecasillabo" n="8">ma per trattar del ben<caesura
+                                    rend="switch"/>ch’i’ vi trovai,</l>
+                              <l rend="endecasillabo" n="9">dirò de l’altre cose<caesura
+                                    rend="switch"/>ch’i’ v’ho scorte</l>
                            </lg>
                            <lg xml:id="terzina-4" type="terzina">
-                              <l rend="endecasillabo" n="10">Io non so ben ridir <caesura
-                                    rend="switch"/> com’ i’ v’intrai,</l>
-                              <l rend="endecasillabo" n="11">tant’ era pien di sonno <caesura
-                                    rend="switch"/> a quel punto</l>
-                              <l rend="endecasillabo" n="12">che la verace via <caesura
-                                    rend="switch"/> abbandonai.</l>
+                              <l rend="endecasillabo" n="10">Io non so ben ridir<caesura
+                                    rend="switch"/>com’ i’ v’intrai,</l>
+                              <l rend="endecasillabo" n="11">tant’ era pien di sonno<caesura
+                                    rend="switch"/>a quel punto</l>
+                              <l rend="endecasillabo" n="12">che la verace via<caesura
+                                    rend="switch"/>abbandonai.</l>
                            </lg>
                         </body>
                      </text>
