@@ -1,8 +1,48 @@
-<ng-container *ngFor="let terzina of main_text?.childNodes">
-    <span *ngIf="this.settings[findRule(terzina)?.condition || 'noCondition']">
-        <span appTransform [data]="terzina" [rule]="findRule(terzina)">{{ terzina.text }}<app-main-text
-                *ngIf="!terzina.isText" [main_text]="terzina" [rule]="findRule(terzina)">
+<ng-container *ngFor="let subtext of main_text?.childNodes" [ngSwitch]="subtext.tagName">
+    <ng-container *ngSwitchCase="'lg'">
+        <div id="{{ findAttributeValue(subtext.attributes, 'xml:id') }}"
+            class="{{ findAttributeValue(subtext.attributes, 'type') }}"
+            *ngIf="isSubset([{name: 'type', value: 'terzina'}], subtext.attributes)">
+            <app-main-text *ngIf="!subtext.isText" [main_text]="subtext" [settings]="settings">
+            </app-main-text>
+        </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="'l'">
+        <p class="{{ findAttributeValue(subtext.attributes, 'rend') }}"
+            *ngIf="isSubset([{name: 'rend', value: 'endecasillabo'}], subtext.attributes)">
+            <app-main-text *ngIf="!subtext.isText" [main_text]="subtext" [settings]="settings">
+            </app-main-text>
+        </p>
+    </ng-container>
+    <ng-container *ngSwitchCase="'caesura'">
+        <span *ngIf="this.settings.showMetric">|</span>
+    </ng-container>
+    <ng-container *ngSwitchCase="'hi'">
+        <span class="{{ findAttributeValue(subtext.attributes, 'rend') }}"
+            *ngIf="this.settings.showMetric && (isSubset([{name: 'rend', value: 'sinalefe'}], subtext.attributes)||isSubset([{name: 'rend', value: 'sineresi'}], subtext.attributes))" placement="top" ngbTooltip="{{ findAttributeValue(subtext.attributes, 'rend') }}" tooltipClass="cicciolina">
+            <app-main-text *ngIf="!subtext.isText" [main_text]="subtext" [settings]="settings">
             </app-main-text>
         </span>
+    </ng-container>
+    <span *ngSwitchCase="'choice'">
+        <app-main-text *ngIf="!subtext.isText" [main_text]="subtext" [settings]="settings">
+        </app-main-text>
+    </span>
+    <ng-container *ngSwitchCase="'seg'">
+        <span *ngIf="!this.settings.showMetric && isSubset([{name: 'rend', value: 'regular'}], subtext.attributes)">
+            <app-main-text *ngIf="!subtext.isText" [main_text]="subtext" [settings]="settings">
+            </app-main-text>
+        </span>
+    </ng-container>
+    <ng-container *ngSwitchCase="'seg'">
+        <span class="{{ findAttributeValue(subtext.attributes, 'rend') }}"
+            *ngIf="this.settings.showMetric && isSubset([{name: 'function', value: 'metric'}], subtext.attributes)">
+            <app-main-text *ngIf="!subtext.isText" [main_text]="subtext" [settings]="settings">
+            </app-main-text>
+        </span>
+    </ng-container>
+    <span *ngSwitchDefault>{{subtext.text}}<app-main-text *ngIf="!subtext.isText" [main_text]="subtext"
+            [settings]="settings">
+        </app-main-text>
     </span>
 </ng-container>

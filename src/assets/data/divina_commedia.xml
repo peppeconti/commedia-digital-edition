@@ -78,37 +78,69 @@
                      <text>
                         <body rend="terzine">
                            <lg xml:id="terzina-1" type="terzina">
-                              <l rend="endecasillabo" n="1">Nel <span type="regular">mez</span><span type="secondary-accent">mèz</span>zo<note type="note" n="1"
-                                 corresp="#nota-2"/> del cam<span type="regular">min</span><span type="primary-accent">mìn</span><caesura rend="switch"/>di
-                                 <span type="regular">no</span><span type="secondary-accent">nò</span>stra <span type="regular">vi</span><span type="primary-accent">vì</span>ta</l>
-                              <l rend="endecasillabo" n="2">mi ritro<span type="regular">vai</span><span type="primary-accent">vài</span><caesura rend="switch"/>per
-                                 una <span type="regular">sel</span><span type="secondary-accent">sél</span><span type="regular">va o</span><span type="sinalefe">va&#x203F;o</span><span type="regular">scu</span><span type="primary-accent">scù</span>ra</l>
-                              <l rend="endecasillabo" n="3">ché la diritta via<caesura rend="switch"/>era
-                                 smarrita.<note type="note" n="2"
-                                    corresp="#nota-2"/></l>
+                              <l rend="endecasillabo" n="1">Nel <choice>
+                                    <seg rend="regular">mez</seg>
+                                    <seg rend="secondary-accent" function="metric">mèz</seg>
+                                 </choice>zo del cam<choice>
+                                    <seg rend="regular">min </seg>
+                                    <seg rend="primary-accent" function="metric">mìn</seg>
+                                 </choice><caesura/>di <choice>
+                                    <seg rend="regular">no</seg>
+                                    <seg rend="secondary-accent" function="metric">nò</seg>
+                                 </choice>stra <choice>
+                                    <seg rend="regular">vi</seg>
+                                    <seg rend="primary-accent" function="metric">vì</seg>
+                                 </choice>ta</l>
+                              <l rend="endecasillabo" n="2">mi ritro<choice>
+                                    <seg rend="regular">vai </seg>
+                                    <seg rend="primary-accent" function="metric">vài</seg>
+                                 </choice><caesura/>per una <choice>
+                                    <seg rend="regular">sel</seg>
+                                    <seg rend="secondary-accent" function="metric">sél</seg>
+                                 </choice><choice>
+                                    <seg rend="regular">va o</seg>
+                                    <seg rend="sinalefe-char" function="metric">v<hi rend="sinalefe">a&#8255;o</hi></seg>
+                                 </choice><choice>
+                                    <seg rend="regular">scu</seg>
+                                    <seg rend="primary-accent" function="metric">scù</seg>
+                                 </choice>ra</l>
+                              <l rend="endecasillabo" n="3"><choice>
+                                 <seg rend="regular">ché</seg>
+                                 <seg rend="secondary-accent" function="metric">ché</seg>
+                              </choice> la di<choice>
+                                 <seg rend="regular">rit</seg>
+                                 <seg rend="secondary-accent" function="metric">rìt</seg>
+                              </choice>ta <choice>
+                                 <seg rend="regular">via </seg>
+                                 <seg rend="primary-accent" function="metric">v<hi rend="sineresi">ìa</hi></seg>
+                              </choice><caesura/><choice>
+                                 <seg rend="regular">e</seg>
+                                 <seg rend="secondary-accent" function="metric">è</seg>
+                              </choice>ra smar<choice>
+                                 <seg rend="regular">ri</seg>
+                                 <seg rend="primary-accent" function="metric">rì</seg>
+                              </choice>ta.<note
+                                    type="note" n="2" corresp="#nota-2"/></l>
                            </lg>
                            <lg xml:id="terzina-2" type="terzina">
-                              <l rend="endecasillabo" n="4">Ahi, quan<span type="regular">to a</span><span type="sinalefe">to&#x203F;a</span> dir qual era<caesura
-                                    rend="switch"/>è cosa dura</l>
-                              <l rend="endecasillabo" n="5">esta selva selvaggi<span type="regular">a e</span><span type="sinalefe">a<caesura rend="switch"/>e</span> aspra e
-                                 forte</l>
-                              <l rend="endecasillabo" n="6">che nel pensier<caesura rend="switch"/>rinova la paura!</l>
+                              <l rend="endecasillabo" n="4">Ahi, quanto a dir qual era è cosa
+                                 dura</l>
+                              <l rend="endecasillabo" n="5">esta selva selvaggia e aspra e forte</l>
+                              <l rend="endecasillabo" n="6">che nel pensier rinova la paura!</l>
                            </lg>
                            <lg xml:id="terzina-3" type="terzina">
-                              <l rend="endecasillabo" n="7">Tant’ è amara<caesura rend="switch"/>che poco è più
-                                 morte;</l>
-                              <l rend="endecasillabo" n="8">ma per trattar del ben<caesura
-                                    rend="switch"/>ch’i’ vi trovai,</l>
-                              <l rend="endecasillabo" n="9">dirò de l’altre cose<caesura
-                                    rend="switch"/>ch’i’ v’ho scorte</l>
+                              <l rend="endecasillabo" n="7">Tant’ è amara che poco è più morte;</l>
+                              <l rend="endecasillabo" n="8">ma per trattar del ben ch’i’ vi
+                                 trovai,</l>
+                              <l rend="endecasillabo" n="9">dirò de l’altre cose ch’i’ v’ho
+                                 scorte</l>
                            </lg>
                            <lg xml:id="terzina-4" type="terzina">
-                              <l rend="endecasillabo" n="10">Io non so ben ridir<caesura
-                                    rend="switch"/>com’ i’ v’intrai,</l>
-                              <l rend="endecasillabo" n="11">tant’ era pien di sonno<caesura
-                                    rend="switch"/>a quel punto</l>
-                              <l rend="endecasillabo" n="12">che la verace via<caesura
-                                    rend="switch"/>abbandonai.</l>
+                              <l rend="endecasillabo" n="10">Io non so ben ridir com’ i’
+                                 v’intrai,</l>
+                              <l rend="endecasillabo" n="11">tant’ era pien di sonno a quel
+                                 punto</l>
+                              <l rend="endecasillabo" n="12">che la verace via abbandonai.</l>
                            </lg>
                         </body>
                      </text>

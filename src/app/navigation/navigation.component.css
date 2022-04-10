@@ -1,0 +1,27 @@
+.nav-menu {
+    position: fixed;
+    height: 100vh;
+    width: 30vw;
+    background: url('../../assets/img/1-selva-oscura.jpg') no-repeat center center;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: transform .5s;
+    z-index: 3;
+}
+.fadeIn {
+    transform: none;
+}
+.handle {
+    position: absolute;
+    width: .5vw;
+    height: 3.5rem;
+    top: 50%;
+    right: .5vw;
+    transform: translateY(-50%);
+    background-color: #fff;
+    border-radius: 2rem;
+    opacity: .6;
+    cursor: grab;
+}

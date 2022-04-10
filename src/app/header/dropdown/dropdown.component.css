@@ -1,0 +1,46 @@
+.dropdown-menu {
+    right: 0;
+    top: 2.5rem;
+}
+
+li.dropdown-item {
+    margin: 1rem 0;
+}
+
+.form-check {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-check input,
+label {
+    margin: .4rem 0;
+    font-size: 1.1rem;
+}
+
+/* BUTTON ICON */
+div.button {
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a.settings {
+    color: #fff;
+    padding-left: 2rem;
+}
+
+.book-icon {
+    font-size: 2.2rem;
+}
+
+a.settings:hover {
+    opacity: .8;
+}
+
+.book-open-icon {
+    font-size: 1.6rem;
+}

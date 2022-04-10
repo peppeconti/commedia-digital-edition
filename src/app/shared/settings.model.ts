@@ -1,4 +1,4 @@
 export class Settings {
-    constructor(public noCondition: boolean, public showMetric: boolean, public noShowMetric: boolean){
+    constructor(public openNav: boolean, public showMetric: boolean, public showParaphrase: boolean, public showNotes: boolean) {
     }
-  }
+}

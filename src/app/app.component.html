@@ -1,17 +1,13 @@
-<div class="main-container">
-   <h1 class="cantus">Canto I</h1>
-   <div class="text">
-      <section class="main-text">
-         <h2 *ngIf="this.settings.showParaphrase">Testo</h2>
-         <app-main-text [main_text]="main_text"></app-main-text>
-      </section>
-      <section class="paraphrase" *ngIf="this.settings.showParaphrase">
-         <h2>Parafrasi</h2>
-         <app-paraphrase [paraphrase]="paraphrase"></app-paraphrase>
-      </section>
-      <app-settings></app-settings>
-      <aside class="note-container" *ngIf="this.settings.showNote">
-         <button (click)="hideNote()">close</button>
-      </aside>
-   </div>
+<app-header></app-header>
+<div class="text container-fluid p-3 d-flex justify-content-center">
+    <section class="main-text">
+        <h3>Testo</h3>
+        <app-main-text [main_text]="commedy_text" [settings]="settings"></app-main-text>
+    </section>
+    <!--<section class="paraphrase-text">
+        <h3>Parafrasi</h3>
+        <app-main-text [main_text]="paraphrase_text"></app-main-text>
+    </section>-->
 </div>
+<app-navigation></app-navigation>
+<div *ngIf="this.settings.openNav" class="overlay"></div>
