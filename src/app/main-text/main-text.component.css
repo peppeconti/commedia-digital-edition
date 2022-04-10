@@ -30,7 +30,8 @@ p.endecasillabo span.line-number {
 /** PARAPHRASE **/
 
 p.terzina-paraphrase {
-    font-size: 1.15rem;
+    font-size: 1.3rem;
+    font-family: 'Palemonas';
 }
 p.terzina-paraphrase span.paraphrase-fragment {
     margin-bottom: .9rem;

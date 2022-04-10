@@ -42,3 +42,12 @@ h6 {
     font-family: "Palemonas";
     font-size: 1.1rem;
 }
+
+h3 {
+    font-family: 'Palemonas';
+    text-align: center;
+    font-weight: 600;
+}
+.text-column {
+    padding: 0 2rem;
+}
