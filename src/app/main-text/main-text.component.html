@@ -1,4 +1,29 @@
 <ng-container *ngFor="let subtext of main_text?.childNodes" [ngSwitch]="subtext.tagName">
+    <ng-container *ngSwitchCase="'div'">
+        <div id="{{ findAttributeValue(subtext.attributes, 'xml:id') }}"
+            class="{{ findAttributeValue(subtext.attributes, 'rend') }}"
+            *ngIf="isSubset([{name: 'rend', value: 'paraphrase-terzina'}], subtext.attributes)">
+            <app-main-text *ngIf="!subtext.isText" [main_text]="subtext" [settings]="settings">
+            </app-main-text>
+        </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="'p'">
+        <p class="{{ findAttributeValue(subtext.attributes, 'rend') }}"
+            *ngIf="isSubset([{name: 'rend', value: 'terzina-paraphrase'}], subtext.attributes)">
+            <app-main-text *ngIf="!subtext.isText" [main_text]="subtext" [settings]="settings">
+            </app-main-text>
+        </p>
+    </ng-container>
+    <ng-container *ngSwitchCase="'span'">
+        <span class="{{ findAttributeValue(subtext.attributes, 'rend') }}"
+            *ngIf="isSubset([{name: 'rend', value: 'paraphrase-fragment'}], subtext.attributes)">
+            <app-main-text *ngIf="!subtext.isText" [main_text]="subtext" [settings]="settings">
+            </app-main-text>
+        </span>
+    </ng-container>
+    <ng-container *ngSwitchCase="'lb'">
+        <br/>
+    </ng-container>
     <ng-container *ngSwitchCase="'lg'">
         <div id="{{ findAttributeValue(subtext.attributes, 'xml:id') }}"
             class="{{ findAttributeValue(subtext.attributes, 'type') }}"

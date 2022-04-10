@@ -3,7 +3,6 @@ import { ServiceSettings } from './shared/settings.service';
 import { ServiceFetch } from './shared/fetch.service';
 import { Settings } from './shared/settings.model';
 import { JsonNode } from './shared/jsonNode.model';
-import { trimTrailingNulls } from '@angular/compiler/src/render3/view/util';
 
 @Component({
   selector: 'app-root',

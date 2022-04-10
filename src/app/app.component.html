@@ -4,10 +4,10 @@
         <h3>Testo</h3>
         <app-main-text [main_text]="commedy_text" [settings]="settings"></app-main-text>
     </section>
-    <!--<section class="paraphrase-text">
+    <section class="paraphrase-text" *ngIf="this.settings.showParaphrase">
         <h3>Parafrasi</h3>
         <app-main-text [main_text]="paraphrase_text"></app-main-text>
-    </section>-->
+    </section>
 </div>
 <app-navigation></app-navigation>
 <div *ngIf="this.settings.openNav" class="overlay"></div>
