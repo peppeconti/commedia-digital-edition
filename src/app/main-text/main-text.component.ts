@@ -10,6 +10,7 @@ import { JsonNode } from '../shared/jsonNode.model';
 export class MainTextComponent implements OnInit {
   @Input() main_text: JsonNode | undefined;
   @Input() settings!: Settings;
+  @Input() notes!: JsonNode[] | null;
 
   constructor() { }
 
@@ -28,6 +29,15 @@ export class MainTextComponent implements OnInit {
     return val?.value;
   };
 
+  showNote(attribute: string | undefined) {
+    // this.notes?.forEach(e => console.log(e));
+    const pirla = this.notes?.find(e => this.findAttributeValue(e.attributes, 'xml:id') === attribute?.replace('#', ''));
+    console.log(pirla);
+  }
+
   ngOnInit(): void {
+    //console.log(this.main_text?.tagName + ' ' + this.notes);
+    //console.log(this.main_text)
+    // attribute?.replace('#', '')
   };
 }

@@ -81,7 +81,7 @@
                               <l rend="endecasillabo" n="1">Nel <choice>
                                     <seg rend="regular">mez</seg>
                                     <seg rend="secondary-accent" function="metric">mèz</seg>
-                                 </choice>zo del cam<choice>
+                              </choice>zo<note type="note" n="1" corresp="#nota-1"/> del cam<choice>
                                     <seg rend="regular">min </seg>
                                     <seg rend="primary-accent" function="metric">mìn</seg>
                                  </choice><caesura/>di <choice>
@@ -99,28 +99,29 @@
                                     <seg rend="secondary-accent" function="metric">sél</seg>
                                  </choice><choice>
                                     <seg rend="regular">va o</seg>
-                                    <seg rend="sinalefe-char" function="metric">v<hi rend="sinalefe">a&#8255;o</hi></seg>
+                                    <seg rend="sinalefe-char" function="metric">v<hi rend="sinalefe"
+                                          >a&#8255;o</hi></seg>
                                  </choice><choice>
                                     <seg rend="regular">scu</seg>
                                     <seg rend="primary-accent" function="metric">scù</seg>
                                  </choice>ra</l>
                               <l rend="endecasillabo" n="3"><choice>
-                                 <seg rend="regular">ché</seg>
-                                 <seg rend="secondary-accent" function="metric">ché</seg>
-                              </choice> la di<choice>
-                                 <seg rend="regular">rit</seg>
-                                 <seg rend="secondary-accent" function="metric">rìt</seg>
-                              </choice>ta <choice>
-                                 <seg rend="regular">via </seg>
-                                 <seg rend="primary-accent" function="metric">v<hi rend="sineresi">ìa</hi></seg>
-                              </choice><caesura/><choice>
-                                 <seg rend="regular">e</seg>
-                                 <seg rend="secondary-accent" function="metric">è</seg>
-                              </choice>ra smar<choice>
-                                 <seg rend="regular">ri</seg>
-                                 <seg rend="primary-accent" function="metric">rì</seg>
-                              </choice>ta.<note
-                                    type="note" n="2" corresp="#nota-2"/></l>
+                                    <seg rend="regular">ché</seg>
+                                    <seg rend="secondary-accent" function="metric">ché</seg>
+                                 </choice> la di<choice>
+                                    <seg rend="regular">rit</seg>
+                                    <seg rend="secondary-accent" function="metric">rìt</seg>
+                                 </choice>ta <choice>
+                                    <seg rend="regular">via </seg>
+                                    <seg rend="primary-accent" function="metric">v<hi
+                                          rend="sineresi">ìa</hi></seg>
+                                 </choice><caesura/><choice>
+                                    <seg rend="regular">e</seg>
+                                    <seg rend="secondary-accent" function="metric">è</seg>
+                                 </choice>ra smar<choice>
+                                    <seg rend="regular">ri</seg>
+                                    <seg rend="primary-accent" function="metric">rì</seg>
+                                 </choice>ta<note type="note" n="2" corresp="#nota-2"/>.</l>
                            </lg>
                            <lg xml:id="terzina-2" type="terzina">
                               <l rend="endecasillabo" n="4">Ahi, quanto a dir qual era è cosa

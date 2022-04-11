@@ -2,7 +2,7 @@
 <div class="text container-fluid p-3 d-flex justify-content-center">
     <section class="text-column main-text">
         <h3 class="py-3">Testo</h3>
-        <app-main-text [main_text]="commedy_text" [settings]="settings"></app-main-text>
+        <app-main-text [main_text]="commedy_text" [settings]="settings" [notes]="notes"></app-main-text>
     </section>
     <section class="text-column paraphrase-text" *ngIf="this.settings.showParaphrase">
         <h3 class="py-3">Parafrasi</h3>

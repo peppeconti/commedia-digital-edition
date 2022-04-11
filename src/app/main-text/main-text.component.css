@@ -27,6 +27,10 @@ p.endecasillabo span.line-number {
     font-weight: 600;
 }
 
+.note {
+    text-decoration: none;
+}
+
 /** PARAPHRASE **/
 
 p.terzina-paraphrase {

@@ -10,11 +10,13 @@ import { Switch } from '../../shared/switch.model';
 })
 export class DropdownComponent implements OnInit {
   @Input() switch_list!: Array<Switch>;
+  settings!: Settings;
   open = false;
 
   constructor(private serviceSettings: ServiceSettings) { }
 
   ngOnInit(): void {
+    this.settings = this.serviceSettings.getSettings();
   }
 
   toggleMenu() {
