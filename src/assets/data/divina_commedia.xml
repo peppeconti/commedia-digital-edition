@@ -57,8 +57,8 @@
                   anno. Il convincimento di Dante si basa sulla Bibbia stessa: nel salmo 89, 10 si
                   legge: <hi rend="quote">La durata della nostra vita è, in sé,
                   settant’anni</hi>.</item>
-               <item xml:id="nota-2"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+               <item xml:id="nota-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
                   veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
                   dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
@@ -81,7 +81,7 @@
                               <l rend="endecasillabo" n="1">Nel <choice>
                                     <seg rend="regular">mez</seg>
                                     <seg rend="secondary-accent" function="metric">mèz</seg>
-                              </choice>zo<note type="note" n="1" corresp="#nota-1"/> del cam<choice>
+                                 </choice>zo<note type="note" n="1" corresp="#nota-1"/> del cam<choice>
                                     <seg rend="regular">min </seg>
                                     <seg rend="primary-accent" function="metric">mìn</seg>
                                  </choice><caesura/>di <choice>

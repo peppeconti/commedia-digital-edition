@@ -1,10 +1,12 @@
-import { Injectable } from "@angular/core";
+import { EventEmitter, Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { JsonNode } from "./jsonNode.model";
 
 @Injectable()
 
 export class ServiceFetch {
+
+    passNoteText = new EventEmitter<JsonNode>();
 
     constructor(private http: HttpClient) {
 

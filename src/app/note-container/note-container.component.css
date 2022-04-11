@@ -1,0 +1,9 @@
+.offcanvas-bottom {
+    left: 50%;
+    transform: translate(-50%, 100%);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.show {
+    transform: translate(-50%, 0);
+}

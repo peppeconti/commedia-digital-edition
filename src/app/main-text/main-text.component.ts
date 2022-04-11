@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Settings } from '../shared/settings.model';
 import { JsonNode } from '../shared/jsonNode.model';
+import { ServiceFetch } from '../shared/fetch.service';
 
 @Component({
   selector: 'app-main-text',
@@ -12,7 +13,7 @@ export class MainTextComponent implements OnInit {
   @Input() settings!: Settings;
   @Input() notes!: JsonNode[] | null;
 
-  constructor() { }
+  constructor(private serviceFetch: ServiceFetch) { }
 
   isSubset(arr1: [{ name: string, value: string }], arr2: Array<{ name: string, value: string }> | null) {
     if (arr1 && arr2) {
@@ -30,14 +31,10 @@ export class MainTextComponent implements OnInit {
   };
 
   showNote(attribute: string | undefined) {
-    // this.notes?.forEach(e => console.log(e));
-    const pirla = this.notes?.find(e => this.findAttributeValue(e.attributes, 'xml:id') === attribute?.replace('#', ''));
-    console.log(pirla);
+    const note = this.notes?.find(e => this.findAttributeValue(e.attributes, 'xml:id') === attribute?.replace('#', ''));
+    this.serviceFetch.passNoteText.emit(note);
   }
 
   ngOnInit(): void {
-    //console.log(this.main_text?.tagName + ' ' + this.notes);
-    //console.log(this.main_text)
-    // attribute?.replace('#', '')
   };
 }

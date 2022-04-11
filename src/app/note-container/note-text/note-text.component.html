@@ -1,0 +1,13 @@
+<p>
+    <ng-container *ngFor="let subtext of note_text?.childNodes" [ngSwitch]="subtext.tagName">
+        <ng-container *ngSwitchCase="'hi'">
+            <i>
+                <app-note-text [note_text]="subtext">
+                </app-note-text>
+            </i>
+        </ng-container>
+        <span class="{{subtext.tagName}}" *ngSwitchDefault>{{subtext.text}}<app-note-text [note_text]="subtext">
+            </app-note-text>
+        </span>
+    </ng-container>
+</p>

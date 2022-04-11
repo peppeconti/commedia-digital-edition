@@ -15,6 +15,8 @@ import { ServiceFetch } from './shared/fetch.service';
 import { HamburgerComponent } from './header/hamburger/hamburger.component';
 import { MainTextComponent } from './main-text/main-text.component';
 import { DropdownComponent } from './header/dropdown/dropdown.component';
+import { NoteContainerComponent } from './note-container/note-container.component';
+import { NoteTextComponent } from './note-container/note-text/note-text.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { DropdownComponent } from './header/dropdown/dropdown.component';
     NavigationComponent,
     HamburgerComponent,
     MainTextComponent,
-    DropdownComponent
+    DropdownComponent,
+    NoteContainerComponent,
+    NoteTextComponent
   ],
   imports: [
     BrowserModule,

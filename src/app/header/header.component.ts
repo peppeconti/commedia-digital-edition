@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Switch } from '../shared/switch.model';
-import { ServiceSettings } from '../shared/settings.service';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +13,7 @@ export class HeaderComponent implements OnInit {
     { name: 'notes', label: 'Note', action: 'showNotes' }
   ];
 
-  constructor(private serviceSettings: ServiceSettings) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

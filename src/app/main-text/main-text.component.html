@@ -45,7 +45,7 @@
     <ng-container *ngSwitchCase="'hi'">
         <span class="{{ findAttributeValue(subtext.attributes, 'rend') }}"
             *ngIf="this.settings.showMetric && (isSubset([{name: 'rend', value: 'sinalefe'}], subtext.attributes)||isSubset([{name: 'rend', value: 'sineresi'}], subtext.attributes))"
-            placement="top" ngbTooltip="{{ findAttributeValue(subtext.attributes, 'rend') }}" tooltipClass="cicciolina">
+            placement="top" ngbTooltip="{{ findAttributeValue(subtext.attributes, 'rend') }}">
             <app-main-text *ngIf="!subtext.isText" [main_text]="subtext" [settings]="settings">
             </app-main-text>
         </span>
@@ -70,12 +70,11 @@
     <ng-container *ngSwitchCase="'note'">
         <a class="{{ findAttributeValue(subtext.attributes, 'type') }}"
             href="{{ findAttributeValue(subtext.attributes, 'corresp') }}"
-            *ngIf="this.settings.showNotes && isSubset([{name: 'type', value: 'note'}], subtext.attributes)" (click)="showNote(findAttributeValue(subtext.attributes, 'corresp'))">
+            *ngIf="this.settings.showNotes && isSubset([{name: 'type', value: 'note'}], subtext.attributes)" (click)="showNote(findAttributeValue(subtext.attributes, 'corresp'))" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
             <sup>[{{findAttributeValue(subtext.attributes, 'n') }}]</sup>
         </a>
     </ng-container>
-    <span *ngSwitchDefault>{{subtext.text}}<app-main-text *ngIf="!subtext.isText" [main_text]="subtext"
-            [settings]="settings">
+    <span *ngSwitchDefault>{{subtext.text}}<app-main-text *ngIf="!subtext.isText" [main_text]="subtext">
         </app-main-text>
     </span>
 </ng-container>
