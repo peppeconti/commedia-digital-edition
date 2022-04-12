@@ -8,7 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faBookOpen, faBook, faInfo } from '@fortawesome/free-solid-svg-icons';
+import { faBookOpen, faBook, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ServiceSettings } from './shared/settings.service';
 import { ServiceFetch } from './shared/fetch.service';
@@ -41,6 +41,6 @@ import { NoteTextComponent } from './note-container/note-text/note-text.componen
 })
 export class AppModule { 
   constructor(library: FaIconLibrary) {
-    library.addIcons(faBook, faBookOpen, faInfo);
+    library.addIcons(faBook, faBookOpen, faInfoCircle);
   }
 }

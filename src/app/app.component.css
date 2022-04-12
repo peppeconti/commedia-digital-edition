@@ -1,32 +1,3 @@
-@font-face {
-    font-family: "IMFell";
-    src: url("../fonts/IMFellGreatPrimer-Regular.ttf");
-}
-
-@font-face {
-    font-family: "Illuminating";
-    src: url("../fonts/ArtOfIlluminating.ttf");
-}
-
-@font-face {
-    font-family: "Palemonas";
-    src: url("../fonts/PalemMUFI-reg.ttf");
-}
-
-@font-face {
-    font-family: "Artifika";
-    src: url("../fonts/Artifika-Regular.ttf");
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin: 0 !important;
-}
-
 .overlay {
     position: fixed;
     height: 100vh;
@@ -37,12 +8,6 @@ h6 {
     z-index: 2;
     opacity: .3;
 }
-
-.tooltip {
-    font-family: "Palemonas";
-    font-size: 1.1rem;
-}
-
 h3 {
     font-family: 'Palemonas';
     text-align: center;
