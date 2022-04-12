@@ -47,7 +47,7 @@
                </item>
             </list>
             <list xml:id="notes" type="notes">
-               <item xml:id="nota-1">
+               <item xml:id="note-1">
                   <hi rend="bold">Nel mezzo ... vita</hi>: il poema dantesco si apre con una
                   indicazione cronologica e autobiografica: la vicenda comincia quando il
                   personaggio Dante ha 35 anni, e cioè nel 1300. Il poeta ritiene infatti che il
@@ -57,7 +57,7 @@
                   anno. Il convincimento di Dante si basa sulla Bibbia stessa: nel salmo 89, 10 si
                   legge: <hi rend="quote">La durata della nostra vita è, in sé,
                   settant’anni</hi>.</item>
-               <item xml:id="nota-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+               <item xml:id="note-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
                   veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
@@ -81,7 +81,7 @@
                               <l rend="endecasillabo" n="1">Nel <choice>
                                     <seg rend="regular">mez</seg>
                                     <seg rend="secondary-accent" function="metric">mèz</seg>
-                                 </choice>zo<note type="note" n="1" corresp="#nota-1"/> del cam<choice>
+                                 </choice>zo<note type="note" n="1" corresp="#note-1"/> del cam<choice>
                                     <seg rend="regular">min </seg>
                                     <seg rend="primary-accent" function="metric">mìn</seg>
                                  </choice><caesura/>di <choice>
@@ -121,7 +121,7 @@
                                  </choice>ra smar<choice>
                                     <seg rend="regular">ri</seg>
                                     <seg rend="primary-accent" function="metric">rì</seg>
-                                 </choice>ta<note type="note" n="2" corresp="#nota-2"/>.</l>
+                                 </choice>ta<note type="note" n="2" corresp="#note-2"/>.</l>
                            </lg>
                            <lg xml:id="terzina-2" type="terzina">
                               <l rend="endecasillabo" n="4">Ahi, quanto a dir qual era è cosa
