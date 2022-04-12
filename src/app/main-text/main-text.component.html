@@ -28,14 +28,14 @@
         <div id="{{ findAttributeValue(subtext.attributes, 'xml:id') }}"
             class="{{ findAttributeValue(subtext.attributes, 'type') }}"
             *ngIf="isSubset([{name: 'type', value: 'terzina'}], subtext.attributes)">
-            <app-main-text *ngIf="!subtext.isText" [main_text]="subtext" [settings]="settings" [notes]="notes">
+            <app-main-text *ngIf="!subtext.isText" [main_text]="subtext" [settings]="settings">
             </app-main-text>
         </div>
     </ng-container>
     <ng-container *ngSwitchCase="'l'">
         <p class="{{ findAttributeValue(subtext.attributes, 'rend') }}"
             *ngIf="isSubset([{name: 'rend', value: 'endecasillabo'}], subtext.attributes)">
-            <app-main-text *ngIf="!subtext.isText" [main_text]="subtext" [settings]="settings" [notes]="notes">
+            <app-main-text *ngIf="!subtext.isText" [main_text]="subtext" [settings]="settings">
             </app-main-text>
         </p>
     </ng-container>

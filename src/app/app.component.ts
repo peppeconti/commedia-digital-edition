@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   settings!: Settings;
   commedy_text?: JsonNode;
   paraphrase_text?: JsonNode;
-  notes!: JsonNode[] | null;
+  notes!: JsonNode;
 
   constructor(private serviceSettings: ServiceSettings, private serviceFetch: ServiceFetch) { }
 
@@ -40,7 +40,7 @@ export class AppComponent implements OnInit {
       this.paraphrase_text = paraphraseJson[0];
       const notes: NodeListOf<Element> = xml.querySelectorAll('list[type=notes]');
       const notesJson: Array<JsonNode> = Array.from(notes).map(e => this.serviceFetch.parseNode(e));
-      this.notes = notesJson[0].childNodes;
+      this.notes = notesJson[0];
       // console.log(this.notes);
     });
   }

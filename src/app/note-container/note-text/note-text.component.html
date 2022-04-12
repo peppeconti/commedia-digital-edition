@@ -1,13 +1,29 @@
-<p>
-    <ng-container *ngFor="let subtext of note_text?.childNodes" [ngSwitch]="subtext.tagName">
-        <ng-container *ngSwitchCase="'hi'">
-            <i>
-                <app-note-text [note_text]="subtext">
-                </app-note-text>
-            </i>
-        </ng-container>
-        <span class="{{subtext.tagName}}" *ngSwitchDefault>{{subtext.text}}<app-note-text [note_text]="subtext">
+<ng-container *ngFor="let subtext of note_text?.childNodes" [ngSwitch]="subtext.tagName">
+    <ng-container *ngSwitchCase="'item'">
+        <p class="note"  id="{{ findAttributeValue(subtext.attributes, 'xml:id') }}" *ngIf="findAttributeValue(subtext.attributes, 'xml:id') === note_id">
+            <app-note-text [note_text]="subtext">
             </app-note-text>
+        </p>
+    </ng-container>
+    <ng-container *ngSwitchCase="'hi'">
+        <i *ngIf="isSubset([{name: 'rend', value: 'italic'}], subtext.attributes)">
+            <app-note-text [note_text]="subtext">
+            </app-note-text>
+        </i>
+    </ng-container>
+    <ng-container *ngSwitchCase="'hi'">
+        <b *ngIf="isSubset([{name: 'rend', value: 'bold'}], subtext.attributes)">
+            <app-note-text [note_text]="subtext">
+            </app-note-text>
+        </b>
+    </ng-container>
+    <ng-container *ngSwitchCase="'hi'">
+        <span *ngIf="isSubset([{name: 'rend', value: 'quote'}], subtext.attributes)">
+            «<app-note-text [note_text]="subtext">
+            </app-note-text>»
         </span>
     </ng-container>
-</p>
+    <span class="{{subtext.tagName}}" *ngSwitchDefault>{{subtext.text}}<app-note-text [note_text]="subtext">
+        </app-note-text>
+    </span>
+</ng-container>

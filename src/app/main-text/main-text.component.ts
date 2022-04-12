@@ -11,7 +11,6 @@ import { ServiceFetch } from '../shared/fetch.service';
 export class MainTextComponent implements OnInit {
   @Input() main_text: JsonNode | undefined;
   @Input() settings!: Settings;
-  @Input() notes!: JsonNode[] | null;
 
   constructor(private serviceFetch: ServiceFetch) { }
 
@@ -31,8 +30,9 @@ export class MainTextComponent implements OnInit {
   };
 
   showNote(attribute: string | undefined) {
-    const note = this.notes?.find(e => this.findAttributeValue(e.attributes, 'xml:id') === attribute?.replace('#', ''));
-    this.serviceFetch.passNoteText.emit(note);
+    // console.log(this.notes);
+    // const note = this.notes?.find(e => this.findAttributeValue(e.attributes, 'xml:id') === attribute?.replace('#', ''));
+    this.serviceFetch.passNoteText.emit(attribute);
   }
 
   ngOnInit(): void {

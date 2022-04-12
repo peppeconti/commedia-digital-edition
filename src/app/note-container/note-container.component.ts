@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ServiceFetch } from '../shared/fetch.service';
 import { JsonNode } from '../shared/jsonNode.model';
 
@@ -8,13 +8,14 @@ import { JsonNode } from '../shared/jsonNode.model';
   styleUrls: ['./note-container.component.css']
 })
 export class NoteContainerComponent implements OnInit {
-  note!: JsonNode
+  @Input() notes!: JsonNode;
+  note_id!: string
 
   constructor(private serviceFetch: ServiceFetch) {
     this.serviceFetch.passNoteText.subscribe(
-      (note: JsonNode) => {
-        this.note = note;
-        console.log(this.note);
+      (note: string) => {
+        this.note_id = note.replace('#', '');
+        console.log(this.note_id);
       }
     );
   }

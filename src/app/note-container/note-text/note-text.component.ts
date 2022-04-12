@@ -8,6 +8,7 @@ import { JsonNode } from '../../shared/jsonNode.model';
 })
 export class NoteTextComponent implements OnInit {
   @Input() note_text: JsonNode | undefined;
+  @Input() note_id?: string;
 
   constructor() { }
 
