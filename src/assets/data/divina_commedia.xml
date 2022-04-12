@@ -81,7 +81,7 @@
                               <l rend="endecasillabo" n="1">Nel <choice>
                                     <seg rend="regular">mez</seg>
                                     <seg rend="secondary-accent" function="metric">mèz</seg>
-                                 </choice>zo<note type="note" n="1" corresp="#note-1"/> del cam<choice>
+                                 </choice>zo del cam<choice>
                                     <seg rend="regular">min </seg>
                                     <seg rend="primary-accent" function="metric">mìn</seg>
                                  </choice><caesura/>di <choice>
@@ -90,7 +90,7 @@
                                  </choice>stra <choice>
                                     <seg rend="regular">vi</seg>
                                     <seg rend="primary-accent" function="metric">vì</seg>
-                                 </choice>ta</l>
+                                 </choice>ta<note type="note" n="1" corresp="#note-1"/></l>
                               <l rend="endecasillabo" n="2">mi ritro<choice>
                                     <seg rend="regular">vai </seg>
                                     <seg rend="primary-accent" function="metric">vài</seg>
