@@ -27,7 +27,7 @@
     <ng-container *ngSwitchCase="'lg'">
         <div id="{{ findAttributeValue(subtext.attributes, 'xml:id') }}"
             class="{{ findAttributeValue(subtext.attributes, 'type') }}"
-            *ngIf="isSubset([{name: 'type', value: 'terzina'}], subtext.attributes)">
+            *ngIf="isSubset([{name: 'type', value: 'terzina'}], subtext.attributes)" appAlign>
             <app-main-text *ngIf="!subtext.isText" [main_text]="subtext" [settings]="settings">
             </app-main-text>
         </div>

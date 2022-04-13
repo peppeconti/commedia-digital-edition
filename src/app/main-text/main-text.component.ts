@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Settings } from '../shared/settings.model';
 import { JsonNode } from '../shared/jsonNode.model';
 import { ServiceFetch } from '../shared/fetch.service';
+// import { Scrolltrigger } from '../../../node_modules/gsap/dist/ScrollToPlugin.min.js';
 
 @Component({
   selector: 'app-main-text',

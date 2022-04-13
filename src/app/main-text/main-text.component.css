@@ -3,7 +3,7 @@ div.terzina {
 }
 
 p.endecasillabo {
-    margin-bottom: .9rem;
+    margin-bottom: .3rem;
     font-size: 1.3rem;
     position: relative;
     font-family: 'Palemonas';
@@ -38,6 +38,10 @@ p.terzina-paraphrase {
     font-family: 'Palemonas';
 }
 p.terzina-paraphrase span.paraphrase-fragment {
-    margin-bottom: .9rem;
+    margin-bottom: .3rem;
     display: inline-block;
+}
+
+.focused {
+    border-left: 1px solid black;
 }
