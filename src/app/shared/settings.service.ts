@@ -2,7 +2,7 @@ import { Settings } from './settings.model';
 
 export class ServiceSettings {
     private settings: Settings = {
-        showMetric: false, showParaphrase: false, showNotes: true
+        showMetric: false, showParaphrase: true, showNotes: true
     }
 
     getSettings() {

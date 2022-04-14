@@ -177,7 +177,7 @@
                      <text>
                         <body rend="terzine-paraphrase">
                            <div xml:id="paraphrase-terzina-1" rend="paraphrase-terzina"
-                              corresp="#terzina-1">
+                              corresp="terzina-1">
                               <p rend="terzina-paraphrase"><span rend="paraphrase-fragment">A metà
                                     del corso medio della vita umana,</span>
                                  <lb/>
@@ -188,7 +188,7 @@
                                     strada.</span></p>
                            </div>
                            <div xml:id="paraphrase-terzina-2" rend="paraphrase-terzina"
-                              corresp="#terzina-2">
+                              corresp="terzina-2">
                               <p rend="terzina-paraphrase"><span rend="paraphrase-fragment">Ahimè,
                                     quanto è difficile descrivere l’aspetto</span>
                                  <lb/>
@@ -202,7 +202,7 @@
                                     paura.</span></p>
                            </div>
                            <div xml:id="paraphrase-terzina-3" rend="paraphrase-terzina"
-                              corresp="#terzina-3">
+                              corresp="terzina-3">
                               <p rend="terzina-paraphrase"><span rend="paraphrase-fragment">È tanto
                                     angosciante che la morte lo</span>
                                  <lb/>

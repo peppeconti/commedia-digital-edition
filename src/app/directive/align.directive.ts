@@ -6,18 +6,21 @@ import { gsap } from 'gsap';
   selector: '[appAlign]'
 })
 export class AlignDirective implements OnInit {
- 
+  @Input() scrollRef!: ElementRef;
+  startPoint!: string;
+
   constructor(private elRef: ElementRef) {
   }
 
   getScrollRef(): string {
-    const scrollRef = document.getElementById('scrollRef');
-    const distance: string = String(scrollRef!.getBoundingClientRect().top + scrollRef!.clientHeight + 2);
-    return distance;
+    const scrollNative = this.scrollRef.nativeElement;
+    const startPoint: string = String(scrollNative!.getBoundingClientRect().top + scrollNative!.clientHeight);
+    return startPoint;
   }
 
   ngOnInit(): void {
     gsap.registerPlugin(ScrollTrigger);
+    this.startPoint = this.getScrollRef(); 
     this.focusByScroll();
   }
 
@@ -25,9 +28,21 @@ export class AlignDirective implements OnInit {
     gsap.to(this.elRef.nativeElement, {
       scrollTrigger: {
         trigger: this.elRef.nativeElement,
-        start: `top ${this.getScrollRef()}`,
-        end: `bottom ${this.getScrollRef()}`,
-        toggleClass: 'focused'
+        start: `top ${this.startPoint}`,
+        end: `bottom ${this.startPoint}`,
+        toggleClass: 'focused',
+        markers: true,
+        onEnter: () => {
+         const matchTerzina = document.querySelector(`[data-terzina=${this.elRef.nativeElement.attributes.id.value}]`);
+         console.log(matchTerzina);
+         matchTerzina?.classList.add('lala');
+        },
+        onLeave: () => {
+          const matchTerzina = document.querySelector(`[data-terzina=${this.elRef.nativeElement.attributes.id.value}]`);
+          console.log(matchTerzina);
+          matchTerzina?.classList.remove('lala');
+         }
+
       }
     });
   }

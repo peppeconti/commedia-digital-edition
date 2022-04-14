@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { ServiceSettings } from './shared/settings.service';
 import { ServiceFetch } from './shared/fetch.service';
 import { Settings } from './shared/settings.model';
@@ -9,13 +9,15 @@ import { JsonNode } from './shared/jsonNode.model';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   settings!: Settings;
   commedy_text?: JsonNode;
   paraphrase_text?: JsonNode;
   notes!: JsonNode;
+  @ViewChild('scrollStart', { read: ElementRef }) scrollStart!: ElementRef;
+  scrollRef!: ElementRef
 
-  constructor(private serviceSettings: ServiceSettings, private serviceFetch: ServiceFetch) { }
+  constructor(private serviceSettings: ServiceSettings, private serviceFetch: ServiceFetch, private cd: ChangeDetectorRef) { }
 
   minifyXml(xml: string) {
     let formatted = '';
@@ -40,8 +42,13 @@ export class AppComponent implements OnInit {
       const notes: NodeListOf<Element> = xml.querySelectorAll('list[type=notes]');
       const notesJson: Array<JsonNode> = Array.from(notes).map(e => this.serviceFetch.parseNode(e));
       this.notes = notesJson[0];
-      // console.log(this.notes);
     });
+  }
+
+  ngAfterViewInit(): void {
+      this.scrollRef = this.scrollStart;
+      this.cd.detectChanges();
+      // console.log(this.scrollRef.nativeElement)
   }
 }
 

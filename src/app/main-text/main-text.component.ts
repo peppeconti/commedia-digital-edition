@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ElementRef } from '@angular/core';
 import { Settings } from '../shared/settings.model';
 import { JsonNode } from '../shared/jsonNode.model';
 import { ServiceFetch } from '../shared/fetch.service';
@@ -12,6 +12,7 @@ import { ServiceFetch } from '../shared/fetch.service';
 export class MainTextComponent implements OnInit {
   @Input() main_text: JsonNode | undefined;
   @Input() settings!: Settings;
+  @Input() scrollRef!: ElementRef
 
   constructor(private serviceFetch: ServiceFetch) { }
 

@@ -2,13 +2,14 @@
     <ng-container *ngSwitchCase="'div'">
         <div id="{{ findAttributeValue(subtext.attributes, 'xml:id') }}"
             class="{{ findAttributeValue(subtext.attributes, 'rend') }}"
+            attr.data-terzina="{{ findAttributeValue(subtext.attributes, 'corresp') }}"
             *ngIf="isSubset([{name: 'rend', value: 'paraphrase-terzina'}], subtext.attributes)">
             <app-main-text *ngIf="!subtext.isText" [main_text]="subtext" [settings]="settings">
             </app-main-text>
         </div>
     </ng-container>
     <ng-container *ngSwitchCase="'p'">
-        <p class="{{ findAttributeValue(subtext.attributes, 'rend') }}"
+        <p class="{{ findAttributeValue(subtext.attributes, 'rend')  }} }}"
             *ngIf="isSubset([{name: 'rend', value: 'terzina-paraphrase'}], subtext.attributes)">
             <app-main-text *ngIf="!subtext.isText" [main_text]="subtext" [settings]="settings">
             </app-main-text>
@@ -26,8 +27,8 @@
     </ng-container>
     <ng-container *ngSwitchCase="'lg'">
         <div id="{{ findAttributeValue(subtext.attributes, 'xml:id') }}"
-            class="{{ findAttributeValue(subtext.attributes, 'type') }}"
-            *ngIf="isSubset([{name: 'type', value: 'terzina'}], subtext.attributes)" appAlign>
+            class="{{ findAttributeValue(subtext.attributes, 'type') }}" [ngClass]="{ 'paraphraseActive': this.settings.showParaphrase }"
+            *ngIf="isSubset([{name: 'type', value: 'terzina'}], subtext.attributes)" appAlign [scrollRef]="scrollRef">
             <p class="inner">
                 <app-main-text *ngIf="!subtext.isText" [main_text]="subtext" [settings]="settings">
                 </app-main-text>

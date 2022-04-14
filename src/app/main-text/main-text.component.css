@@ -43,11 +43,11 @@ p.terzina-paraphrase span.paraphrase-fragment {
     display: inline-block;
 }
 
-.inner {
+.inner, .lala {
     position: relative;
 }
 
-.focused p.inner::after {
+.paraphraseActive.focused p.inner::after {
     content: '';
     position: absolute;
     top: 0;
@@ -56,4 +56,14 @@ p.terzina-paraphrase span.paraphrase-fragment {
     height: 100%;
     background-color: rgb(1, 209, 1);
 
+}
+
+.lala::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -15px;
+    width: 4px;
+    height: 100%;
+    background-color: rgb(1, 209, 1);
 }
