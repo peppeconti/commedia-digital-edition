@@ -16,3 +16,9 @@ h3 {
 .text-column {
     padding: 0 2rem;
 }
+.paraphrase-text {
+    display: none;
+}
+.visible {
+    display: block;
+}

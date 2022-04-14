@@ -20,7 +20,7 @@ export class AlignDirective implements OnInit {
 
   ngOnInit(): void {
     gsap.registerPlugin(ScrollTrigger);
-    this.startPoint = this.getScrollRef(); 
+    this.startPoint = this.getScrollRef();
     this.focusByScroll();
   }
 
@@ -33,15 +33,25 @@ export class AlignDirective implements OnInit {
         toggleClass: 'focused',
         markers: true,
         onEnter: () => {
-         const matchTerzina = document.querySelector(`[data-terzina=${this.elRef.nativeElement.attributes.id.value}]`);
-         console.log(matchTerzina);
-         matchTerzina?.classList.add('lala');
+          const matchTerzina = document.querySelector(`[data-terzina=${this.elRef.nativeElement.attributes.id.value}]`);
+          //console.log(matchTerzina);
+          matchTerzina?.classList.add('lala');
         },
         onLeave: () => {
           const matchTerzina = document.querySelector(`[data-terzina=${this.elRef.nativeElement.attributes.id.value}]`);
-          console.log(matchTerzina);
+          //console.log(matchTerzina);
           matchTerzina?.classList.remove('lala');
-         }
+        },
+        onEnterBack: () => {
+          const matchTerzina = document.querySelector(`[data-terzina=${this.elRef.nativeElement.attributes.id.value}]`);
+          //console.log(matchTerzina);
+          matchTerzina?.classList.add('lala');
+        },
+        onLeaveBack: () => {
+          const matchTerzina = document.querySelector(`[data-terzina=${this.elRef.nativeElement.attributes.id.value}]`);
+          //console.log(matchTerzina);
+          matchTerzina?.classList.remove('lala');
+        },
 
       }
     });
