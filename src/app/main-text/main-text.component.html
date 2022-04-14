@@ -28,8 +28,10 @@
         <div id="{{ findAttributeValue(subtext.attributes, 'xml:id') }}"
             class="{{ findAttributeValue(subtext.attributes, 'type') }}"
             *ngIf="isSubset([{name: 'type', value: 'terzina'}], subtext.attributes)" appAlign>
-            <app-main-text *ngIf="!subtext.isText" [main_text]="subtext" [settings]="settings">
-            </app-main-text>
+            <p class="inner">
+                <app-main-text *ngIf="!subtext.isText" [main_text]="subtext" [settings]="settings">
+                </app-main-text>
+            </p>
         </div>
     </ng-container>
     <ng-container *ngSwitchCase="'l'">
@@ -70,7 +72,9 @@
     <ng-container *ngSwitchCase="'note'">
         <a class="{{ findAttributeValue(subtext.attributes, 'type') }}"
             href="{{ findAttributeValue(subtext.attributes, 'corresp') }}"
-            *ngIf="this.settings.showNotes && isSubset([{name: 'type', value: 'note'}], subtext.attributes)" (click)="showNote(findAttributeValue(subtext.attributes, 'corresp'))" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
+            *ngIf="this.settings.showNotes && isSubset([{name: 'type', value: 'note'}], subtext.attributes)"
+            (click)="showNote(findAttributeValue(subtext.attributes, 'corresp'))" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
             <sup>[{{findAttributeValue(subtext.attributes, 'n') }}]</sup>
         </a>
     </ng-container>

@@ -1,5 +1,6 @@
 div.terzina {
-    margin-bottom: 3.5rem;
+    padding-bottom: 2.5rem;
+    margin-top: -1px;
 }
 
 p.endecasillabo {
@@ -42,6 +43,17 @@ p.terzina-paraphrase span.paraphrase-fragment {
     display: inline-block;
 }
 
-.focused {
-    border-left: 1px solid black;
+.inner {
+    position: relative;
+}
+
+.focused p.inner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -15px;
+    width: 4px;
+    height: 100%;
+    background-color: rgb(1, 209, 1);
+
 }

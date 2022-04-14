@@ -143,6 +143,31 @@
                                  punto</l>
                               <l rend="endecasillabo" n="12">che la verace via abbandonai.</l>
                            </lg>
+                           <lg xml:id="terzina-5" type="terzina">
+                              <l rend="endecasillabo" n="13">Ma poi ch’i’ fui al piè d’un colle giunto,</l>
+                              <l rend="endecasillabo" n="14">là dove terminava quella valle</l>
+                              <l rend="endecasillabo" n="15">che m’avea di paura il cor compunto,</l>
+                           </lg>
+                           <lg xml:id="terzina-6" type="terzina">
+                              <l rend="endecasillabo" n="16">guardai in alto, e vidi le sue spalle</l>
+                              <l rend="endecasillabo" n="17">vestite già de’ raggi del pianeta</l>
+                              <l rend="endecasillabo" n="18">che mena dritto altrui per ogne calle.</l>
+                           </lg>
+                           <lg xml:id="terzina-7" type="terzina">
+                              <l rend="endecasillabo" n="19">Allor fu la paura un poco queta</l>
+                              <l rend="endecasillabo" n="20">che nel lago del cor m’era durata</l>
+                              <l rend="endecasillabo" n="21">la notte ch’i’ passai con tanta pieta.</l>
+                           </lg>
+                           <lg xml:id="terzina-8" type="terzina">
+                              <l rend="endecasillabo" n="22">E come quei che con lena affannata</l>
+                              <l rend="endecasillabo" n="23">uscito fuor del pelago a la riva</l>
+                              <l rend="endecasillabo" n="24">si volge a l’acqua perigliosa e guata,</l>
+                           </lg>
+                           <lg xml:id="terzina-9" type="terzina">
+                              <l rend="endecasillabo" n="25">così l’animo mio, ch’ancor fuggiva,</l>
+                              <l rend="endecasillabo" n="26">si volse a retro a rimirar lo passo</l>
+                              <l rend="endecasillabo" n="27">che non lasciò già mai persona viva.</l>
+                           </lg>
                         </body>
                      </text>
                   </group>

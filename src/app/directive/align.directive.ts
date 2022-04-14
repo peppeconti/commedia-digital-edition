@@ -1,32 +1,47 @@
-import { Directive, ElementRef, OnInit } from '@angular/core';
-import { gsap } from 'gsap';
+import { Directive, ElementRef, OnInit, Input } from '@angular/core';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { gsap } from 'gsap';
 
 @Directive({
   selector: '[appAlign]'
 })
 export class AlignDirective implements OnInit {
-
+ 
   constructor(private elRef: ElementRef) {
+  }
+
+  getScrollRef(): string {
+    const scrollRef = document.getElementById('scrollRef');
+    const distance: string = String(scrollRef!.getBoundingClientRect().top + scrollRef!.clientHeight + 2);
+    return distance;
   }
 
   ngOnInit(): void {
     gsap.registerPlugin(ScrollTrigger);
-    this.scrollFunc();
+    this.focusByScroll();
   }
 
-  scrollFunc() {
+  focusByScroll() {
     gsap.to(this.elRef.nativeElement, {
       scrollTrigger: {
         trigger: this.elRef.nativeElement,
-        start: 'top 33%',
-        end: 'bottom 36%',
-        toggleClass: 'focused',
-        markers: true
+        start: `top ${this.getScrollRef()}`,
+        end: `bottom ${this.getScrollRef()}`,
+        toggleClass: 'focused'
       }
     });
   }
 }
+
+
+/*cumulativeOffset(element: HTMLElement | null) {
+  let top = 0;
+  do {
+      top += element?.offsetTop || 0;
+      element = <HTMLElement>element?.offsetParent;
+  } while (element);
+  return top;
+};
 
 
 /*enableScrollTrigger() {
