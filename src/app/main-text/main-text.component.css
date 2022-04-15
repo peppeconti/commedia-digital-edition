@@ -1,6 +1,7 @@
 div.terzina {
     padding-bottom: 2.5rem;
     margin-top: -1px;
+    border: 1px solid black;
 }
 
 p.endecasillabo {
@@ -43,7 +44,7 @@ p.terzina-paraphrase span.paraphrase-fragment {
     display: inline-block;
 }
 
-.inner, .lala {
+.inner, .corresp {
     position: relative;
 }
 
@@ -58,7 +59,12 @@ p.terzina-paraphrase span.paraphrase-fragment {
 
 }
 
-.lala::after {
+div.paraphrase-terzina {
+    margin-top: -1px;
+    border: 1px solid black;
+}
+
+div.corresp::after {
     content: '';
     position: absolute;
     top: 0;

@@ -17,8 +17,8 @@ h3 {
     padding: 0 2rem;
 }
 .paraphrase-text {
-    display: none;
+    content-visibility: hidden;
 }
 .visible {
-    display: block;
+    content-visibility: visible;
 }

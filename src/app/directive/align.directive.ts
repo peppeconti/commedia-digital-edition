@@ -35,22 +35,30 @@ export class AlignDirective implements OnInit {
         onEnter: () => {
           const matchTerzina = document.querySelector(`[data-terzina=${this.elRef.nativeElement.attributes.id.value}]`);
           //console.log(matchTerzina);
-          matchTerzina?.classList.add('lala');
+          matchTerzina?.classList.add('corresp');
+          console.log(this.elRef.nativeElement.getBoundingClientRect().top);
+          console.log(matchTerzina!.getBoundingClientRect().top);
+          let aa = this.elRef.nativeElement.getBoundingClientRect().top;
+          let bb = matchTerzina!.getBoundingClientRect().top;
+          if (bb !== 0) {
+            let cc = aa - bb;
+            (<HTMLElement>matchTerzina!).style.transform = `translateY(${cc}px)`;
+          }
         },
         onLeave: () => {
           const matchTerzina = document.querySelector(`[data-terzina=${this.elRef.nativeElement.attributes.id.value}]`);
           //console.log(matchTerzina);
-          matchTerzina?.classList.remove('lala');
+          matchTerzina?.classList.remove('corresp');
         },
         onEnterBack: () => {
           const matchTerzina = document.querySelector(`[data-terzina=${this.elRef.nativeElement.attributes.id.value}]`);
           //console.log(matchTerzina);
-          matchTerzina?.classList.add('lala');
+          matchTerzina?.classList.add('corresp');
         },
         onLeaveBack: () => {
           const matchTerzina = document.querySelector(`[data-terzina=${this.elRef.nativeElement.attributes.id.value}]`);
           //console.log(matchTerzina);
-          matchTerzina?.classList.remove('lala');
+          matchTerzina?.classList.remove('corresp');
         },
 
       }
