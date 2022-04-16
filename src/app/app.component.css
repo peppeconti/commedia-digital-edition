@@ -18,6 +18,7 @@ h3 {
 }
 .paraphrase-text {
     display: none;
+    transition: .5s;
 }
 .visible {
     display: block;

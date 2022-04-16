@@ -144,29 +144,36 @@
                               <l rend="endecasillabo" n="12">che la verace via abbandonai.</l>
                            </lg>
                            <lg xml:id="terzina-5" type="terzina">
-                              <l rend="endecasillabo" n="13">Ma poi ch’i’ fui al piè d’un colle giunto,</l>
+                              <l rend="endecasillabo" n="13">Ma poi ch’i’ fui al piè d’un colle
+                                 giunto,</l>
                               <l rend="endecasillabo" n="14">là dove terminava quella valle</l>
-                              <l rend="endecasillabo" n="15">che m’avea di paura il cor compunto,</l>
+                              <l rend="endecasillabo" n="15">che m’avea di paura il cor
+                                 compunto,</l>
                            </lg>
                            <lg xml:id="terzina-6" type="terzina">
-                              <l rend="endecasillabo" n="16">guardai in alto, e vidi le sue spalle</l>
+                              <l rend="endecasillabo" n="16">guardai in alto, e vidi le sue
+                                 spalle</l>
                               <l rend="endecasillabo" n="17">vestite già de’ raggi del pianeta</l>
-                              <l rend="endecasillabo" n="18">che mena dritto altrui per ogne calle.</l>
+                              <l rend="endecasillabo" n="18">che mena dritto altrui per ogne
+                                 calle.</l>
                            </lg>
                            <lg xml:id="terzina-7" type="terzina">
                               <l rend="endecasillabo" n="19">Allor fu la paura un poco queta</l>
                               <l rend="endecasillabo" n="20">che nel lago del cor m’era durata</l>
-                              <l rend="endecasillabo" n="21">la notte ch’i’ passai con tanta pieta.</l>
+                              <l rend="endecasillabo" n="21">la notte ch’i’ passai con tanta
+                                 pieta.</l>
                            </lg>
                            <lg xml:id="terzina-8" type="terzina">
                               <l rend="endecasillabo" n="22">E come quei che con lena affannata</l>
                               <l rend="endecasillabo" n="23">uscito fuor del pelago a la riva</l>
-                              <l rend="endecasillabo" n="24">si volge a l’acqua perigliosa e guata,</l>
+                              <l rend="endecasillabo" n="24">si volge a l’acqua perigliosa e
+                                 guata,</l>
                            </lg>
                            <lg xml:id="terzina-9" type="terzina">
                               <l rend="endecasillabo" n="25">così l’animo mio, ch’ancor fuggiva,</l>
                               <l rend="endecasillabo" n="26">si volse a retro a rimirar lo passo</l>
-                              <l rend="endecasillabo" n="27">che non lasciò già mai persona viva.</l>
+                              <l rend="endecasillabo" n="27">che non lasciò già mai persona
+                                 viva.</l>
                            </lg>
                         </body>
                      </text>
@@ -210,10 +217,36 @@
                                     descrivere il</span>
                                  <lb/>
                                  <span rend="paraphrase-fragment">bene che io trovai in essa,
-                                    parlerò</span>
-                                 <span rend="paraphrase-fragment">prima</span><lb/>
+                                    parlerò prima</span><lb/>
                                  <span rend="paraphrase-fragment">delle altre cose che vi ho
                                     visto.</span></p>
+                           </div>
+                           <div xml:id="paraphrase-terzina-4" rend="paraphrase-terzina"
+                              corresp="terzina-4">
+                              <p rend="terzina-paraphrase"><span rend="paraphrase-fragment">Non so
+                                    descrivere il modo in cui io vi entrai,</span>
+                                 <lb/>
+                                 <span rend="paraphrase-fragment">tanto ero intorpidito nel momento
+                                    in cui</span>
+                                 <lb/>
+                                 <span rend="paraphrase-fragment">abbandonai la via della
+                                    verità.</span></p>
+                           </div>
+                           <div xml:id="paraphrase-terzina-5" rend="paraphrase-terzina"
+                              corresp="terzina-5">
+                              <p rend="terzina-paraphrase"><span rend="paraphrase-fragment">Ma dopo che giunsi ai piedi di un colle, nel</span>
+                                 <lb/>
+                                 <span rend="paraphrase-fragment">luogo in cui finiva quella valle che aveva</span>
+                                 <lb/>
+                                 <span rend="paraphrase-fragment">turbato di paura il mio cuore,</span></p>
+                           </div>
+                           <div xml:id="paraphrase-terzina-6" rend="paraphrase-terzina"
+                              corresp="terzina-6">
+                              <p rend="terzina-paraphrase"><span rend="paraphrase-fragment">guardai verso l’alto e vidi la sua vetta già</span>
+                                 <lb/>
+                                 <span rend="paraphrase-fragment">illuminata dai raggi di quel pianeta [il Sole]</span>
+                                 <lb/>
+                                 <span rend="paraphrase-fragment">che conduce ogni uomo sulla giusta strada.</span></p>
                            </div>
                         </body>
                      </text>

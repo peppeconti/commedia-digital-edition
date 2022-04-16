@@ -8,7 +8,7 @@ export class ServiceFetch {
 
     passNoteText = new EventEmitter<string>();
 
-    passParaph = new EventEmitter<QueryList<ElementRef>>();
+    passParaphrFragm = new EventEmitter<QueryList<ElementRef>>();
 
     constructor(private http: HttpClient) {
 

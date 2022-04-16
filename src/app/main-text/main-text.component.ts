@@ -13,7 +13,8 @@ export class MainTextComponent implements OnInit, AfterViewInit {
   @Input() main_text: JsonNode | undefined;
   @Input() settings!: Settings;
   @Input() scrollRef!: ElementRef;
-  @ViewChildren('paraph') paraphGroup!: QueryList<ElementRef>;
+  @Input() paraphrColumnRef!: ElementRef;
+  @ViewChildren('paraphrFragm') paraphGroup!: QueryList<ElementRef>;
 
   constructor(private serviceFetch: ServiceFetch) { }
 
@@ -43,7 +44,7 @@ export class MainTextComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.paraphGroup.changes.subscribe(
-      a => this.serviceFetch.passParaph.emit(a)
+      a => this.serviceFetch.passParaphrFragm.emit(a)
     );
   }
 }

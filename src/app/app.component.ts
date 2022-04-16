@@ -15,7 +15,9 @@ export class AppComponent implements OnInit, AfterViewInit {
   paraphrase_text?: JsonNode;
   notes!: JsonNode;
   @ViewChild('scrollStart', { read: ElementRef }) scrollStart!: ElementRef;
-  scrollRef!: ElementRef
+  @ViewChild('paraphrColumn', { read: ElementRef }) paraphrColumn!: ElementRef;
+  scrollRef!: ElementRef;
+  paraphrColumnRef!: ElementRef;
 
   constructor(private serviceSettings: ServiceSettings, private serviceFetch: ServiceFetch, private cd: ChangeDetectorRef) { }
 
@@ -47,6 +49,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
       this.scrollRef = this.scrollStart;
+      this.paraphrColumnRef = this.paraphrColumn;
       this.cd.detectChanges();
       // console.log(this.scrollRef.nativeElement)
   }

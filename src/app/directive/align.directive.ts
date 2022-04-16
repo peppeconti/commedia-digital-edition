@@ -8,8 +8,10 @@ import { ServiceFetch } from '../shared/fetch.service';
 })
 export class AlignDirective implements OnInit {
   @Input() scrollRef!: ElementRef;
+  @Input() paraphrColumnRef!: ElementRef;
   paraphraseFragment!: HTMLElement;
   startPoint!: string;
+  paraphraseDistance: number = 0;
 
   constructor(private elRef: ElementRef, private serviceFetch: ServiceFetch) {
   }
@@ -29,13 +31,22 @@ export class AlignDirective implements OnInit {
   ngOnInit(): void {
     gsap.registerPlugin(ScrollTrigger);
     this.startPoint = this.setScrollRef();
-    this.serviceFetch.passParaph.subscribe(
+    this.serviceFetch.passParaphrFragm.subscribe(
       (paraphraseList: QueryList<ElementRef>) => {
         this.setParaphraseFragment(paraphraseList);
         this.focusByScroll();
       }
     );
   }
+
+  cumulativeOffset(element: HTMLElement | null) {
+    let top = 0;
+    do {
+        top += element?.offsetTop || 0;
+        element = <HTMLElement>element?.offsetParent;
+    } while (element);
+    return top;
+  };
 
   focusByScroll() {
     gsap.to(this.elRef.nativeElement, {
@@ -46,16 +57,26 @@ export class AlignDirective implements OnInit {
         toggleClass: 'focused',
         markers: true,
         onEnter: () => {
-          this.paraphraseFragment.classList.add('corresp');
+          this.paraphraseFragment ? this.paraphraseFragment.classList.add('corresp') : console.log('no match found');
+          console.log(this.paraphrColumnRef);
+          const elRefDistance = this.cumulativeOffset(this.elRef.nativeElement);
+          const parFragDistance = this.cumulativeOffset(this.paraphraseFragment);
+          const totalDistance = elRefDistance - parFragDistance;
+          (<HTMLElement>this.paraphrColumnRef.nativeElement).style.transform = `translateY(${String(totalDistance)}px)`;
         },
         onLeave: () => {
-          this.paraphraseFragment.classList.remove('corresp');
+          this.paraphraseFragment ? this.paraphraseFragment.classList.remove('corresp') : console.log('no match found');
         },
         onEnterBack: () => {
-          this.paraphraseFragment.classList.add('corresp');
+          this.paraphraseFragment ? this.paraphraseFragment.classList.add('corresp') : console.log('no match found');
+          const elRefDistance = this.cumulativeOffset(this.elRef.nativeElement);
+          const parFragDistance = this.cumulativeOffset(this.paraphraseFragment);
+          const totalDistance = elRefDistance - parFragDistance;
+          (<HTMLElement>this.paraphrColumnRef.nativeElement).style.transform = `translateY(${String(totalDistance)}px)`;
+
         },
         onLeaveBack: () => {
-          this.paraphraseFragment.classList.remove('corresp');
+          this.paraphraseFragment ? this.paraphraseFragment.classList.remove('corresp') : console.log('no match found');
         },
 
       }
@@ -64,16 +85,16 @@ export class AlignDirective implements OnInit {
 }
 
  // matchTerzina?.classList.add('corresp');
-          /*console.log(this.elRef.nativeElement.getBoundingClientRect().top);
-         console.log(matchTerzina!.getBoundingClientRect().top);
-         let aa = this.elRef.nativeElement.getBoundingClientRect().top;
-         let bb = matchTerzina!.getBoundingClientRect().top;
-         if (bb !== 0) {
-           let cc = aa - bb;
-           (<HTMLElement>matchTerzina!).style.transform = `translateY(${cc}px)`;
-         }*/
+/*console.log(this.elRef.nativeElement.getBoundingClientRect().top);
+console.log(matchTerzina!.getBoundingClientRect().top);
+let aa = this.elRef.nativeElement.getBoundingClientRect().top;
+let bb = matchTerzina!.getBoundingClientRect().top;
+if (bb !== 0) {
+ let cc = aa - bb;
+ (<HTMLElement>matchTerzina!).style.transform = `translateY(${cc}px)`;
+}*/
 
-         /***********************/
+/***********************/
 
 /*cumulativeOffset(element: HTMLElement | null) {
   let top = 0;

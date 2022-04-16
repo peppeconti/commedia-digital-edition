@@ -1,7 +1,6 @@
 div.terzina {
     padding-bottom: 2.5rem;
     margin-top: -1px;
-    border: 1px solid black;
 }
 
 p.endecasillabo {
@@ -61,7 +60,6 @@ p.terzina-paraphrase span.paraphrase-fragment {
 
 div.paraphrase-terzina {
     margin-top: -1px;
-    border: 1px solid black;
 }
 
 div.corresp::after {
