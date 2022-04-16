@@ -3,7 +3,7 @@
         <div id="{{ findAttributeValue(subtext.attributes, 'xml:id') }}"
             class="{{ findAttributeValue(subtext.attributes, 'rend') }}"
             attr.data-terzina="{{ findAttributeValue(subtext.attributes, 'corresp') }}"
-            *ngIf="isSubset([{name: 'rend', value: 'paraphrase-terzina'}], subtext.attributes)">
+            *ngIf="isSubset([{name: 'rend', value: 'paraphrase-terzina'}], subtext.attributes)" #paraph>
             <app-main-text *ngIf="!subtext.isText" [main_text]="subtext" [settings]="settings">
             </app-main-text>
         </div>

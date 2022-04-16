@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
 import { Settings } from '../shared/settings.model';
 import { JsonNode } from '../shared/jsonNode.model';
 import { ServiceFetch } from '../shared/fetch.service';
@@ -9,10 +9,11 @@ import { ServiceFetch } from '../shared/fetch.service';
   templateUrl: './main-text.component.html',
   styleUrls: ['./main-text.component.css']
 })
-export class MainTextComponent implements OnInit {
+export class MainTextComponent implements OnInit, AfterViewInit {
   @Input() main_text: JsonNode | undefined;
   @Input() settings!: Settings;
-  @Input() scrollRef!: ElementRef
+  @Input() scrollRef!: ElementRef;
+  @ViewChildren('paraph') paraphGroup!: QueryList<ElementRef>;
 
   constructor(private serviceFetch: ServiceFetch) { }
 
@@ -39,4 +40,10 @@ export class MainTextComponent implements OnInit {
 
   ngOnInit(): void {
   };
+
+  ngAfterViewInit() {
+    this.paraphGroup.changes.subscribe(
+      a => this.serviceFetch.passParaph.emit(a)
+    );
+  }
 }

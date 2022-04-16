@@ -1,4 +1,4 @@
-import { EventEmitter, Injectable } from "@angular/core";
+import { EventEmitter, Injectable, QueryList, ElementRef } from "@angular/core";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { JsonNode } from "./jsonNode.model";
 
@@ -7,6 +7,8 @@ import { JsonNode } from "./jsonNode.model";
 export class ServiceFetch {
 
     passNoteText = new EventEmitter<string>();
+
+    passParaph = new EventEmitter<QueryList<ElementRef>>();
 
     constructor(private http: HttpClient) {
 

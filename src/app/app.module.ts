@@ -17,6 +17,7 @@ import { DropdownComponent } from './header/dropdown/dropdown.component';
 import { NoteContainerComponent } from './note-container/note-container.component';
 import { NoteTextComponent } from './note-container/note-text/note-text.component';
 import { AlignDirective } from './directive/align.directive';
+import { QuerySelfDirective } from './directive/query-self.directive';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AlignDirective } from './directive/align.directive';
     DropdownComponent,
     NoteContainerComponent,
     NoteTextComponent,
-    AlignDirective
+    AlignDirective,
+    QuerySelfDirective
   ],
   imports: [
     BrowserModule,

@@ -1,18 +1,26 @@
-import { Directive, ElementRef, OnInit, Input } from '@angular/core';
+import { Directive, ElementRef, OnInit, Input, QueryList } from '@angular/core';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { gsap } from 'gsap';
+import { ServiceFetch } from '../shared/fetch.service';
 
 @Directive({
   selector: '[appAlign]'
 })
 export class AlignDirective implements OnInit {
   @Input() scrollRef!: ElementRef;
+  paraphraseFragment!: HTMLElement;
   startPoint!: string;
 
-  constructor(private elRef: ElementRef) {
+  constructor(private elRef: ElementRef, private serviceFetch: ServiceFetch) {
   }
 
-  getScrollRef(): string {
+  setParaphraseFragment(list: QueryList<ElementRef>) {
+    const fragmentsList = list.toArray().map(e => e.nativeElement);
+    const elRefId = this.elRef.nativeElement.attributes.id.value;
+    this.paraphraseFragment = fragmentsList.find(e => e.dataset['terzina'] === elRefId);
+  }
+
+  setScrollRef(): string {
     const scrollNative = this.scrollRef.nativeElement;
     const startPoint: string = String(scrollNative!.getBoundingClientRect().top + scrollNative!.clientHeight);
     return startPoint;
@@ -20,8 +28,13 @@ export class AlignDirective implements OnInit {
 
   ngOnInit(): void {
     gsap.registerPlugin(ScrollTrigger);
-    this.startPoint = this.getScrollRef();
-    this.focusByScroll();
+    this.startPoint = this.setScrollRef();
+    this.serviceFetch.passParaph.subscribe(
+      (paraphraseList: QueryList<ElementRef>) => {
+        this.setParaphraseFragment(paraphraseList);
+        this.focusByScroll();
+      }
+    );
   }
 
   focusByScroll() {
@@ -33,32 +46,16 @@ export class AlignDirective implements OnInit {
         toggleClass: 'focused',
         markers: true,
         onEnter: () => {
-          const matchTerzina = document.querySelector(`[data-terzina=${this.elRef.nativeElement.attributes.id.value}]`);
-          //console.log(matchTerzina);
-          matchTerzina?.classList.add('corresp');
-          console.log(this.elRef.nativeElement.getBoundingClientRect().top);
-          console.log(matchTerzina!.getBoundingClientRect().top);
-          let aa = this.elRef.nativeElement.getBoundingClientRect().top;
-          let bb = matchTerzina!.getBoundingClientRect().top;
-          if (bb !== 0) {
-            let cc = aa - bb;
-            (<HTMLElement>matchTerzina!).style.transform = `translateY(${cc}px)`;
-          }
+          this.paraphraseFragment.classList.add('corresp');
         },
         onLeave: () => {
-          const matchTerzina = document.querySelector(`[data-terzina=${this.elRef.nativeElement.attributes.id.value}]`);
-          //console.log(matchTerzina);
-          matchTerzina?.classList.remove('corresp');
+          this.paraphraseFragment.classList.remove('corresp');
         },
         onEnterBack: () => {
-          const matchTerzina = document.querySelector(`[data-terzina=${this.elRef.nativeElement.attributes.id.value}]`);
-          //console.log(matchTerzina);
-          matchTerzina?.classList.add('corresp');
+          this.paraphraseFragment.classList.add('corresp');
         },
         onLeaveBack: () => {
-          const matchTerzina = document.querySelector(`[data-terzina=${this.elRef.nativeElement.attributes.id.value}]`);
-          //console.log(matchTerzina);
-          matchTerzina?.classList.remove('corresp');
+          this.paraphraseFragment.classList.remove('corresp');
         },
 
       }
@@ -66,6 +63,17 @@ export class AlignDirective implements OnInit {
   }
 }
 
+ // matchTerzina?.classList.add('corresp');
+          /*console.log(this.elRef.nativeElement.getBoundingClientRect().top);
+         console.log(matchTerzina!.getBoundingClientRect().top);
+         let aa = this.elRef.nativeElement.getBoundingClientRect().top;
+         let bb = matchTerzina!.getBoundingClientRect().top;
+         if (bb !== 0) {
+           let cc = aa - bb;
+           (<HTMLElement>matchTerzina!).style.transform = `translateY(${cc}px)`;
+         }*/
+
+         /***********************/
 
 /*cumulativeOffset(element: HTMLElement | null) {
   let top = 0;
