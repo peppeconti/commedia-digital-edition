@@ -15,7 +15,7 @@ export class MainTextComponent implements OnInit, AfterViewInit {
   @Input() scrollRef!: ElementRef;
   @Input() paraphrColumnRef!: ElementRef;
   @ViewChildren('paraphrFragm') paraphGroup!: QueryList<ElementRef>;
-  key!: keyof Settings;
+  condition?: boolean;
 
   constructor(private serviceFetch: ServiceFetch) { }
 

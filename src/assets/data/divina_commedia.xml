@@ -185,68 +185,68 @@
                         <body rend="terzine-paraphrase">
                            <div xml:id="paraphrase-terzina-1" rend="paraphrase-terzina"
                               corresp="terzina-1">
-                              <p rend="terzina-paraphrase"><span rend="paraphrase-fragment">A metà
-                                    del corso medio della vita umana,</span>
+                              <p rend="terzina-paraphrase"><seg rend="paraphrase-fragment">A metà
+                                    del corso medio della vita umana,</seg>
                                  <lb/>
-                                 <span rend="paraphrase-fragment">mi ritrovai in una foresta
-                                    buia,</span>
+                                 <seg rend="paraphrase-fragment">mi ritrovai in una foresta
+                                    buia,</seg>
                                  <lb/>
-                                 <span rend="paraphrase-fragment">perché avevo smarrito la giusta
-                                    strada.</span></p>
+                                 <seg rend="paraphrase-fragment">perché avevo smarrito la giusta
+                                    strada.</seg></p>
                            </div>
                            <div xml:id="paraphrase-terzina-2" rend="paraphrase-terzina"
                               corresp="terzina-2">
                               <p rend="terzina-paraphrase"><span rend="paraphrase-fragment">Ahimè,
                                     quanto è difficile descrivere l’aspetto</span>
                                  <lb/>
-                                 <span rend="paraphrase-fragment">di questa foresta inospitale,
-                                    intricata e</span>
+                                 <seg rend="paraphrase-fragment">di questa foresta inospitale,
+                                    intricata e</seg>
                                  <lb/>
-                                 <span rend="paraphrase-fragment">difficile, a tal punto che
-                                    al</span>
+                                 <seg rend="paraphrase-fragment">difficile, a tal punto che
+                                    al</seg>
                                  <lb/>
-                                 <span rend="paraphrase-fragment">solo pensiero si rinnova in me la
-                                    paura.</span></p>
+                                 <seg rend="paraphrase-fragment">solo pensiero si rinnova in me la
+                                    paura.</seg></p>
                            </div>
                            <div xml:id="paraphrase-terzina-3" rend="paraphrase-terzina"
                               corresp="terzina-3">
-                              <p rend="terzina-paraphrase"><span rend="paraphrase-fragment">È tanto
-                                    angosciante che la morte lo</span>
+                              <p rend="terzina-paraphrase"><seg rend="paraphrase-fragment">È tanto
+                                    angosciante che la morte lo</seg>
                                  <lb/>
-                                 <span rend="paraphrase-fragment">è giusto poco di più; ma per
-                                    descrivere il</span>
+                                 <seg rend="paraphrase-fragment">è giusto poco di più; ma per
+                                    descrivere il</seg>
                                  <lb/>
-                                 <span rend="paraphrase-fragment">bene che io trovai in essa,
-                                    parlerò prima</span><lb/>
-                                 <span rend="paraphrase-fragment">delle altre cose che vi ho
-                                    visto.</span></p>
+                                 <seg rend="paraphrase-fragment">bene che io trovai in essa,
+                                    parlerò prima</seg><lb/>
+                                 <seg rend="paraphrase-fragment">delle altre cose che vi ho
+                                    visto.</seg></p>
                            </div>
                            <div xml:id="paraphrase-terzina-4" rend="paraphrase-terzina"
                               corresp="terzina-4">
-                              <p rend="terzina-paraphrase"><span rend="paraphrase-fragment">Non so
-                                    descrivere il modo in cui io vi entrai,</span>
+                              <p rend="terzina-paraphrase"><seg rend="paraphrase-fragment">Non so
+                                    descrivere il modo in cui io vi entrai,</seg>
                                  <lb/>
-                                 <span rend="paraphrase-fragment">tanto ero intorpidito nel momento
-                                    in cui</span>
+                                 <seg rend="paraphrase-fragment">tanto ero intorpidito nel momento
+                                    in cui</seg>
                                  <lb/>
-                                 <span rend="paraphrase-fragment">abbandonai la via della
-                                    verità.</span></p>
+                                 <seg rend="paraphrase-fragment">abbandonai la via della
+                                    verità.</seg></p>
                            </div>
                            <div xml:id="paraphrase-terzina-5" rend="paraphrase-terzina"
                               corresp="terzina-5">
-                              <p rend="terzina-paraphrase"><span rend="paraphrase-fragment">Ma dopo che giunsi ai piedi di un colle, nel</span>
+                              <p rend="terzina-paraphrase"><seg rend="paraphrase-fragment">Ma dopo che giunsi ai piedi di un colle, nel</seg>
                                  <lb/>
-                                 <span rend="paraphrase-fragment">luogo in cui finiva quella valle che aveva</span>
+                                 <seg rend="paraphrase-fragment">luogo in cui finiva quella valle che aveva</seg>
                                  <lb/>
-                                 <span rend="paraphrase-fragment">turbato di paura il mio cuore,</span></p>
+                                 <seg rend="paraphrase-fragment">turbato di paura il mio cuore,</seg></p>
                            </div>
                            <div xml:id="paraphrase-terzina-6" rend="paraphrase-terzina"
                               corresp="terzina-6">
-                              <p rend="terzina-paraphrase"><span rend="paraphrase-fragment">guardai verso l’alto e vidi la sua vetta già</span>
+                              <p rend="terzina-paraphrase"><seg rend="paraphrase-fragment">guardai verso l’alto e vidi la sua vetta già</seg>
                                  <lb/>
-                                 <span rend="paraphrase-fragment">illuminata dai raggi di quel pianeta [il Sole]</span>
+                                 <seg rend="paraphrase-fragment">illuminata dai raggi di quel pianeta <add>il Sole</add></seg>
                                  <lb/>
-                                 <span rend="paraphrase-fragment">che conduce ogni uomo sulla giusta strada.</span></p>
+                                 <seg rend="paraphrase-fragment">che conduce ogni uomo sulla giusta strada.</seg></p>
                            </div>
                         </body>
                      </text>
