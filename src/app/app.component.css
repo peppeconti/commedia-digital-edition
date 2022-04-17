@@ -7,9 +7,9 @@ h3 {
     padding: 0 2rem;
 }
 .paraphrase-text {
-    display: none;
-    transition: .5s;
+    content-visibility: hidden;
+    transition: .35s;
 }
 .active {
-    display: block;
+    content-visibility: visible;
 }
