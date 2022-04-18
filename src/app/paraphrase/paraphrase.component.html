@@ -1,0 +1,4 @@
+<span appTransform *ngFor="let paragraph of paraphrase?.childNodes" [rule]="findRule(paragraph)" [data]="paragraph">
+    {{ paragraph.text }}
+   <app-paraphrase *ngIf="!paragraph.isText" [paraphrase]="paragraph"></app-paraphrase>
+</span>

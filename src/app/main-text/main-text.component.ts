@@ -2,7 +2,6 @@ import { Component, OnInit, Input, ElementRef, ViewChildren, QueryList, AfterVie
 import { Settings } from '../shared/settings.model';
 import { JsonNode } from '../shared/jsonNode.model';
 import { ServiceFetch } from '../shared/fetch.service';
-// import { Scrolltrigger } from '../../../node_modules/gsap/dist/ScrollToPlugin.min.js';
 
 @Component({
   selector: 'app-main-text',
@@ -35,8 +34,6 @@ export class MainTextComponent implements OnInit, AfterViewInit {
   };
 
   showNote(attribute: string | undefined) {
-    // console.log(this.notes);
-    // const note = this.notes?.find(e => this.findAttributeValue(e.attributes, 'xml:id') === attribute?.replace('#', ''));
     this.serviceFetch.passNoteText.emit(attribute);
   }
 

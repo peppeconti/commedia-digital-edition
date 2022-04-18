@@ -1,5 +1,4 @@
-import { Directive, ElementRef, OnInit, Input, QueryList, Renderer2, HostListener } from '@angular/core';
-import ScrollTrigger from 'gsap/ScrollTrigger';
+import { Directive, ElementRef, OnInit, Input, QueryList, Renderer2 } from '@angular/core';
 import { gsap } from 'gsap';
 import { ServiceFetch } from '../shared/fetch.service';
 
@@ -10,19 +9,7 @@ export class AlignDirective implements OnInit {
   @Input() scrollRef!: ElementRef;
   @Input() paraphrColumnRef!: ElementRef;
   paraphraseFragment!: HTMLElement;
-  // tl = gsap.timeline;
-
-  /*@HostListener('window:resize', ['$event']) onResize() {
-    //ScrollTrigger.getAll().forEach(e => console.log(e.vars));
-    ScrollTrigger.refresh();
-    /*setTimeout(() => {
-      ScrollTrigger.getAll().forEach(e => {
-        e.vars.start = `top ${this.setScrollRef()}`;
-        e.vars.end = `bottom ${this.setScrollRef()}`;
-      });
-    }, 1000)
-  }*/
-
+ 
   constructor(private elRef: ElementRef, private serviceFetch: ServiceFetch, private renderer: Renderer2) {
   }
 
@@ -39,7 +26,6 @@ export class AlignDirective implements OnInit {
   }
 
   ngOnInit(): void {
-    gsap.registerPlugin(ScrollTrigger);
     this.serviceFetch.passParaphrFragm.subscribe(
       (paraphraseList: QueryList<ElementRef>) => {
         this.setParaphraseFragment(paraphraseList);
@@ -73,7 +59,6 @@ export class AlignDirective implements OnInit {
             const parFragDistance = this.cumulativeOffset(this.paraphraseFragment);
             const totalDistance = elRefDistance - parFragDistance;
             this.renderer.setStyle(this.paraphrColumnRef.nativeElement, 'transform', `translateY(${String(totalDistance)}px)`);
-            //console.log(this.paraphrColumnRef.nativeElement.style.transform);
           }
         },
         onLeave: () => {
@@ -88,7 +73,6 @@ export class AlignDirective implements OnInit {
             const parFragDistance = this.cumulativeOffset(this.paraphraseFragment);
             const totalDistance = elRefDistance - parFragDistance;
             this.renderer.setStyle(this.paraphrColumnRef.nativeElement, 'transform', `translateY(${String(totalDistance)}px)`);
-            //console.log(this.paraphrColumnRef.nativeElement.style.transform);
           }
         },
         onLeaveBack: () => {
@@ -101,29 +85,6 @@ export class AlignDirective implements OnInit {
     });
   }
 }
-
- // matchTerzina?.classList.add('corresp');
-/*console.log(this.elRef.nativeElement.getBoundingClientRect().top);
-console.log(matchTerzina!.getBoundingClientRect().top);
-let aa = this.elRef.nativeElement.getBoundingClientRect().top;
-let bb = matchTerzina!.getBoundingClientRect().top;
-if (bb !== 0) {
- let cc = aa - bb;
- (<HTMLElement>matchTerzina!).style.transform = `translateY(${cc}px)`;
-}*/
-
-/***********************/
-
-/*cumulativeOffset(element: HTMLElement | null) {
-  let top = 0;
-  do {
-      top += element?.offsetTop || 0;
-      element = <HTMLElement>element?.offsetParent;
-  } while (element);
-  return top;
-};
-
-
 /*enableScrollTrigger() {
 
   const ciao = gsap.timeline().to(this.elRef.nativeElement, 5, { x: 100 });

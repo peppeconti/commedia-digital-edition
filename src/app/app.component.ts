@@ -3,6 +3,8 @@ import { ServiceSettings } from './shared/settings.service';
 import { ServiceFetch } from './shared/fetch.service';
 import { Settings } from './shared/settings.model';
 import { JsonNode } from './shared/jsonNode.model';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import { gsap } from 'gsap';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +21,9 @@ export class AppComponent implements OnInit, AfterViewInit {
   scrollRef!: ElementRef;
   paraphrColumnRef!: ElementRef;
 
-  constructor(private serviceSettings: ServiceSettings, private serviceFetch: ServiceFetch, private cd: ChangeDetectorRef) { }
+  constructor(private serviceSettings: ServiceSettings, private serviceFetch: ServiceFetch, private cd: ChangeDetectorRef) { 
+    gsap.registerPlugin(ScrollTrigger);
+  }
 
   minifyXml(xml: string) {
     let formatted = '';
@@ -51,7 +55,6 @@ export class AppComponent implements OnInit, AfterViewInit {
       this.scrollRef = this.scrollStart;
       this.paraphrColumnRef = this.paraphrColumn;
       this.cd.detectChanges();
-      // console.log(this.scrollRef.nativeElement)
   }
 }
 
