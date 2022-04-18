@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, AfterViewInit, QueryList, ViewChildren, ContentChildren, ChangeDetectorRef } from '@angular/core';
 import { ServiceSettings } from './shared/settings.service';
 import { ServiceFetch } from './shared/fetch.service';
 import { Settings } from './shared/settings.model';
@@ -16,12 +16,12 @@ export class AppComponent implements OnInit, AfterViewInit {
   commedy_text?: JsonNode;
   paraphrase_text?: JsonNode;
   notes!: JsonNode;
+  paraphraseList!: QueryList<ElementRef>;
   @ViewChild('scrollStart', { read: ElementRef }) scrollStart!: ElementRef;
   @ViewChild('paraphrColumn', { read: ElementRef }) paraphrColumn!: ElementRef;
-  scrollRef!: ElementRef;
-  paraphrColumnRef!: ElementRef;
+  @ViewChildren('paraphrFragm', { read: ElementRef }) paraphGroup!: QueryList<ElementRef>;
 
-  constructor(private serviceSettings: ServiceSettings, private serviceFetch: ServiceFetch, private cd: ChangeDetectorRef) { 
+  constructor(private serviceSettings: ServiceSettings, private serviceFetch: ServiceFetch, /*private cd: ChangeDetectorRef*/) { 
     gsap.registerPlugin(ScrollTrigger);
   }
 
@@ -49,14 +49,50 @@ export class AppComponent implements OnInit, AfterViewInit {
       const notesJson: Array<JsonNode> = Array.from(notes).map(e => this.serviceFetch.parseNode(e));
       this.notes = notesJson[0];
     });
+    this.serviceFetch.passParaphrFragm.subscribe(
+      (paraphraseList: QueryList<ElementRef>) => {
+        this.paraphraseList = paraphraseList;
+      }
+    );
   }
 
   ngAfterViewInit(): void {
-      this.scrollRef = this.scrollStart;
-      this.paraphrColumnRef = this.paraphrColumn;
-      this.cd.detectChanges();
+      // this.cd.detectChanges();
+      
+      console.log(this.paraphrColumn);
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Oiginal version to indent xml
 

@@ -11,10 +11,7 @@ import { ServiceFetch } from '../shared/fetch.service';
 export class MainTextComponent implements OnInit, AfterViewInit {
   @Input() main_text: JsonNode | undefined;
   @Input() settings!: Settings;
-  @Input() scrollRef!: ElementRef;
-  @Input() paraphrColumnRef!: ElementRef;
   @ViewChildren('paraphrFragm') paraphGroup!: QueryList<ElementRef>;
-  condition?: boolean;
 
   constructor(private serviceFetch: ServiceFetch) { }
 
@@ -41,6 +38,7 @@ export class MainTextComponent implements OnInit, AfterViewInit {
   };
 
   ngAfterViewInit() {
+    // console.log(this.paraphGroup);
     this.paraphGroup.changes.subscribe(
       a => this.serviceFetch.passParaphrFragm.emit(a)
     );

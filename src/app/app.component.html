@@ -2,7 +2,7 @@
 <div class="text container-fluid p-3 d-flex justify-content-center">
     <section class="text-column main-text">
         <h3 class="py-5" #scrollStart>Testo</h3>
-        <app-main-text [main_text]="commedy_text" [settings]="settings" [scrollRef]="scrollRef" [paraphrColumnRef]="paraphrColumnRef"></app-main-text>
+        <app-main-text [main_text]="commedy_text" [settings]="settings"></app-main-text>
     </section>
     <section class="text-column paraphrase-text" [ngClass]="{ 'active': this.settings.showParaphrase }" #paraphrColumn>
         <h3 class="py-5">Parafrasi</h3>
