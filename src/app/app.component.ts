@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild, AfterViewInit, QueryList, ViewChildren, Renderer2, ChangeDetectorRef } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, QueryList, ViewChildren, Renderer2, ChangeDetectorRef } from '@angular/core';
 import { ServiceSettings } from './shared/settings.service';
 import { ServiceFetch } from './shared/fetch.service';
 import { Settings } from './shared/settings.model';
@@ -11,7 +11,7 @@ import { gsap } from 'gsap';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit, AfterViewInit {
+export class AppComponent implements OnInit{
   settings!: Settings;
   commedy_text?: JsonNode;
   paraphrase_text?: JsonNode;
@@ -78,12 +78,24 @@ export class AppComponent implements OnInit, AfterViewInit {
         this.scrolltrigger = ScrollTrigger.getAll();
         this.cd.detectChanges();
         ScrollTrigger.disable();
-        //console.log(this.scrolltrigger);
       }
     );
   }
 
-  ngAfterViewInit(): void {
+  enterAction(el: HTMLElement) {
+    if (this.setParaphraseFragment(this.paraphraseList, el )) {
+      this.renderer.addClass(this.setParaphraseFragment(this.paraphraseList, el), 'corresp');
+      const elRefDistance = this.cumulativeOffset(el);
+      const parFragDistance = this.cumulativeOffset(this.setParaphraseFragment(this.paraphraseList, el));
+      const totalDistance = elRefDistance - parFragDistance;
+      this.renderer.setStyle(this.paraphrColumn.nativeElement, 'transform', `translateY(${String(totalDistance)}px)`);
+    }
+  }
+
+  leaveAction(el: HTMLElement) {
+    if (this.setParaphraseFragment(this.paraphraseList, el)) {
+      this.renderer.removeClass(this.setParaphraseFragment(this.paraphraseList, el), 'corresp');
+    }
   }
 
   focusByScroll() {
@@ -94,38 +106,17 @@ export class AppComponent implements OnInit, AfterViewInit {
           start: () => `top ${this.setScrollRef()}`,
           end: () => `bottom ${this.setScrollRef()}`,
           toggleClass: 'focused',
-          // markers: true,
-          // invalidateOnRefresh: true,
           onEnter: () => {
-            if (this.setParaphraseFragment(this.paraphraseList, <HTMLElement>terzina)) {
-              this.renderer.addClass(this.setParaphraseFragment(this.paraphraseList, <HTMLElement>terzina), 'corresp');
-              const elRefDistance = this.cumulativeOffset(<HTMLElement>terzina);
-              const parFragDistance = this.cumulativeOffset(this.setParaphraseFragment(this.paraphraseList, <HTMLElement>terzina));
-              const totalDistance = elRefDistance - parFragDistance;
-              this.renderer.setStyle(this.paraphrColumn.nativeElement, 'transform', `translateY(${String(totalDistance)}px)`);
-              //console.log('ciao');
-              //console.log(totalDistance);
-              //console.log(parFragDistance);
-            }
+            this.enterAction(<HTMLElement>terzina);
           },
           onLeave: () => {
-            if (this.setParaphraseFragment(this.paraphraseList, <HTMLElement>terzina)) {
-              this.renderer.removeClass(this.setParaphraseFragment(this.paraphraseList, <HTMLElement>terzina), 'corresp');
-            }
+            this.leaveAction(<HTMLElement>terzina);
           },
           onEnterBack: () => {
-            if (this.setParaphraseFragment(this.paraphraseList, <HTMLElement>terzina)) {
-              this.renderer.addClass(this.setParaphraseFragment(this.paraphraseList, <HTMLElement>terzina), 'corresp');
-              const elRefDistance = this.cumulativeOffset(<HTMLElement>terzina);
-              const parFragDistance = this.cumulativeOffset(this.setParaphraseFragment(this.paraphraseList, <HTMLElement>terzina));
-              const totalDistance = elRefDistance - parFragDistance;
-              this.renderer.setStyle(this.paraphrColumn.nativeElement, 'transform', `translateY(${String(totalDistance)}px)`);
-            }
+            this.enterAction(<HTMLElement>terzina);
           },
           onLeaveBack: () => {
-            if (this.setParaphraseFragment(this.paraphraseList, <HTMLElement>terzina)) {
-              this.renderer.removeClass(this.setParaphraseFragment(this.paraphraseList, <HTMLElement>terzina), 'corresp');
-            }
+            this.leaveAction(<HTMLElement>terzina);
           },
         }
       });
