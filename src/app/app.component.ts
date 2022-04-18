@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild, AfterViewInit, QueryList, ViewChildren, Renderer2, ChangeDetectorRef  } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, AfterViewInit, QueryList, ViewChildren, Renderer2, ChangeDetectorRef } from '@angular/core';
 import { ServiceSettings } from './shared/settings.service';
 import { ServiceFetch } from './shared/fetch.service';
 import { Settings } from './shared/settings.model';
@@ -22,7 +22,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild('paraphrColumn', { read: ElementRef }) paraphrColumn!: ElementRef;
   @ViewChildren('paraphrFragm', { read: ElementRef }) paraphGroup!: QueryList<ElementRef>;
 
-  constructor(private serviceSettings: ServiceSettings, private serviceFetch: ServiceFetch, private cd: ChangeDetectorRef, private renderer: Renderer2) { 
+  constructor(private serviceSettings: ServiceSettings, private serviceFetch: ServiceFetch, private cd: ChangeDetectorRef, private renderer: Renderer2) {
     gsap.registerPlugin(ScrollTrigger);
   }
 
@@ -71,17 +71,19 @@ export class AppComponent implements OnInit, AfterViewInit {
       const notesJson: Array<JsonNode> = Array.from(notes).map(e => this.serviceFetch.parseNode(e));
       this.notes = notesJson[0];
     });
+    this.serviceFetch.passParaphrFragm.subscribe(
+      (paraphraseList: QueryList<ElementRef>) => {
+        this.paraphraseList = paraphraseList;
+        this.focusByScroll();
+        this.scrolltrigger = ScrollTrigger.getAll();
+        this.cd.detectChanges();
+        ScrollTrigger.disable();
+        //console.log(this.scrolltrigger);
+      }
+    );
   }
 
   ngAfterViewInit(): void {
-      this.serviceFetch.passParaphrFragm.subscribe(
-        (paraphraseList: QueryList<ElementRef>) => {
-          this.paraphraseList = paraphraseList;
-          this.focusByScroll();
-          this.scrolltrigger = ScrollTrigger.getAll();
-          this.cd.detectChanges();
-        }
-      );
   }
 
   focusByScroll() {
@@ -92,7 +94,7 @@ export class AppComponent implements OnInit, AfterViewInit {
           start: () => `top ${this.setScrollRef()}`,
           end: () => `bottom ${this.setScrollRef()}`,
           toggleClass: 'focused',
-          markers: true,
+          // markers: true,
           // invalidateOnRefresh: true,
           onEnter: () => {
             if (this.setParaphraseFragment(this.paraphraseList, <HTMLElement>terzina)) {
@@ -101,6 +103,9 @@ export class AppComponent implements OnInit, AfterViewInit {
               const parFragDistance = this.cumulativeOffset(this.setParaphraseFragment(this.paraphraseList, <HTMLElement>terzina));
               const totalDistance = elRefDistance - parFragDistance;
               this.renderer.setStyle(this.paraphrColumn.nativeElement, 'transform', `translateY(${String(totalDistance)}px)`);
+              //console.log('ciao');
+              //console.log(totalDistance);
+              //console.log(parFragDistance);
             }
           },
           onLeave: () => {
