@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild, AfterViewInit, QueryList, ViewChildren, ContentChildren, ChangeDetectorRef } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, AfterViewInit, QueryList, ViewChildren, Renderer2, ChangeDetectorRef  } from '@angular/core';
 import { ServiceSettings } from './shared/settings.service';
 import { ServiceFetch } from './shared/fetch.service';
 import { Settings } from './shared/settings.model';
@@ -17,13 +17,35 @@ export class AppComponent implements OnInit, AfterViewInit {
   paraphrase_text?: JsonNode;
   notes!: JsonNode;
   paraphraseList!: QueryList<ElementRef>;
+  scrolltrigger!: Array<ScrollTrigger>;
   @ViewChild('scrollStart', { read: ElementRef }) scrollStart!: ElementRef;
   @ViewChild('paraphrColumn', { read: ElementRef }) paraphrColumn!: ElementRef;
   @ViewChildren('paraphrFragm', { read: ElementRef }) paraphGroup!: QueryList<ElementRef>;
 
-  constructor(private serviceSettings: ServiceSettings, private serviceFetch: ServiceFetch, /*private cd: ChangeDetectorRef*/) { 
+  constructor(private serviceSettings: ServiceSettings, private serviceFetch: ServiceFetch, private cd: ChangeDetectorRef, private renderer: Renderer2) { 
     gsap.registerPlugin(ScrollTrigger);
   }
+
+  setParaphraseFragment(list: QueryList<ElementRef>, el: HTMLElement) {
+    const fragmentsList = list.toArray().map(e => e.nativeElement);
+    const elRefId = el.id;
+    return fragmentsList.find(e => e.dataset['terzina'] === elRefId);
+  }
+
+  setScrollRef(): string {
+    const scrollNative = this.scrollStart.nativeElement;
+    const startPoint: string = String(this.cumulativeOffset(scrollNative) + scrollNative!.clientHeight + 1);
+    return startPoint;
+  }
+
+  cumulativeOffset(element: HTMLElement | null) {
+    let top = 0;
+    do {
+      top += element?.offsetTop || 0;
+      element = <HTMLElement>element?.offsetParent;
+    } while (element);
+    return top;
+  };
 
   minifyXml(xml: string) {
     let formatted = '';
@@ -49,17 +71,60 @@ export class AppComponent implements OnInit, AfterViewInit {
       const notesJson: Array<JsonNode> = Array.from(notes).map(e => this.serviceFetch.parseNode(e));
       this.notes = notesJson[0];
     });
-    this.serviceFetch.passParaphrFragm.subscribe(
-      (paraphraseList: QueryList<ElementRef>) => {
-        this.paraphraseList = paraphraseList;
-      }
-    );
   }
 
   ngAfterViewInit(): void {
-      // this.cd.detectChanges();
-      
-      console.log(this.paraphrColumn);
+      this.serviceFetch.passParaphrFragm.subscribe(
+        (paraphraseList: QueryList<ElementRef>) => {
+          this.paraphraseList = paraphraseList;
+          this.focusByScroll();
+          this.scrolltrigger = ScrollTrigger.getAll();
+          this.cd.detectChanges();
+        }
+      );
+  }
+
+  focusByScroll() {
+    Array.from(document.querySelectorAll('div.terzina')).forEach(terzina => {
+      gsap.to(terzina, {
+        scrollTrigger: {
+          trigger: terzina,
+          start: () => `top ${this.setScrollRef()}`,
+          end: () => `bottom ${this.setScrollRef()}`,
+          toggleClass: 'focused',
+          markers: true,
+          // invalidateOnRefresh: true,
+          onEnter: () => {
+            if (this.setParaphraseFragment(this.paraphraseList, <HTMLElement>terzina)) {
+              this.renderer.addClass(this.setParaphraseFragment(this.paraphraseList, <HTMLElement>terzina), 'corresp');
+              const elRefDistance = this.cumulativeOffset(<HTMLElement>terzina);
+              const parFragDistance = this.cumulativeOffset(this.setParaphraseFragment(this.paraphraseList, <HTMLElement>terzina));
+              const totalDistance = elRefDistance - parFragDistance;
+              this.renderer.setStyle(this.paraphrColumn.nativeElement, 'transform', `translateY(${String(totalDistance)}px)`);
+            }
+          },
+          onLeave: () => {
+            if (this.setParaphraseFragment(this.paraphraseList, <HTMLElement>terzina)) {
+              this.renderer.removeClass(this.setParaphraseFragment(this.paraphraseList, <HTMLElement>terzina), 'corresp');
+            }
+          },
+          onEnterBack: () => {
+            if (this.setParaphraseFragment(this.paraphraseList, <HTMLElement>terzina)) {
+              this.renderer.addClass(this.setParaphraseFragment(this.paraphraseList, <HTMLElement>terzina), 'corresp');
+              const elRefDistance = this.cumulativeOffset(<HTMLElement>terzina);
+              const parFragDistance = this.cumulativeOffset(this.setParaphraseFragment(this.paraphraseList, <HTMLElement>terzina));
+              const totalDistance = elRefDistance - parFragDistance;
+              this.renderer.setStyle(this.paraphrColumn.nativeElement, 'transform', `translateY(${String(totalDistance)}px)`);
+            }
+          },
+          onLeaveBack: () => {
+            if (this.setParaphraseFragment(this.paraphraseList, <HTMLElement>terzina)) {
+              this.renderer.removeClass(this.setParaphraseFragment(this.paraphraseList, <HTMLElement>terzina), 'corresp');
+            }
+          },
+        }
+      });
+    });
   }
 }
 

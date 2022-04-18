@@ -1,100 +1,16 @@
-import { Directive, ElementRef, OnInit, Input, QueryList, Renderer2 } from '@angular/core';
+import { Directive, OnInit, Input } from '@angular/core';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 import { gsap } from 'gsap';
-import { ServiceFetch } from '../shared/fetch.service';
 
 @Directive({
   selector: '[appAlign]'
 })
 export class AlignDirective implements OnInit {
-  @Input() scrollRef!: ElementRef;
-  @Input() paraphrColumnRef!: ElementRef;
-  paraphraseFragment!: HTMLElement;
+  @Input() scrolltrigger!: Array<ScrollTrigger>;
  
-  constructor(private elRef: ElementRef, private serviceFetch: ServiceFetch, private renderer: Renderer2) {
+  constructor() {
   }
-
-  setParaphraseFragment(list: QueryList<ElementRef>) {
-    const fragmentsList = list.toArray().map(e => e.nativeElement);
-    const elRefId = this.elRef.nativeElement.attributes.id.value;
-    this.paraphraseFragment = fragmentsList.find(e => e.dataset['terzina'] === elRefId);
-  }
-
-  setScrollRef(): string {
-    const scrollNative = this.scrollRef.nativeElement;
-    const startPoint: string = String(this.cumulativeOffset(scrollNative) + scrollNative!.clientHeight + 1);
-    return startPoint;
-  }
-
+  
   ngOnInit(): void {
-    this.serviceFetch.passParaphrFragm.subscribe(
-      (paraphraseList: QueryList<ElementRef>) => {
-        this.setParaphraseFragment(paraphraseList);
-        this.focusByScroll();
-      }
-    );
-  }
-
-  cumulativeOffset(element: HTMLElement | null) {
-    let top = 0;
-    do {
-      top += element?.offsetTop || 0;
-      element = <HTMLElement>element?.offsetParent;
-    } while (element);
-    return top;
-  };
-
-  focusByScroll() {
-    gsap.to(this.elRef.nativeElement, {
-      scrollTrigger: {
-        trigger: this.elRef.nativeElement,
-        start: () => `top ${this.setScrollRef()}`,
-        end: () => `bottom ${this.setScrollRef()}`,
-        toggleClass: 'focused',
-        // markers: true,
-        // invalidateOnRefresh: true,
-        onEnter: () => {
-          if (this.paraphraseFragment) {
-            this.renderer.addClass(this.paraphraseFragment, 'corresp');
-            const elRefDistance = this.cumulativeOffset(this.elRef.nativeElement);
-            const parFragDistance = this.cumulativeOffset(this.paraphraseFragment);
-            const totalDistance = elRefDistance - parFragDistance;
-            this.renderer.setStyle(this.paraphrColumnRef.nativeElement, 'transform', `translateY(${String(totalDistance)}px)`);
-          }
-        },
-        onLeave: () => {
-          if (this.paraphraseFragment) {
-            this.renderer.removeClass(this.paraphraseFragment, 'corresp');
-          }
-        },
-        onEnterBack: () => {
-          if (this.paraphraseFragment) {
-            this.renderer.addClass(this.paraphraseFragment, 'corresp');
-            const elRefDistance = this.cumulativeOffset(this.elRef.nativeElement);
-            const parFragDistance = this.cumulativeOffset(this.paraphraseFragment);
-            const totalDistance = elRefDistance - parFragDistance;
-            this.renderer.setStyle(this.paraphrColumnRef.nativeElement, 'transform', `translateY(${String(totalDistance)}px)`);
-          }
-        },
-        onLeaveBack: () => {
-          if (this.paraphraseFragment) {
-            this.renderer.removeClass(this.paraphraseFragment, 'corresp');
-          }
-        },
-
-      }
-    });
   }
 }
-/*enableScrollTrigger() {
-
-  const ciao = gsap.timeline().to(this.elRef.nativeElement, 5, { x: 100 });
-
-  ScrollTrigger.create(
-    {
-      animation: ciao,
-      trigger: this.elRef.nativeElement,
-      start: 'top center',
-      markers: true
-    },
-  )
-}*/
