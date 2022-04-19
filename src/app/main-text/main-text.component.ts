@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, ElementRef, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
 import { Settings } from '../shared/settings.model';
 import { JsonNode } from '../shared/jsonNode.model';
-import { ServiceFetch } from '../shared/fetch.service';
 import { ServiceEvent } from '../shared/event.service';
 
 @Component({
@@ -14,7 +13,7 @@ export class MainTextComponent implements OnInit, AfterViewInit {
   @Input() settings!: Settings;
   @ViewChildren('paraphrFragm') paraphGroup!: QueryList<ElementRef>;
 
-  constructor(private serviceFetch: ServiceFetch, private serviceEvt: ServiceEvent) { }
+  constructor(private serviceEvt: ServiceEvent) { }
 
   isSubset(arr1: [{ name: string, value: string }], arr2: Array<{ name: string, value: string }> | null) {
     if (arr1 && arr2) {

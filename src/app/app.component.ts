@@ -78,7 +78,7 @@ export class AppComponent implements OnInit{
         this.focusByScroll();
         this.scrolltrigger = ScrollTrigger.getAll();
         this.cd.detectChanges();
-        ScrollTrigger.disable();
+        // ScrollTrigger.disable();
       }
     );
   }
@@ -107,6 +107,7 @@ export class AppComponent implements OnInit{
           start: () => `top ${this.setScrollRef()}`,
           end: () => `bottom ${this.setScrollRef()}`,
           toggleClass: 'focused',
+          markers: true,
           onEnter: () => {
             this.enterAction(<HTMLElement>terzina);
           },
