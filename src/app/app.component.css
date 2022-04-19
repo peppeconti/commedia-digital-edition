@@ -13,3 +13,9 @@ h3 {
 .active {
     position: static;
 }
+
+@media screen and (max-width: 690px) { 
+    .hidden {
+        display: none;
+    }
+}
