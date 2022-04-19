@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild, QueryList, ViewChildren, Renderer2, ChangeDetectorRef } from '@angular/core';
 import { ServiceSettings } from './shared/settings.service';
 import { ServiceFetch } from './shared/fetch.service';
+import { ServiceEvent } from './shared/event.service';
 import { Settings } from './shared/settings.model';
 import { JsonNode } from './shared/jsonNode.model';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -22,7 +23,7 @@ export class AppComponent implements OnInit{
   @ViewChild('paraphrColumn', { read: ElementRef }) paraphrColumn!: ElementRef;
   @ViewChildren('paraphrFragm', { read: ElementRef }) paraphGroup!: QueryList<ElementRef>;
 
-  constructor(private serviceSettings: ServiceSettings, private serviceFetch: ServiceFetch, private cd: ChangeDetectorRef, private renderer: Renderer2) {
+  constructor(private serviceSettings: ServiceSettings, private serviceFetch: ServiceFetch, private serviceEvt: ServiceEvent, private cd: ChangeDetectorRef, private renderer: Renderer2) {
     gsap.registerPlugin(ScrollTrigger);
   }
 
@@ -71,7 +72,7 @@ export class AppComponent implements OnInit{
       const notesJson: Array<JsonNode> = Array.from(notes).map(e => this.serviceFetch.parseNode(e));
       this.notes = notesJson[0];
     });
-    this.serviceFetch.passParaphrFragm.subscribe(
+    this.serviceEvt.passParaphrFragm.subscribe(
       (paraphraseList: QueryList<ElementRef>) => {
         this.paraphraseList = paraphraseList;
         this.focusByScroll();

@@ -6,10 +6,6 @@ import { JsonNode } from "./jsonNode.model";
 
 export class ServiceFetch {
 
-    passNoteText = new EventEmitter<string>();
-
-    passParaphrFragm = new EventEmitter<QueryList<ElementRef>>();
-
     constructor(private http: HttpClient) {
 
     }

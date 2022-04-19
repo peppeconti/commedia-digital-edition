@@ -263,7 +263,7 @@
       <back>
          <div type="biblCompleta">
             <listBibl>
-               <bibl xml:id="an"> ciccio </bibl>
+               <bibl xml:id="an">ciccio</bibl>
             </listBibl>
          </div>
       </back>

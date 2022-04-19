@@ -2,6 +2,7 @@ import { Component, OnInit, Input, ElementRef, ViewChildren, QueryList, AfterVie
 import { Settings } from '../shared/settings.model';
 import { JsonNode } from '../shared/jsonNode.model';
 import { ServiceFetch } from '../shared/fetch.service';
+import { ServiceEvent } from '../shared/event.service';
 
 @Component({
   selector: 'app-main-text',
@@ -13,7 +14,7 @@ export class MainTextComponent implements OnInit, AfterViewInit {
   @Input() settings!: Settings;
   @ViewChildren('paraphrFragm') paraphGroup!: QueryList<ElementRef>;
 
-  constructor(private serviceFetch: ServiceFetch) { }
+  constructor(private serviceFetch: ServiceFetch, private serviceEvt: ServiceEvent) { }
 
   isSubset(arr1: [{ name: string, value: string }], arr2: Array<{ name: string, value: string }> | null) {
     if (arr1 && arr2) {
@@ -31,7 +32,7 @@ export class MainTextComponent implements OnInit, AfterViewInit {
   };
 
   showNote(attribute: string | undefined) {
-    this.serviceFetch.passNoteText.emit(attribute);
+    this.serviceEvt.passNoteText.emit(attribute);
   }
 
   ngOnInit(): void {
@@ -40,7 +41,7 @@ export class MainTextComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     // console.log(this.paraphGroup);
     this.paraphGroup.changes.subscribe(
-      a => this.serviceFetch.passParaphrFragm.emit(a)
+      a => this.serviceEvt.passParaphrFragm.emit(a)
     );
   }
 }

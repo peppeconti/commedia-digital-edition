@@ -8,10 +8,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faBookOpen, faBook, faInfoCircle, faBars, faEllipsisV } from '@fortawesome/free-solid-svg-icons';
+import { faBookOpen, faBook, faInfoCircle, faBars } from '@fortawesome/free-solid-svg-icons';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ServiceSettings } from './shared/settings.service';
 import { ServiceFetch } from './shared/fetch.service';
+import { ServiceEvent } from './shared/event.service';
 import { MainTextComponent } from './main-text/main-text.component';
 import { DropdownComponent } from './header/dropdown/dropdown.component';
 import { NoteContainerComponent } from './note-container/note-container.component';
@@ -36,11 +37,11 @@ import { AlignDirective } from './directive/align.directive';
     HttpClientModule,
     FontAwesomeModule
   ],
-  providers: [ServiceSettings, ServiceFetch],
+  providers: [ServiceSettings, ServiceFetch, ServiceEvent],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
   constructor(library: FaIconLibrary) {
-    library.addIcons(faBook, faBookOpen, faInfoCircle, faEllipsisV, faBars);
+    library.addIcons(faBook, faBookOpen, faInfoCircle, faBars);
   }
 }
