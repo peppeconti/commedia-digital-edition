@@ -5,12 +5,12 @@ h3 {
 }
 
 .text-column {
-    padding: 0 2rem;
+    
 }
 
 .paraphrase-text {
-    position: fixed;
-    right: -100%;
+    position: static;
+
     transition: transform .35s;
 }
 
