@@ -1,10 +1,10 @@
 <app-header></app-header>
-<div class="text container-fluid p-3 d-flex justify-content-center">
-    <section class="text-column main-text col-lg-6 col-sm-12 flex-column d-flex align-items-center">
+<div class="d-flex p-3 container-fluid justify-content-center flex-wrap">
+    <section class="d-flex flex-column align-items-center col-xl-5 col-md-6 col-6">
         <h3 class="py-5" #scrollStart>Testo</h3>
         <app-main-text [main_text]="commedy_text" [settings]="settings"></app-main-text>
     </section>
-    <section class="text-column paraphrase-text col-lg-6 col-sm-12 flex-column d-flex align-items-center" appAlign [paraphraseActive]="settings.showParaphrase"
+    <section class="paraphrase-text d-flex flex-column align-items-center col-xl-5 col-md-6 col-6" appAlign [paraphraseActive]="settings.showParaphrase"
         [scrolltrigger]="scrolltrigger" [ngClass]="{ 'active': this.settings.showParaphrase }" #paraphrColumn>
         <h3 class="py-5">Parafrasi</h3>
         <app-main-text [main_text]="paraphrase_text"></app-main-text>

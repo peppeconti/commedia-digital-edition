@@ -18,3 +18,9 @@ h6 {
     font-family: "Palemonas";
     font-size: 1.1rem;
 }
+
+@media screen and (max-width: 335px) { 
+    html {
+        font-size: 12px;
+    }
+}

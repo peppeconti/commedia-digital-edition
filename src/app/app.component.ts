@@ -107,7 +107,7 @@ export class AppComponent implements OnInit{
           start: () => `top ${this.setScrollRef()}`,
           end: () => `bottom ${this.setScrollRef()}`,
           toggleClass: 'focused',
-          markers: true,
+          // markers: true,
           onEnter: () => {
             this.enterAction(<HTMLElement>terzina);
           },
