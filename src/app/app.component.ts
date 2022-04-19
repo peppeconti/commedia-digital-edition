@@ -102,7 +102,7 @@ export class AppComponent implements OnInit {
   focusByScroll() {
     Array.from(document.querySelectorAll('div.terzina')).forEach(terzina => {
       ScrollTrigger.matchMedia({
-        "(min-width: 690px)": () => {
+        "all": () => {
           gsap.to(terzina, {
             scrollTrigger: {
               trigger: terzina,
