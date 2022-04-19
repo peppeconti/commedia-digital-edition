@@ -6,7 +6,7 @@ h3 {
 
 .paraphrase-text {
     position: fixed;
-    left: -100%;
+    left: -200%;
     transition: transform .35s;
 }
 
@@ -16,6 +16,7 @@ h3 {
 
 @media screen and (max-width: 690px) { 
     .hidden {
-        display: none;
+        position: fixed!important;
+        left: -200%;
     }
 }

@@ -12,7 +12,7 @@ import { gsap } from 'gsap';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   settings!: Settings;
   commedy_text?: JsonNode;
   paraphrase_text?: JsonNode;
@@ -84,7 +84,7 @@ export class AppComponent implements OnInit{
   }
 
   enterAction(el: HTMLElement) {
-    if (this.setParaphraseFragment(this.paraphraseList, el )) {
+    if (this.setParaphraseFragment(this.paraphraseList, el)) {
       this.renderer.addClass(this.setParaphraseFragment(this.paraphraseList, el), 'corresp');
       const elRefDistance = this.cumulativeOffset(el);
       const parFragDistance = this.cumulativeOffset(this.setParaphraseFragment(this.paraphraseList, el));
@@ -101,26 +101,30 @@ export class AppComponent implements OnInit{
 
   focusByScroll() {
     Array.from(document.querySelectorAll('div.terzina')).forEach(terzina => {
-      gsap.to(terzina, {
-        scrollTrigger: {
-          trigger: terzina,
-          start: () => `top ${this.setScrollRef()}`,
-          end: () => `bottom ${this.setScrollRef()}`,
-          toggleClass: 'focused',
-          // markers: true,
-          onEnter: () => {
-            this.enterAction(<HTMLElement>terzina);
-          },
-          onLeave: () => {
-            this.leaveAction(<HTMLElement>terzina);
-          },
-          onEnterBack: () => {
-            this.enterAction(<HTMLElement>terzina);
-          },
-          onLeaveBack: () => {
-            this.leaveAction(<HTMLElement>terzina);
-          },
-        }
+      ScrollTrigger.matchMedia({
+        "(min-width: 690px)": () => {
+          gsap.to(terzina, {
+            scrollTrigger: {
+              trigger: terzina,
+              start: () => `top ${this['setScrollRef']()}`,
+              end: () => `bottom ${this['setScrollRef']()}`,
+              toggleClass: 'focused',
+              // markers: true,
+              onEnter: () => {
+                this['enterAction'](<HTMLElement>terzina);
+              },
+              onLeave: () => {
+                this['leaveAction'](<HTMLElement>terzina);
+              },
+              onEnterBack: () => {
+                this['enterAction'](<HTMLElement>terzina);
+              },
+              onLeaveBack: () => {
+                this['leaveAction'](<HTMLElement>terzina);
+              },
+            }
+          });
+        },
       });
     });
   }
