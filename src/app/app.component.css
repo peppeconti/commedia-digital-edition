@@ -4,20 +4,21 @@ h3 {
     font-weight: 600;
 }
 
-.paraphrase-text {
-    position: fixed;
-    left: -200%;
-    transition: transform .35s;
+section {
+    padding: 0px 1.5rem;
 }
 
-.active {
-    position: static;
+section.paraphrase-text {
+    display: none!important;
 }
 
-@media screen and (max-width: 690px) { 
-    .hidden {
-        position: fixed!important;
-        left: -200%;
+section.active {
+    display: block!important;
+}
+
+@media screen and (max-width: 720px) { 
+    section.hidden {
+        display: none!important;
     }
     .paraphrase-text {
         transition: none;

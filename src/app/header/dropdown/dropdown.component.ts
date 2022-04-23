@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { ServiceSettings } from '../../shared/settings.service';
 import { Settings } from '../../shared/settings.model';
 import { Switch } from '../../shared/switch.model';
@@ -26,5 +26,4 @@ export class DropdownComponent implements OnInit {
   handleSettings(key: keyof Settings) {
     this.serviceSettings.setSettings(key);
   }
-
 }

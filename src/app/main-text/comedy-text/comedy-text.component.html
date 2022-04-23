@@ -1,0 +1,61 @@
+<ng-container *ngFor="let subtext of main_text?.childNodes" [ngSwitch]="true">
+    <ng-container
+        *ngSwitchCase="subtext.tagName === 'lg' && isSubset([{name: 'type', value: 'terzina'}], subtext.attributes)">
+        <div id="{{ findAttributeValue(subtext.attributes, 'xml:id') }}"
+            class="{{ findAttributeValue(subtext.attributes, 'type') }}"
+            [ngClass]="{ 'paraphraseActive': this.settings.showParaphrase }" #terzina>
+            <p class="inner">
+                <app-comedy-text *ngIf="!subtext.isText" [main_text]="subtext" [settings]="settings">
+                </app-comedy-text>
+            </p>
+        </div>
+    </ng-container>
+    <ng-container
+        *ngSwitchCase="subtext.tagName === 'l' && isSubset([{name: 'rend', value: 'endecasillabo'}], subtext.attributes)">
+        <p class="{{ findAttributeValue(subtext.attributes, 'rend') }}">
+            <app-comedy-text *ngIf="!subtext.isText" [main_text]="subtext" [settings]="settings">
+            </app-comedy-text>
+        </p>
+    </ng-container>
+    <ng-container *ngSwitchCase="subtext.tagName === 'caesura'">
+        <span *ngIf="this.settings.showMetric">|</span>
+    </ng-container>
+    <span *ngSwitchCase="subtext.tagName === 'choice'">
+        <app-comedy-text *ngIf="!subtext.isText" [main_text]="subtext" [settings]="settings">
+        </app-comedy-text>
+    </span>
+    <ng-container
+        *ngSwitchCase="subtext.tagName === 'seg' && isSubset([{name: 'rend', value: 'regular'}], subtext.attributes)">
+        <span *ngIf="!this.settings.showMetric">
+            <app-comedy-text *ngIf="!subtext.isText" [main_text]="subtext" [settings]="settings">
+            </app-comedy-text>
+        </span>
+    </ng-container>
+    <ng-container
+        *ngSwitchCase="subtext.tagName === 'seg' && isSubset([{name: 'function', value: 'metric'}], subtext.attributes)">
+        <span class="{{ findAttributeValue(subtext.attributes, 'rend') }}" *ngIf="this.settings.showMetric">
+            <app-comedy-text *ngIf="!subtext.isText" [main_text]="subtext" [settings]="settings">
+            </app-comedy-text>
+        </span>
+    </ng-container>
+    <ng-container
+        *ngSwitchCase="subtext.tagName === 'hi' && (isSubset([{name: 'rend', value: 'sinalefe'}], subtext.attributes)||isSubset([{name: 'rend', value: 'sineresi'}], subtext.attributes))">
+        <span class="{{ findAttributeValue(subtext.attributes, 'rend') }}" *ngIf="this.settings.showMetric"
+            placement="top" ngbTooltip="{{ findAttributeValue(subtext.attributes, 'rend') }}">
+            <app-comedy-text *ngIf="!subtext.isText" [main_text]="subtext">
+            </app-comedy-text>
+        </span>
+    </ng-container>
+    <ng-container
+        *ngSwitchCase="subtext.tagName === 'note' && isSubset([{name: 'type', value: 'note'}], subtext.attributes)">
+        <a class="{{ findAttributeValue(subtext.attributes, 'type') }}"
+            href="{{ findAttributeValue(subtext.attributes, 'corresp') }}" *ngIf="this.settings.showNotes"
+            (click)="showNote(findAttributeValue(subtext.attributes, 'corresp'))" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
+            <sup>[{{findAttributeValue(subtext.attributes, 'n') }}]</sup>
+        </a>
+    </ng-container>
+    <span *ngSwitchDefault>{{subtext.text}}<app-comedy-text *ngIf="!subtext.isText" [main_text]="subtext">
+        </app-comedy-text>
+    </span>
+</ng-container>

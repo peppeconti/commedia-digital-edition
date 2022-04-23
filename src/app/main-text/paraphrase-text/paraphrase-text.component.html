@@ -1,0 +1,32 @@
+<ng-container *ngFor="let subtext of main_text?.childNodes" [ngSwitch]="true">
+    <ng-container *ngSwitchCase="subtext.tagName === 'div' && isSubset([{name: 'rend', value: 'paraphrase-terzina'}], subtext.attributes)">
+        <div id="{{ findAttributeValue(subtext.attributes, 'xml:id') }}"
+            class="{{ findAttributeValue(subtext.attributes, 'rend') }}"
+            attr.data-terzina="{{ findAttributeValue(subtext.attributes, 'corresp') }}" #paraphrFragm>
+            <app-paraphrase-text *ngIf="!subtext.isText" [main_text]="subtext">
+            </app-paraphrase-text>
+        </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="subtext.tagName === 'p' && isSubset([{name: 'rend', value: 'terzina-paraphrase'}], subtext.attributes)">
+        <p class="{{ findAttributeValue(subtext.attributes, 'rend')  }} }}">
+            <app-paraphrase-text *ngIf="!subtext.isText" [main_text]="subtext">
+            </app-paraphrase-text>
+        </p>
+    </ng-container>
+    <ng-container *ngSwitchCase="subtext.tagName === 'lb'">
+        <br />
+    </ng-container>
+    <ng-container *ngSwitchCase="subtext.tagName === 'seg' && isSubset([{name: 'rend', value: 'paraphrase-fragment'}], subtext.attributes)">
+        <span class="{{ findAttributeValue(subtext.attributes, 'rend') }}">
+            <app-paraphrase-text *ngIf="!subtext.isText" [main_text]="subtext">
+            </app-paraphrase-text>
+        </span>
+    </ng-container>
+    <ng-container *ngSwitchCase="subtext.tagName === 'add'">
+        <span>[<app-paraphrase-text *ngIf="!subtext.isText" [main_text]="subtext">
+        </app-paraphrase-text>]</span>
+    </ng-container>
+    <span *ngSwitchDefault>{{subtext.text}}<app-paraphrase-text *ngIf="!subtext.isText" [main_text]="subtext">
+        </app-paraphrase-text>
+    </span>
+</ng-container>

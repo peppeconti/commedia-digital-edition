@@ -1,19 +1,13 @@
-import { Component, OnInit, Input, ElementRef, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
-import { Settings } from '../shared/settings.model';
-import { JsonNode } from '../shared/jsonNode.model';
-import { ServiceEvent } from '../shared/event.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-main-text',
   templateUrl: './main-text.component.html',
   styleUrls: ['./main-text.component.css']
 })
-export class MainTextComponent implements OnInit, AfterViewInit {
-  @Input() main_text: JsonNode | undefined;
-  @Input() settings!: Settings;
-  @ViewChildren('paraphrFragm') paraphGroup!: QueryList<ElementRef>;
-
-  constructor(private serviceEvt: ServiceEvent) { }
+export class MainTextComponent {
+  
+  constructor() { }
 
   isSubset(arr1: [{ name: string, value: string }], arr2: Array<{ name: string, value: string }> | null) {
     if (arr1 && arr2) {
@@ -29,18 +23,4 @@ export class MainTextComponent implements OnInit, AfterViewInit {
     const val = attributes?.find(e => e.name === attribute);
     return val?.value;
   };
-
-  showNote(attribute: string | undefined) {
-    this.serviceEvt.passNoteText.emit(attribute);
-  }
-
-  ngOnInit(): void {
-  };
-
-  ngAfterViewInit() {
-    // console.log(this.paraphGroup);
-    this.paraphGroup.changes.subscribe(
-      a => this.serviceEvt.passParaphrFragm.emit(a)
-    );
-  }
 }

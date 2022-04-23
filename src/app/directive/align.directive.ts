@@ -1,21 +1,28 @@
-import { Directive, Input, OnChanges } from '@angular/core';
+import { Directive, Input, OnDestroy, OnInit, QueryList } from '@angular/core';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
 @Directive({
   selector: '[appAlign]'
 })
-export class AlignDirective implements OnChanges {
+export class AlignDirective implements OnInit, OnDestroy {
   @Input() scrolltrigger!: Array<ScrollTrigger>;
-  @Input() paraphraseActive!: boolean;
+  // @Input() paraphraseActive!: boolean;
 
   constructor() {
   }
 
   ngOnChanges(): void {
-    if (this.paraphraseActive && this.scrolltrigger) {
+    if (this.scrolltrigger) {
       this.scrolltrigger.forEach(e => e.enable())
-    } else if (!this.paraphraseActive && this.scrolltrigger) {
-      this.scrolltrigger.forEach(e => e.disable())
+      console.log(this.scrolltrigger);
     }
+  }
+
+  ngOnInit(): void {
+   console.log(this.scrolltrigger)
+  }
+
+  ngOnDestroy(): void {
+    
   }
 }

@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild, QueryList, ViewChildren, Renderer2, ChangeDetectorRef } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, QueryList, Renderer2, Input } from '@angular/core';
 import { ServiceSettings } from './shared/settings.service';
 import { ServiceFetch } from './shared/fetch.service';
 import { ServiceEvent } from './shared/event.service';
@@ -14,16 +14,16 @@ import { gsap } from 'gsap';
 })
 export class AppComponent implements OnInit {
   settings!: Settings;
-  commedy_text?: JsonNode;
+  comedy_text?: JsonNode;
   paraphrase_text?: JsonNode;
   notes!: JsonNode;
+  terzineList!: QueryList<ElementRef>;
   paraphraseList!: QueryList<ElementRef>;
-  scrolltrigger!: Array<ScrollTrigger>;
+  // scrolltrigger!: Array<ScrollTrigger>;
   @ViewChild('scrollStart', { read: ElementRef }) scrollStart!: ElementRef;
   @ViewChild('paraphrColumn', { read: ElementRef }) paraphrColumn!: ElementRef;
-  @ViewChildren('paraphrFragm', { read: ElementRef }) paraphGroup!: QueryList<ElementRef>;
 
-  constructor(private serviceSettings: ServiceSettings, private serviceFetch: ServiceFetch, private serviceEvt: ServiceEvent, private cd: ChangeDetectorRef, private renderer: Renderer2) {
+  constructor(private serviceSettings: ServiceSettings, private serviceFetch: ServiceFetch, private serviceEvt: ServiceEvent, private renderer: Renderer2) {
     gsap.registerPlugin(ScrollTrigger);
   }
 
@@ -64,7 +64,7 @@ export class AppComponent implements OnInit {
       const xml: Document = parser.parseFromString(formattedXML, "application/xml");
       const commedyText: NodeListOf<Element> = xml.querySelectorAll('[type=main-text] body');
       const commedyJson: Array<JsonNode> = Array.from(commedyText).map(e => this.serviceFetch.parseNode(e));
-      this.commedy_text = commedyJson[0];
+      this.comedy_text = commedyJson[0];
       const paraphraseText: NodeListOf<Element> = xml.querySelectorAll('[type=paraphrase] body');
       const paraphraseJson: Array<JsonNode> = Array.from(paraphraseText).map(e => this.serviceFetch.parseNode(e));
       this.paraphrase_text = paraphraseJson[0];
@@ -72,16 +72,24 @@ export class AppComponent implements OnInit {
       const notesJson: Array<JsonNode> = Array.from(notes).map(e => this.serviceFetch.parseNode(e));
       this.notes = notesJson[0];
     });
+    this.serviceEvt.passTerzine.subscribe(
+      (terzineList: QueryList<ElementRef>) => {
+        this.terzineList = terzineList;
+      }
+    );
     this.serviceEvt.passParaphrFragm.subscribe(
       (paraphraseList: QueryList<ElementRef>) => {
         this.paraphraseList = paraphraseList;
+        // console.log(this.paraphraseList);
         this.focusByScroll();
-        this.scrolltrigger = ScrollTrigger.getAll();
-        this.cd.detectChanges();
-        // ScrollTrigger.disable();
       }
     );
   }
+
+
+/*********************************************** */
+
+
 
   enterAction(el: HTMLElement) {
     if (this.setParaphraseFragment(this.paraphraseList, el)) {
@@ -90,6 +98,7 @@ export class AppComponent implements OnInit {
       const parFragDistance = this.cumulativeOffset(this.setParaphraseFragment(this.paraphraseList, el));
       const totalDistance = elRefDistance - parFragDistance;
       this.renderer.setStyle(this.paraphrColumn.nativeElement, 'transform', `translateY(${String(totalDistance)}px)`);
+      // console.log('ciao');
     }
   }
 
@@ -100,9 +109,9 @@ export class AppComponent implements OnInit {
   }
 
   focusByScroll() {
-    Array.from(document.querySelectorAll('div.terzina')).forEach(terzina => {
+    this.terzineList.toArray().map(e => e.nativeElement).forEach(terzina => {
       ScrollTrigger.matchMedia({
-        "all": () => {
+        "(min-width: 720px)": () => {
           gsap.to(terzina, {
             scrollTrigger: {
               trigger: terzina,

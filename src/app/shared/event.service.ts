@@ -4,6 +4,7 @@ export class ServiceEvent {
 
     passNoteText = new EventEmitter<string>();
     passParaphrFragm = new EventEmitter<QueryList<ElementRef>>();
+    passTerzine = new EventEmitter<QueryList<ElementRef>>();
 
     constructor() { }
 }
