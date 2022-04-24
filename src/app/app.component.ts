@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild, QueryList, Renderer2, ChangeDetectorRef } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, QueryList, Renderer2 } from '@angular/core';
 import { ServiceSettings } from './shared/settings.service';
 import { ServiceFetch } from './shared/fetch.service';
 import { ServiceEvent } from './shared/event.service';
@@ -19,11 +19,10 @@ export class AppComponent implements OnInit {
   notes!: JsonNode;
   terzineList!: QueryList<ElementRef>;
   paraphraseList!: QueryList<ElementRef>;
-  scrolltrigger!: Array<ScrollTrigger>;
   @ViewChild('scrollStart', { read: ElementRef }) scrollStart!: ElementRef;
   @ViewChild('paraphrColumn', { read: ElementRef }) paraphrColumn!: ElementRef;
 
-  constructor(private serviceSettings: ServiceSettings, private serviceFetch: ServiceFetch, private serviceEvt: ServiceEvent, private renderer: Renderer2, private cd: ChangeDetectorRef ) {
+  constructor(private serviceSettings: ServiceSettings, private serviceFetch: ServiceFetch, private serviceEvt: ServiceEvent, private renderer: Renderer2 ) {
     gsap.registerPlugin(ScrollTrigger);
   }
 
@@ -87,9 +86,6 @@ export class AppComponent implements OnInit {
 
   setScrolling() {
     this.focusByScroll();
-    this.scrolltrigger = ScrollTrigger.getAll();
-    this.cd.detectChanges();
-    this.renderer.setStyle(this.paraphrColumn.nativeElement, 'transform', `translateY(0px)`);
   }
 
   enterAction(el: HTMLElement) {
@@ -99,7 +95,9 @@ export class AppComponent implements OnInit {
       const parFragDistance = this.cumulativeOffset(this.setParaphraseFragment(this.paraphraseList, el));
       const totalDistance = elRefDistance - parFragDistance;
       this.renderer.setStyle(this.paraphrColumn.nativeElement, 'transform', `translateY(${String(totalDistance)}px)`);
-      console.log('ciao');
+      console.log(totalDistance);
+      console.log(parFragDistance);
+      console.log(elRefDistance);
     }
   }
 
@@ -112,7 +110,7 @@ export class AppComponent implements OnInit {
   focusByScroll() {
     this.terzineList.toArray().map(e => e.nativeElement).forEach(terzina => {
       ScrollTrigger.matchMedia({
-        "(min-width: 720px)": () => {
+        "(min-width: 721px)": () => {
           gsap.to(terzina, {
             scrollTrigger: {
               trigger: terzina,

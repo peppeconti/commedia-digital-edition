@@ -17,7 +17,6 @@ import { MainTextComponent } from './main-text/main-text.component';
 import { DropdownComponent } from './header/dropdown/dropdown.component';
 import { NoteContainerComponent } from './note-container/note-container.component';
 import { NoteTextComponent } from './note-container/note-text/note-text.component';
-import { AlignDirective } from './directive/align.directive';
 import { ComedyTextComponent } from './main-text/comedy-text/comedy-text.component';
 import { ParaphraseTextComponent } from './main-text/paraphrase-text/paraphrase-text.component';
 
@@ -30,7 +29,6 @@ import { ParaphraseTextComponent } from './main-text/paraphrase-text/paraphrase-
     DropdownComponent,
     NoteContainerComponent,
     NoteTextComponent,
-    AlignDirective,
     ComedyTextComponent,
     ParaphraseTextComponent,
   ],

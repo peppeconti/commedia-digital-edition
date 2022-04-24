@@ -6,7 +6,7 @@
     </section>
     <section class="paraphrase-text d-flex flex-column align-items-center" [ngClass]="{'active': this.settings.showParaphrase}" #paraphrColumn>
         <h3 class="py-5">Parafrasi</h3>
-        <app-paraphrase-text [main_text]="paraphrase_text" appAlign [paraphraseActive]="this.settings.showParaphrase" [scrolltrigger]="scrolltrigger"></app-paraphrase-text>
+        <app-paraphrase-text [main_text]="paraphrase_text"></app-paraphrase-text>
     </section>
 </div>
 <app-note-container [notes]="notes"></app-note-container>

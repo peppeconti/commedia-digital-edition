@@ -23,7 +23,6 @@ section.active {
         display: none!important;
     }
     .paraphrase-text {
-        transform: translateY(0%);
         transition: none;
     }
 }
