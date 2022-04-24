@@ -95,9 +95,9 @@ export class AppComponent implements OnInit {
       const parFragDistance = this.cumulativeOffset(this.setParaphraseFragment(this.paraphraseList, el));
       const totalDistance = elRefDistance - parFragDistance;
       this.renderer.setStyle(this.paraphrColumn.nativeElement, 'transform', `translateY(${String(totalDistance)}px)`);
-      console.log(totalDistance);
-      console.log(parFragDistance);
-      console.log(elRefDistance);
+      // console.log(totalDistance);
+      // console.log(parFragDistance);
+      // console.log(elRefDistance);
     }
   }
 
