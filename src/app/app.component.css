@@ -21,6 +21,6 @@ section.active {
         display: none!important;
     }
     .paraphrase-text {
-        transition: none;
+        transform: none;
     }
 }

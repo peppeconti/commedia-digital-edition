@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
   notes!: JsonNode;
   terzineList!: QueryList<ElementRef>;
   paraphraseList!: QueryList<ElementRef>;
-  // scrolltrigger!: Array<ScrollTrigger>;
+  scrolltrigger!: Array<ScrollTrigger>;
   @ViewChild('scrollStart', { read: ElementRef }) scrollStart!: ElementRef;
   @ViewChild('paraphrColumn', { read: ElementRef }) paraphrColumn!: ElementRef;
 
@@ -80,14 +80,18 @@ export class AppComponent implements OnInit {
     this.serviceEvt.passParaphrFragm.subscribe(
       (paraphraseList: QueryList<ElementRef>) => {
         this.paraphraseList = paraphraseList;
-        // console.log(this.paraphraseList);
-        this.focusByScroll();
+        this.setScrolling();
       }
     );
   }
 
+  setScrolling() {
+    this.focusByScroll();
+    this.renderer.setStyle(this.paraphrColumn.nativeElement, 'transform', `translateY(0px)`);
+  }
 
-/*********************************************** */
+
+  /************************************************/
 
 
 
