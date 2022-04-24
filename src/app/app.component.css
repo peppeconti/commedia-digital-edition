@@ -10,6 +10,7 @@ section {
 
 section.paraphrase-text {
     display: none!important;
+    transition: .5s;
 }
 
 section.active {
@@ -21,6 +22,6 @@ section.active {
         display: none!important;
     }
     .paraphrase-text {
-        transform: none;
+        transition: none;
     }
 }
