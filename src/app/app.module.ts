@@ -19,6 +19,7 @@ import { NoteContainerComponent } from './note-container/note-container.componen
 import { NoteTextComponent } from './note-container/note-text/note-text.component';
 import { ComedyTextComponent } from './main-text/comedy-text/comedy-text.component';
 import { ParaphraseTextComponent } from './main-text/paraphrase-text/paraphrase-text.component';
+import { RouterContainerComponent } from './router-container/router-container.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ParaphraseTextComponent } from './main-text/paraphrase-text/paraphrase-
     NoteTextComponent,
     ComedyTextComponent,
     ParaphraseTextComponent,
+    RouterContainerComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,29 @@
+h3 {
+    font-family: 'Palemonas';
+    text-align: center;
+    font-weight: 600;
+}
+
+section {
+    padding: 0px 1.5rem;
+}
+
+section.paraphrase-text {
+    position: fixed;
+    left: -100%;
+    transition: .5s;
+}
+
+section.active {
+    position: static;
+}
+
+@media screen and (max-width: 720px) { 
+    section.hidden {
+        display: none!important;
+    }
+    .paraphrase-text {
+        transform: translate(0)!important;
+        transition: none!important;
+    }
+}
