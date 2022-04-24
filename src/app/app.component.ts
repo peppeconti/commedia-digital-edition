@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
   @ViewChild('scrollStart', { read: ElementRef }) scrollStart!: ElementRef;
   @ViewChild('paraphrColumn', { read: ElementRef }) paraphrColumn!: ElementRef;
 
-  constructor(private serviceSettings: ServiceSettings, private serviceFetch: ServiceFetch, private serviceEvt: ServiceEvent, private renderer: Renderer2 ) {
+  constructor(private serviceSettings: ServiceSettings, private serviceFetch: ServiceFetch, private serviceEvt: ServiceEvent, private renderer: Renderer2) {
     gsap.registerPlugin(ScrollTrigger);
   }
 
@@ -79,31 +79,21 @@ export class AppComponent implements OnInit {
     this.serviceEvt.passParaphrFragm.subscribe(
       (paraphraseList: QueryList<ElementRef>) => {
         this.paraphraseList = paraphraseList;
-        this.setScrolling();
+        this.focusByScroll();
       }
     );
   }
 
-  setScrolling() {
-    this.focusByScroll();
-  }
-
   enterAction(el: HTMLElement) {
-    if (this.setParaphraseFragment(this.paraphraseList, el)) {
-      this.renderer.addClass(this.setParaphraseFragment(this.paraphraseList, el), 'corresp');
+    const paraphrFragment = this.setParaphraseFragment(this.paraphraseList, el);
+    if (paraphrFragment) {
+      const paraphrArray = this.paraphraseList.toArray().map(e => e.nativeElement);
+      paraphrArray.forEach(e => this.renderer.removeClass(e, 'corresp'));
+      this.renderer.addClass(paraphrFragment, 'corresp');
       const elRefDistance = this.cumulativeOffset(el);
-      const parFragDistance = this.cumulativeOffset(this.setParaphraseFragment(this.paraphraseList, el));
+      const parFragDistance = this.cumulativeOffset(paraphrFragment);
       const totalDistance = elRefDistance - parFragDistance;
       this.renderer.setStyle(this.paraphrColumn.nativeElement, 'transform', `translateY(${String(totalDistance)}px)`);
-      // console.log(totalDistance);
-      // console.log(parFragDistance);
-      // console.log(elRefDistance);
-    }
-  }
-
-  leaveAction(el: HTMLElement) {
-    if (this.setParaphraseFragment(this.paraphraseList, el)) {
-      this.renderer.removeClass(this.setParaphraseFragment(this.paraphraseList, el), 'corresp');
     }
   }
 
@@ -121,14 +111,8 @@ export class AppComponent implements OnInit {
               onEnter: () => {
                 this['enterAction'](<HTMLElement>terzina);
               },
-              onLeave: () => {
-                this['leaveAction'](<HTMLElement>terzina);
-              },
               onEnterBack: () => {
                 this['enterAction'](<HTMLElement>terzina);
-              },
-              onLeaveBack: () => {
-                this['leaveAction'](<HTMLElement>terzina);
               },
             }
           });
@@ -137,46 +121,3 @@ export class AppComponent implements OnInit {
     });
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Oiginal version to indent xml
-
-/*formatXml(xml: string, tab: string = '\t') { // tab = optional indent value, default is tab (\t)
-  var formatted = '', indent = '';
-  xml.split(/>\s*</).forEach(function (node) {
-    if (node.match(/^\/\w/)) indent = indent.substring(tab.length); // decrease indent by one 'tab'
-    formatted += indent + '<' + node + '>\r\n';
-    if (node.match(/^<?\w[^>]*[^\/]$/)) indent += tab;              // increase indent
-  });
-  return formatted.substring(1, formatted.length - 3).replace(/[\r\n]/g, '');
-}*/
