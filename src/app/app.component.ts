@@ -1,4 +1,6 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { RouterContainerComponent } from './router-container/router-container.component';
 
 @Component({
   selector: 'app-root',
@@ -6,10 +8,20 @@ import { Component, OnInit} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  cantica: string = 'inferno';
-  canto: string = 'inferno-1';
- 
-  constructor() {}
+  route!: { cantica: string, canto: string }
 
-  ngOnInit(): void {}
+  constructor(private paramsRoute: ActivatedRoute) { }
+
+  onOutletLoaded(component: RouterContainerComponent) {
+    component.cantica = this.route.cantica;
+    component.canto = this.route.canto;
+  }
+
+  ngOnInit(): void { 
+    this.route = {
+      cantica: this.paramsRoute.snapshot.params['cantica'],
+      canto: this.paramsRoute.snapshot.params['canto']
+    }
+    console.log(this.paramsRoute.snapshot);
+  }
 }

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
@@ -20,10 +19,10 @@ import { NoteTextComponent } from './note-container/note-text/note-text.componen
 import { ComedyTextComponent } from './main-text/comedy-text/comedy-text.component';
 import { ParaphraseTextComponent } from './main-text/paraphrase-text/paraphrase-text.component';
 import { RouterContainerComponent } from './router-container/router-container.component';
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
-const appRoutes: Routes = [
-  {path: '', component: RouterContainerComponent}
+const routes: Routes = [
+  { path: ':cantica/:canto', component: RouterContainerComponent }
 ];
 
 @NgModule({
@@ -40,8 +39,8 @@ const appRoutes: Routes = [
     RouterContainerComponent,
   ],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule,
-    AppRoutingModule,
     NgbModule,
     HttpClientModule,
     FontAwesomeModule

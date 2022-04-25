@@ -10,7 +10,7 @@ import { JsonNode } from '../shared/jsonNode.model';
 export class NoteContainerComponent implements OnInit {
   @Input() notes!: JsonNode;
   note_id!: string;
-  praefix = /\w+-\d+-note-/;
+  praefix = /\w+-\d+-\w+-/;
 
   constructor(private serviceEvt: ServiceEvent) {
     this.serviceEvt.passNoteText.subscribe(

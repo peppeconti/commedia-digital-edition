@@ -82,7 +82,7 @@
                      </argument>
                      <text type="main-text">
                         <body rend="terzine">
-                           <lg xml:id="terzina-1" type="terzina">
+                           <lg xml:id="inferno-1-terzina-1" type="terzina">
                               <l rend="endecasillabo" n="1">Nel <choice>
                                     <seg rend="regular">mez</seg>
                                     <seg rend="secondary-accent" function="metric">mèz</seg>
@@ -128,53 +128,53 @@
                                     <seg rend="primary-accent" function="metric">rì</seg>
                                  </choice>ta<note type="note" n="2" corresp="#inferno-1-note-2"/>.</l>
                            </lg>
-                           <lg xml:id="terzina-2" type="terzina">
+                           <lg xml:id="inferno-1-terzina-2" type="terzina">
                               <l rend="endecasillabo" n="4">Ahi, quanto a dir qual era è cosa
                                  dura</l>
                               <l rend="endecasillabo" n="5">esta selva selvaggia e aspra e forte</l>
                               <l rend="endecasillabo" n="6">che nel pensier rinova la paura!</l>
                            </lg>
-                           <lg xml:id="terzina-3" type="terzina">
+                           <lg xml:id="inferno-1-terzina-3" type="terzina">
                               <l rend="endecasillabo" n="7">Tant’ è amara che poco è più morte;</l>
                               <l rend="endecasillabo" n="8">ma per trattar del ben ch’i’ vi
                                  trovai,</l>
                               <l rend="endecasillabo" n="9">dirò de l’altre cose ch’i’ v’ho
                                  scorte</l>
                            </lg>
-                           <lg xml:id="terzina-4" type="terzina">
+                           <lg xml:id="inferno-1-terzina-4" type="terzina">
                               <l rend="endecasillabo" n="10">Io non so ben ridir com’ i’
                                  v’intrai,</l>
                               <l rend="endecasillabo" n="11">tant’ era pien di sonno a quel
                                  punto</l>
                               <l rend="endecasillabo" n="12">che la verace via abbandonai.</l>
                            </lg>
-                           <lg xml:id="terzina-5" type="terzina">
+                           <lg xml:id="inferno-1-terzina-5" type="terzina">
                               <l rend="endecasillabo" n="13">Ma poi ch’i’ fui al piè d’un colle
                                  giunto,</l>
                               <l rend="endecasillabo" n="14">là dove terminava quella valle</l>
                               <l rend="endecasillabo" n="15">che m’avea di paura il cor
                                  compunto,</l>
                            </lg>
-                           <lg xml:id="terzina-6" type="terzina">
+                           <lg xml:id="inferno-1-terzina-6" type="terzina">
                               <l rend="endecasillabo" n="16">guardai in alto, e vidi le sue
                                  spalle</l>
                               <l rend="endecasillabo" n="17">vestite già de’ raggi del pianeta</l>
                               <l rend="endecasillabo" n="18">che mena dritto altrui per ogne
                                  calle.</l>
                            </lg>
-                           <lg xml:id="terzina-7" type="terzina">
+                           <lg xml:id="inferno-1-terzina-7" type="terzina">
                               <l rend="endecasillabo" n="19">Allor fu la paura un poco queta</l>
                               <l rend="endecasillabo" n="20">che nel lago del cor m’era durata</l>
                               <l rend="endecasillabo" n="21">la notte ch’i’ passai con tanta
                                  pieta.</l>
                            </lg>
-                           <lg xml:id="terzina-8" type="terzina">
+                           <lg xml:id="inferno-1-terzina-8" type="terzina">
                               <l rend="endecasillabo" n="22">E come quei che con lena affannata</l>
                               <l rend="endecasillabo" n="23">uscito fuor del pelago a la riva</l>
                               <l rend="endecasillabo" n="24">si volge a l’acqua perigliosa e
                                  guata,</l>
                            </lg>
-                           <lg xml:id="terzina-9" type="terzina">
+                           <lg xml:id="inferno-1-terzina-9" type="terzina">
                               <l rend="endecasillabo" n="25">così l’animo mio, ch’ancor fuggiva,</l>
                               <l rend="endecasillabo" n="26">si volse a retro a rimirar lo passo</l>
                               <l rend="endecasillabo" n="27">che non lasciò già mai persona
@@ -184,7 +184,7 @@
                      </text>
                      <text type="paraphrase">
                         <body rend="terzine-paraphrase">
-                           <div xml:id="paraphrase-terzina-1" rend="paraphrase-terzina"
+                           <div xml:id="inferno-1-paraphrase-terzina-1" rend="paraphrase-terzina"
                               corresp="terzina-1">
                               <p rend="terzina-paraphrase"><seg rend="paraphrase-fragment">A metà
                                     del corso medio della vita umana,</seg>
@@ -195,7 +195,7 @@
                                  <seg rend="paraphrase-fragment">perché avevo smarrito la giusta
                                     strada.</seg></p>
                            </div>
-                           <div xml:id="paraphrase-terzina-2" rend="paraphrase-terzina"
+                           <div xml:id="inferno-1-paraphrase-terzina-2" rend="paraphrase-terzina"
                               corresp="terzina-2">
                               <p rend="terzina-paraphrase"><span rend="paraphrase-fragment">Ahimè,
                                     quanto è difficile descrivere l’aspetto</span>
@@ -208,7 +208,7 @@
                                  <seg rend="paraphrase-fragment">solo pensiero si rinnova in me la
                                     paura.</seg></p>
                            </div>
-                           <div xml:id="paraphrase-terzina-3" rend="paraphrase-terzina"
+                           <div xml:id="inferno-1-paraphrase-terzina-3" rend="paraphrase-terzina"
                               corresp="terzina-3">
                               <p rend="terzina-paraphrase"><seg rend="paraphrase-fragment">È tanto
                                     angosciante che la morte lo</seg>
@@ -221,7 +221,7 @@
                                  <seg rend="paraphrase-fragment">delle altre cose che vi ho
                                     visto.</seg></p>
                            </div>
-                           <div xml:id="paraphrase-terzina-4" rend="paraphrase-terzina"
+                           <div xml:id="inferno-1-paraphrase-terzina-4" rend="paraphrase-terzina"
                               corresp="terzina-4">
                               <p rend="terzina-paraphrase"><seg rend="paraphrase-fragment">Non so
                                     descrivere il modo in cui io vi entrai,</seg>
@@ -232,7 +232,7 @@
                                  <seg rend="paraphrase-fragment">abbandonai la via della
                                     verità.</seg></p>
                            </div>
-                           <div xml:id="paraphrase-terzina-5" rend="paraphrase-terzina"
+                           <div xml:id="infernon-1-paraphrase-terzina-5" rend="paraphrase-terzina"
                               corresp="terzina-5">
                               <p rend="terzina-paraphrase"><seg rend="paraphrase-fragment">Ma dopo
                                     che giunsi ai piedi di un colle, nel</seg>
@@ -243,7 +243,7 @@
                                  <seg rend="paraphrase-fragment">turbato di paura il mio
                                     cuore,</seg></p>
                            </div>
-                           <div xml:id="paraphrase-terzina-6" rend="paraphrase-terzina"
+                           <div xml:id="inferno-1-paraphrase-terzina-6" rend="paraphrase-terzina"
                               corresp="terzina-6">
                               <p rend="terzina-paraphrase"><seg rend="paraphrase-fragment">guardai
                                     verso l’alto e vidi la sua vetta già</seg>
@@ -285,8 +285,20 @@
                      </argument>
                      <text type="main_text">
                         <body>
-                           <lg>
-                              <l/>
+                           <lg xml:id="inferno-2-terzina-1" type="terzina">
+                              <l rend="endecasillabo" n="1">Lo giorno se n’andava, e l’aere bruno</l>
+                              <l rend="endecasillabo" n="2">toglieva li animai che sono in terra</l>
+                              <l rend="endecasillabo" n="3">da le fatiche loro; e io sol uno</l>
+                           </lg>
+                           <lg xml:id="inferno-2-terzina-2" type="terzina">
+                              <l rend="endecasillabo" n="4">m’apparecchiava a sostener la guerra</l>
+                              <l rend="endecasillabo" n="5">sì del cammino e sì de la pietate,</l>
+                              <l rend="endecasillabo" n="6">che ritrarrà la mente che non erra.</l>
+                           </lg>
+                           <lg xml:id="inferno-2-terzina-3" type="terzina">
+                              <l rend="endecasillabo" n="7">O muse, o alto ingegno, or m’aiutate;</l>
+                              <l rend="endecasillabo" n="8">o mente che scrivesti ciò ch’io vidi,</l>
+                              <l rend="endecasillabo" n="9">qui si parrà la tua nobilitate.</l>
                            </lg>
                         </body>
                      </text>
