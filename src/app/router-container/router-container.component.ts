@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild, QueryList, Renderer2 } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, QueryList, Renderer2, Input } from '@angular/core';
 import { ServiceSettings } from '../shared/settings.service';
 import { ServiceFetch } from '../shared/fetch.service';
 import { ServiceEvent } from '../shared/event.service';
@@ -19,6 +19,8 @@ export class RouterContainerComponent implements OnInit {
   notes!: JsonNode;
   terzineList!: QueryList<ElementRef>;
   paraphraseList!: QueryList<ElementRef>;
+  @Input() cantica!: string;
+  @Input() canto!: string;
   @ViewChild('scrollStart', { read: ElementRef }) scrollStart!: ElementRef;
   @ViewChild('paraphrColumn', { read: ElementRef }) paraphrColumn!: ElementRef;
 
@@ -61,13 +63,13 @@ export class RouterContainerComponent implements OnInit {
       const parser: DOMParser = new DOMParser();
       const formattedXML = this.minifyXml(res);
       const xml: Document = parser.parseFromString(formattedXML, "application/xml");
-      const commedyText: NodeListOf<Element> = xml.querySelectorAll('[type=main-text] body');
+      const commedyText: NodeListOf<Element> = xml.querySelectorAll(`[*|id=${this.cantica}] [*|id=${this.canto}] [type=main-text] body`);
       const commedyJson: Array<JsonNode> = Array.from(commedyText).map(e => this.serviceFetch.parseNode(e));
       this.comedy_text = commedyJson[0];
-      const paraphraseText: NodeListOf<Element> = xml.querySelectorAll('[type=paraphrase] body');
+      const paraphraseText: NodeListOf<Element> = xml.querySelectorAll(`[*|id=${this.cantica}] [*|id=${this.canto}] [type=paraphrase] body`);
       const paraphraseJson: Array<JsonNode> = Array.from(paraphraseText).map(e => this.serviceFetch.parseNode(e));
       this.paraphrase_text = paraphraseJson[0];
-      const notes: NodeListOf<Element> = xml.querySelectorAll('list[type=notes]');
+      const notes: NodeListOf<Element> = xml.querySelectorAll(`[*|id=${this.cantica}] [*|id=${this.canto}] list[type=notes]`);
       const notesJson: Array<JsonNode> = Array.from(notes).map(e => this.serviceFetch.parseNode(e));
       this.notes = notesJson[0];
     });

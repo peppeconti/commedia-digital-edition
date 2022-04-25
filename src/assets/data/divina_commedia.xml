@@ -52,10 +52,10 @@
    <text>
       <front/>
       <group>
-         <text xml:id="Inferno" type="cantica">
+         <text xml:id="inferno" type="cantica">
             <group>
                <head>Inferno</head>
-               <text xml:id="inferno-I" type="canto" n="1">
+               <text xml:id="inferno-1" type="canto" n="1">
                   <group>
                      <head>Canto I</head>
                      <argument>
@@ -80,7 +80,7 @@
                               culpa qui officia deserunt mollit anim id est laborum.</item>
                         </list>
                      </argument>
-                     <text type="main_text">
+                     <text type="main-text">
                         <body rend="terzine">
                            <lg xml:id="terzina-1" type="terzina">
                               <l rend="endecasillabo" n="1">Nel <choice>
@@ -278,14 +278,14 @@
                </text>
             </group>
          </text>
-         <text xml:id="Purgatorio" type="cantica">
+         <text xml:id="purgatorio" type="cantica">
             <body>
                <div>
                   <p/>
                </div>
             </body>
          </text>
-         <text xml:id="Paradiso" type="cantica">
+         <text xml:id="paradiso" type="cantica">
             <body>
                <div>
                   <p/>
