@@ -55,7 +55,7 @@
          <text xml:id="inferno" type="cantica">
             <group>
                <head>Inferno</head>
-               <text xml:id="inferno-1" type="canto" n="1">
+               <text xml:id="inferno-1" type="canto" n="1" next="#inferno-2">
                   <group>
                      <head>Canto I</head>
                      <argument>
@@ -258,7 +258,7 @@
                      </text>
                   </group>
                </text>
-               <text xml:id="inferno-2" type="canto" n="2">
+               <text xml:id="inferno-2" type="canto" n="2" prev="#inferno-1" next="#inferno-3">
                   <group>
                      <head>Canto II</head>
                      <argument>

@@ -22,8 +22,9 @@ export class RouterContainerComponent implements OnInit {
   paraphraseList!: QueryList<ElementRef>;
   cantica!: string;
   canto!: string;
-  @ViewChild('scrollStart', { read: ElementRef }) scrollStart!: ElementRef;
-  @ViewChild('paraphrColumn', { read: ElementRef }) paraphrColumn!: ElementRef;
+  navigation!: { next: string |undefined | null, prev: string |undefined | null };
+  @ViewChild('scrollStart') scrollStart!: ElementRef;
+  @ViewChild('paraphrColumn') paraphrColumn!: ElementRef;
 
   constructor(private paramsRoute: ActivatedRoute, private serviceSettings: ServiceSettings, private serviceFetch: ServiceFetch, private serviceEvt: ServiceEvent, private renderer: Renderer2) {
     gsap.registerPlugin(ScrollTrigger);
@@ -68,7 +69,7 @@ export class RouterContainerComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // routing wit params
+    // routing
     this.switchText();
     // get Settings
     this.settings = this.serviceSettings.getSettings();
@@ -86,6 +87,12 @@ export class RouterContainerComponent implements OnInit {
       const notes: NodeListOf<Element> = xml.querySelectorAll(`[*|id=${this.cantica}] [*|id=${this.canto}] list[type=notes]`);
       const notesJson: Array<JsonNode> = Array.from(notes).map(e => this.serviceFetch.parseNode(e));
       this.notes = notesJson[0];
+      const next: string | null | undefined = xml.querySelector(`[*|id=${this.canto}]`)?.getAttribute('next');
+      //console.log(next);
+      const prev: string | null | undefined = xml.querySelector(`[*|id=${this.canto}]`)?.getAttribute('prev');
+      //console.log(prev);
+      this.navigation = { next, prev };
+      //console.log(this.navigation);
     });
     this.serviceEvt.passTerzine.subscribe(
       (terzineList: QueryList<ElementRef>) => {
