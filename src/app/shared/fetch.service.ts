@@ -1,4 +1,4 @@
-import { EventEmitter, Injectable, QueryList, ElementRef } from "@angular/core";
+import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { JsonNode } from "./jsonNode.model";
 

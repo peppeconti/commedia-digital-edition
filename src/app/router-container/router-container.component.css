@@ -36,6 +36,15 @@ section.active {
     justify-content: flex-end;
 }
 
+.angles {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.angles:hover {
+    opacity: .8;
+}
+
 @media screen and (max-width: 720px) { 
     section.hidden {
         display: none!important;

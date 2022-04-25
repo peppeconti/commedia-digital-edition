@@ -4,10 +4,19 @@
         <h3 class="py-5" #scrollStart>Testo</h3>
         <app-comedy-text [main_text]="comedy_text" [settings]="settings"></app-comedy-text>
     </section>
-    <section class="paraphrase-text d-flex flex-column align-items-center" [ngClass]="{'active': this.settings.showParaphrase}" #paraphrColumn>
+    <section class="paraphrase-text d-flex flex-column align-items-center"
+        [ngClass]="{'active': this.settings.showParaphrase}" #paraphrColumn>
         <h3 class="py-5">Parafrasi</h3>
         <app-paraphrase-text [main_text]="paraphrase_text"></app-paraphrase-text>
     </section>
 </div>
-<nav class="nav" [ngClass]="{'start': this.navigation?.prev && !this.navigation?.next}" [ngClass]="{'end': !this.navigation?.prev && this.navigation?.next}"><button [routerLink]="'/'+this.getCantica(this.navigation?.prev)+'/'+this.getCanto(this.navigation?.prev)" *ngIf="this.navigation?.prev">Back</button><button [routerLink]="'/'+this.getCantica(this.navigation?.next)+'/'+this.getCanto(this.navigation?.next)" *ngIf="this.navigation?.next">Next</button></nav>
+<nav class="nav" [ngClass]="{'start': this.navigation?.prev && !this.navigation?.next}"
+    [ngClass]="{'end': !this.navigation?.prev && this.navigation?.next}">
+    <fa-icon class="angles"
+        [routerLink]="'/'+this.getCantica(this.navigation?.prev)+'/'+this.getCanto(this.navigation?.prev)"
+        *ngIf="this.navigation?.prev" [icon]="'angle-double-left'"></fa-icon>
+    <fa-icon class="angles"
+        [routerLink]="'/'+this.getCantica(this.navigation?.next)+'/'+this.getCanto(this.navigation?.next)"
+        *ngIf="this.navigation?.next" [icon]="'angle-double-right'"></fa-icon>
+</nav>
 <app-note-container [notes]="notes"></app-note-container>

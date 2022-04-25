@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild, QueryList, Renderer2, Input } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, QueryList, Renderer2 } from '@angular/core';
 import { ServiceSettings } from '../shared/settings.service';
 import { ServiceFetch } from '../shared/fetch.service';
 import { ServiceEvent } from '../shared/event.service';
@@ -108,7 +108,6 @@ export class RouterContainerComponent implements OnInit {
         this.focusByScroll();
       }
     );
-    // console.log(this.paramsRoute.snapshot.params);
   }
 
   enterAction(el: HTMLElement) {
