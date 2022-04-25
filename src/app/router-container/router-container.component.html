@@ -9,5 +9,5 @@
         <app-paraphrase-text [main_text]="paraphrase_text"></app-paraphrase-text>
     </section>
 </div>
-<nav class="nav"><button>Back</button><button>Next</button></nav>
+<nav class="nav" [ngClass]="{'start': this.navigation?.prev && !this.navigation?.next}" [ngClass]="{'end': !this.navigation?.prev && this.navigation?.next}"><button [routerLink]="'/'+this.getCantica(this.navigation?.prev)+'/'+this.getCanto(this.navigation?.prev)" *ngIf="this.navigation?.prev">Back</button><button [routerLink]="'/'+this.getCantica(this.navigation?.next)+'/'+this.getCanto(this.navigation?.next)" *ngIf="this.navigation?.next">Next</button></nav>
 <app-note-container [notes]="notes"></app-note-container>

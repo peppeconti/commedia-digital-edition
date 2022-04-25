@@ -28,6 +28,14 @@ section.active {
     justify-content: space-between;
 }
 
+.start {
+    justify-content: flex-start;
+}
+
+.end {
+    justify-content: flex-end;
+}
+
 @media screen and (max-width: 720px) { 
     section.hidden {
         display: none!important;

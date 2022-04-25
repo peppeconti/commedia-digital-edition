@@ -22,7 +22,7 @@ export class RouterContainerComponent implements OnInit {
   paraphraseList!: QueryList<ElementRef>;
   cantica!: string;
   canto!: string;
-  navigation!: { next: string |undefined | null, prev: string |undefined | null };
+  navigation?: { next: string | undefined | null, prev: string | undefined | null } = { next: null, prev: null } ;
   @ViewChild('scrollStart') scrollStart!: ElementRef;
   @ViewChild('paraphrColumn') paraphrColumn!: ElementRef;
 
@@ -58,22 +58,16 @@ export class RouterContainerComponent implements OnInit {
     return minified;
   }
 
-  switchText() {
-    this.cantica = this.paramsRoute.snapshot.params['cantica'];
-    this.canto = this.paramsRoute.snapshot.params['canto'];
-    this.paramsRoute.params
-      .subscribe((params: Params) => {
-        this.cantica = params['cantica'];
-        this.canto = params['canto'];
-      });
+  getCanto(arg: any) {
+    return arg.replace('#', '');
   }
 
-  ngOnInit(): void {
-    // routing
-    this.switchText();
-    // get Settings
-    this.settings = this.serviceSettings.getSettings();
-    // fetch
+  getCantica(arg: any){
+    const ff = arg.split('-');
+    return this.getCanto(ff[0]);
+  }
+
+  fetch(){
     this.serviceFetch.fetchData().subscribe(res => {
       const parser: DOMParser = new DOMParser();
       const formattedXML = this.minifyXml(res);
@@ -92,7 +86,16 @@ export class RouterContainerComponent implements OnInit {
       const prev: string | null | undefined = xml.querySelector(`[*|id=${this.canto}]`)?.getAttribute('prev');
       //console.log(prev);
       this.navigation = { next, prev };
-      //console.log(this.navigation);
+    });
+  }
+
+  ngOnInit(): void {
+    this.settings = this.serviceSettings.getSettings();
+    this.paramsRoute.params
+    .subscribe((params: Params) => {
+      this.cantica = params['cantica'];
+      this.canto = params['canto'];
+      this.fetch();
     });
     this.serviceEvt.passTerzine.subscribe(
       (terzineList: QueryList<ElementRef>) => {
@@ -105,7 +108,7 @@ export class RouterContainerComponent implements OnInit {
         this.focusByScroll();
       }
     );
-    console.log(this.paramsRoute.snapshot.params);
+    // console.log(this.paramsRoute.snapshot.params);
   }
 
   enterAction(el: HTMLElement) {
