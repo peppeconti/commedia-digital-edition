@@ -20,6 +20,11 @@ import { NoteTextComponent } from './note-container/note-text/note-text.componen
 import { ComedyTextComponent } from './main-text/comedy-text/comedy-text.component';
 import { ParaphraseTextComponent } from './main-text/paraphrase-text/paraphrase-text.component';
 import { RouterContainerComponent } from './router-container/router-container.component';
+import { Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+  {path: '', component: RouterContainerComponent}
+];
 
 @NgModule({
   declarations: [

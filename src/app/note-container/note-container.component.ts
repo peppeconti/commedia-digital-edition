@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ServiceFetch } from '../shared/fetch.service';
 import { ServiceEvent } from '../shared/event.service';
 import { JsonNode } from '../shared/jsonNode.model';
 
@@ -10,9 +9,10 @@ import { JsonNode } from '../shared/jsonNode.model';
 })
 export class NoteContainerComponent implements OnInit {
   @Input() notes!: JsonNode;
-  note_id!: string
+  note_id!: string;
+  praefix = /\w+-\d+-note-/;
 
-  constructor(private serviceFetch: ServiceFetch, private serviceEvt: ServiceEvent) {
+  constructor(private serviceEvt: ServiceEvent) {
     this.serviceEvt.passNoteText.subscribe(
       (note: string) => {
         this.note_id = note.replace('#', '');

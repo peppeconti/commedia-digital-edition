@@ -59,8 +59,8 @@
                   <group>
                      <head>Canto I</head>
                      <argument>
-                        <list xml:id="notes" type="notes">
-                           <item xml:id="note-1">
+                        <list xml:id="inferno-1-notes" type="notes">
+                           <item xml:id="inferno-1-note-1">
                               <hi rend="bold">Nel mezzo [...] vita</hi>: il poema dantesco si apre
                               con una indicazione cronologica e autobiografica: la vicenda comincia
                               quando il personaggio Dante ha 35 anni, e cioè nel 1300. Il poeta
@@ -71,7 +71,7 @@
                               di Dante si basa sulla Bibbia stessa: nel salmo 89, 10 si legge: <hi
                                  rend="quote">La durata della nostra vita è, in sé,
                                  settant’anni</hi>.</item>
-                           <item xml:id="note-2">Lorem ipsum dolor sit amet, consectetur adipiscing
+                           <item xml:id="inferno-1-note-2">Lorem ipsum dolor sit amet, consectetur adipiscing
                               elit, sed do eiusmod tempor incididunt ut labore et dolore magna
                               aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                               laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
@@ -95,7 +95,7 @@
                                  </choice>stra <choice>
                                     <seg rend="regular">vi</seg>
                                     <seg rend="primary-accent" function="metric">vì</seg>
-                                 </choice>ta<note type="note" n="1" corresp="#note-1"/></l>
+                                 </choice>ta<note type="note" n="1" corresp="#inferno-1-note-1"/></l>
                               <l rend="endecasillabo" n="2">mi ritro<choice>
                                     <seg rend="regular">vai </seg>
                                     <seg rend="primary-accent" function="metric">vài</seg>
@@ -126,7 +126,7 @@
                                  </choice>ra smar<choice>
                                     <seg rend="regular">ri</seg>
                                     <seg rend="primary-accent" function="metric">rì</seg>
-                                 </choice>ta<note type="note" n="2" corresp="#note-2"/>.</l>
+                                 </choice>ta<note type="note" n="2" corresp="#inferno-1-note-2"/>.</l>
                            </lg>
                            <lg xml:id="terzina-2" type="terzina">
                               <l rend="endecasillabo" n="4">Ahi, quanto a dir qual era è cosa
@@ -258,8 +258,31 @@
                      </text>
                   </group>
                </text>
-               <text type="canto" n="2">
+               <text xml:id="inferno-2" type="canto" n="2">
                   <group>
+                     <head>Canto II</head>
+                     <argument>
+                        <list xml:id="inferno-2-notes" type="notes">
+                           <item xml:id="inferno-2-note-1">
+                              <hi rend="bold">Nel mezzo [...] vita</hi>: il poema dantesco si apre
+                              con una indicazione cronologica e autobiografica: la vicenda comincia
+                              quando il personaggio Dante ha 35 anni, e cioè nel 1300. Il poeta
+                              ritiene infatti che il punto centrale della vita umana sia da
+                              collocare tra il trentesimo e il quarantesimo anno e più precisamente,
+                              per i <hi rend="quote">perfettamente naturati</hi> (<hi rend="italic"
+                                 >Cv</hi>. IV, 23, 9), è il trentacinquesimo anno. Il convincimento
+                              di Dante si basa sulla Bibbia stessa: nel salmo 89, 10 si legge: <hi
+                                 rend="quote">La durata della nostra vita è, in sé,
+                                 settant’anni</hi>.</item>
+                           <item xml:id="inferno-2-note-2">Lorem ipsum dolor sit amet, consectetur adipiscing
+                              elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                              in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                              culpa qui officia deserunt mollit anim id est laborum.</item>
+                        </list>
+                     </argument>
                      <text type="main_text">
                         <body>
                            <lg>
