@@ -46,36 +46,41 @@
                      di due o più parole che hanno la stessa radice etimologica.</gloss>
                </item>
             </list>
-            <list xml:id="notes" type="notes">
-               <item xml:id="note-1">
-                  <hi rend="bold">Nel mezzo [...] vita</hi>: il poema dantesco si apre con una
-                  indicazione cronologica e autobiografica: la vicenda comincia quando il
-                  personaggio Dante ha 35 anni, e cioè nel 1300. Il poeta ritiene infatti che il
-                  punto centrale della vita umana sia da collocare tra il trentesimo e il
-                  quarantesimo anno e più precisamente, per i <hi rend="quote">perfettamente
-                     naturati</hi> (<hi rend="italic">Cv</hi>. IV, 23, 9), è il trentacinquesimo
-                  anno. Il convincimento di Dante si basa sulla Bibbia stessa: nel salmo 89, 10 si
-                  legge: <hi rend="quote">La durata della nostra vita è, in sé,
-                  settant’anni</hi>.</item>
-               <item xml:id="note-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                  sunt in culpa qui officia deserunt mollit anim id est laborum.</item>
-            </list>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <text>
-      <group type="cantica">
-         <head type="head-cantica">Inferno</head>
-         <text>
-            <group type="single-cantus">
-               <head n="1" type="head-cantus">Canto I</head>
-               <text>
-                  <group type="main-text">
-                     <text>
+      <front/>
+      <group>
+         <text xml:id="Inferno" type="cantica">
+            <group>
+               <head>Inferno</head>
+               <text xml:id="inferno-I" type="canto" n="1">
+                  <group>
+                     <head>Canto I</head>
+                     <argument>
+                        <list xml:id="notes" type="notes">
+                           <item xml:id="note-1">
+                              <hi rend="bold">Nel mezzo [...] vita</hi>: il poema dantesco si apre
+                              con una indicazione cronologica e autobiografica: la vicenda comincia
+                              quando il personaggio Dante ha 35 anni, e cioè nel 1300. Il poeta
+                              ritiene infatti che il punto centrale della vita umana sia da
+                              collocare tra il trentesimo e il quarantesimo anno e più precisamente,
+                              per i <hi rend="quote">perfettamente naturati</hi> (<hi rend="italic"
+                                 >Cv</hi>. IV, 23, 9), è il trentacinquesimo anno. Il convincimento
+                              di Dante si basa sulla Bibbia stessa: nel salmo 89, 10 si legge: <hi
+                                 rend="quote">La durata della nostra vita è, in sé,
+                                 settant’anni</hi>.</item>
+                           <item xml:id="note-2">Lorem ipsum dolor sit amet, consectetur adipiscing
+                              elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                              in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                              culpa qui officia deserunt mollit anim id est laborum.</item>
+                        </list>
+                     </argument>
+                     <text type="main_text">
                         <body rend="terzine">
                            <lg xml:id="terzina-1" type="terzina">
                               <l rend="endecasillabo" n="1">Nel <choice>
@@ -177,11 +182,7 @@
                            </lg>
                         </body>
                      </text>
-                  </group>
-               </text>
-               <text>
-                  <group type="paraphrase">
-                     <text>
+                     <text type="paraphrase">
                         <body rend="terzine-paraphrase">
                            <div xml:id="paraphrase-terzina-1" rend="paraphrase-terzina"
                               corresp="terzina-1">
@@ -257,15 +258,41 @@
                      </text>
                   </group>
                </text>
+               <text type="canto" n="2">
+                  <group>
+                     <text type="main_text">
+                        <body>
+                           <lg>
+                              <l/>
+                           </lg>
+                        </body>
+                     </text>
+                     <text type="paraphrase">
+                        <body>
+                           <div>
+                              <p/>
+                           </div>
+                        </body>
+                     </text>
+                  </group>
+               </text>
             </group>
          </text>
+         <text xml:id="Purgatorio" type="cantica">
+            <body>
+               <div>
+                  <p/>
+               </div>
+            </body>
+         </text>
+         <text xml:id="Paradiso" type="cantica">
+            <body>
+               <div>
+                  <p/>
+               </div>
+            </body>
+         </text>
       </group>
-      <back>
-         <div type="biblCompleta">
-            <listBibl>
-               <bibl xml:id="an">ciccio</bibl>
-            </listBibl>
-         </div>
-      </back>
+      <back/>
    </text>
 </TEI>
