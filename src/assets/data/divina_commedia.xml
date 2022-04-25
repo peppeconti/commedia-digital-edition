@@ -185,7 +185,7 @@
                      <text type="paraphrase">
                         <body rend="terzine-paraphrase">
                            <div xml:id="inferno-1-paraphrase-terzina-1" rend="paraphrase-terzina"
-                              corresp="terzina-1">
+                              corresp="inferno-1-terzina-1">
                               <p rend="terzina-paraphrase"><seg rend="paraphrase-fragment">A metà
                                     del corso medio della vita umana,</seg>
                                  <lb/>
@@ -196,7 +196,7 @@
                                     strada.</seg></p>
                            </div>
                            <div xml:id="inferno-1-paraphrase-terzina-2" rend="paraphrase-terzina"
-                              corresp="terzina-2">
+                              corresp="inferno-1-terzina-2">
                               <p rend="terzina-paraphrase"><span rend="paraphrase-fragment">Ahimè,
                                     quanto è difficile descrivere l’aspetto</span>
                                  <lb/>
@@ -209,7 +209,7 @@
                                     paura.</seg></p>
                            </div>
                            <div xml:id="inferno-1-paraphrase-terzina-3" rend="paraphrase-terzina"
-                              corresp="terzina-3">
+                              corresp="inferno-1-terzina-3">
                               <p rend="terzina-paraphrase"><seg rend="paraphrase-fragment">È tanto
                                     angosciante che la morte lo</seg>
                                  <lb/>
@@ -222,7 +222,7 @@
                                     visto.</seg></p>
                            </div>
                            <div xml:id="inferno-1-paraphrase-terzina-4" rend="paraphrase-terzina"
-                              corresp="terzina-4">
+                              corresp="inferno-1-terzina-4">
                               <p rend="terzina-paraphrase"><seg rend="paraphrase-fragment">Non so
                                     descrivere il modo in cui io vi entrai,</seg>
                                  <lb/>
@@ -232,8 +232,8 @@
                                  <seg rend="paraphrase-fragment">abbandonai la via della
                                     verità.</seg></p>
                            </div>
-                           <div xml:id="infernon-1-paraphrase-terzina-5" rend="paraphrase-terzina"
-                              corresp="terzina-5">
+                           <div xml:id="inferno-1-paraphrase-terzina-5" rend="paraphrase-terzina"
+                              corresp="inferno-1-terzina-5">
                               <p rend="terzina-paraphrase"><seg rend="paraphrase-fragment">Ma dopo
                                     che giunsi ai piedi di un colle, nel</seg>
                                  <lb/>
@@ -244,7 +244,7 @@
                                     cuore,</seg></p>
                            </div>
                            <div xml:id="inferno-1-paraphrase-terzina-6" rend="paraphrase-terzina"
-                              corresp="terzina-6">
+                              corresp="inferno-1-terzina-6">
                               <p rend="terzina-paraphrase"><seg rend="paraphrase-fragment">guardai
                                     verso l’alto e vidi la sua vetta già</seg>
                                  <lb/>
@@ -283,7 +283,7 @@
                               culpa qui officia deserunt mollit anim id est laborum.</item>
                         </list>
                      </argument>
-                     <text type="main_text">
+                     <text type="main-text">
                         <body>
                            <lg xml:id="inferno-2-terzina-1" type="terzina">
                               <l rend="endecasillabo" n="1">Lo giorno se n’andava, e l’aere bruno</l>

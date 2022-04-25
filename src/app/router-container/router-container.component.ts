@@ -6,6 +6,7 @@ import { Settings } from '../shared/settings.model';
 import { JsonNode } from '../shared/jsonNode.model';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { gsap } from 'gsap';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-router-container',
@@ -19,12 +20,12 @@ export class RouterContainerComponent implements OnInit {
   notes!: JsonNode;
   terzineList!: QueryList<ElementRef>;
   paraphraseList!: QueryList<ElementRef>;
-  @Input() cantica!: string;
-  @Input() canto!: string;
+  cantica!: string;
+  canto!: string;
   @ViewChild('scrollStart', { read: ElementRef }) scrollStart!: ElementRef;
   @ViewChild('paraphrColumn', { read: ElementRef }) paraphrColumn!: ElementRef;
 
-  constructor(private serviceSettings: ServiceSettings, private serviceFetch: ServiceFetch, private serviceEvt: ServiceEvent, private renderer: Renderer2) {
+  constructor(private paramsRoute: ActivatedRoute, private serviceSettings: ServiceSettings, private serviceFetch: ServiceFetch, private serviceEvt: ServiceEvent, private renderer: Renderer2) {
     gsap.registerPlugin(ScrollTrigger);
   }
 
@@ -56,7 +57,20 @@ export class RouterContainerComponent implements OnInit {
     return minified;
   }
 
+  switchText() {
+    this.cantica = this.paramsRoute.snapshot.params['cantica'];
+    this.canto = this.paramsRoute.snapshot.params['canto'];
+    this.paramsRoute.params
+      .subscribe((params: Params) => {
+        this.cantica = params['cantica'];
+        this.canto = params['canto'];
+      });
+  }
+
   ngOnInit(): void {
+    // routing wit params
+    this.switchText();
+    // get Settings
     this.settings = this.serviceSettings.getSettings();
     // fetch
     this.serviceFetch.fetchData().subscribe(res => {
@@ -84,6 +98,7 @@ export class RouterContainerComponent implements OnInit {
         this.focusByScroll();
       }
     );
+    console.log(this.paramsRoute.snapshot.params);
   }
 
   enterAction(el: HTMLElement) {
