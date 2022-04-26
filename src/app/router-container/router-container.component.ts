@@ -6,21 +6,19 @@ import { Settings } from '../shared/settings.model';
 import { JsonNode } from '../shared/jsonNode.model';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { gsap } from 'gsap';
-import { ActivationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-router-container',
   templateUrl: './router-container.component.html',
   styleUrls: ['./router-container.component.css']
 })
-export class RouterContainerComponent implements OnInit, OnChanges{
+export class RouterContainerComponent implements OnInit, OnChanges {
   settings!: Settings;
   comedy_text?: JsonNode;
   paraphrase_text?: JsonNode;
   notes!: JsonNode;
   terzineList!: QueryList<ElementRef>;
   paraphraseList!: QueryList<ElementRef>;
-  totalDistance?: number;
   @Input() canto!: string;
   navigation?: { next: string | undefined | null, prev: string | undefined | null, active: string | undefined | null } = { active: null, next: null, prev: null };
   @ViewChild('scrollStart') scrollStart!: ElementRef;
@@ -57,7 +55,7 @@ export class RouterContainerComponent implements OnInit, OnChanges{
     const minified = formatted.substring(1, formatted.length - 3);
     return minified;
   }
-
+  //**** SISTE;ARE */
   getCanto(arg: any) {
     return arg.replace('#', '');
   }
@@ -66,30 +64,39 @@ export class RouterContainerComponent implements OnInit, OnChanges{
     const ff = arg.split('-');
     return this.getCanto(ff[0]);
   }
-
-  fetch() {
-    this.serviceFetch.fetchData().subscribe(res => {
-      const parser: DOMParser = new DOMParser();
-      const formattedXML = this.minifyXml(res);
-      const xml: Document = parser.parseFromString(formattedXML, "application/xml");
-      const commedyText: NodeListOf<Element> = xml.querySelectorAll(`[*|id=${this.canto}] [type=main-text] body`);
-      const commedyJson: Array<JsonNode> = Array.from(commedyText).map(e => this.serviceFetch.parseNode(e));
-      this.comedy_text = commedyJson[0];
-      const paraphraseText: NodeListOf<Element> = xml.querySelectorAll(`[*|id=${this.canto}] [type=paraphrase] body`);
-      const paraphraseJson: Array<JsonNode> = Array.from(paraphraseText).map(e => this.serviceFetch.parseNode(e));
-      this.paraphrase_text = paraphraseJson[0];
-      const notes: NodeListOf<Element> = xml.querySelectorAll(`[*|id=${this.canto}] list[type=notes]`);
-      const notesJson: Array<JsonNode> = Array.from(notes).map(e => this.serviceFetch.parseNode(e));
-      this.notes = notesJson[0];
-      const next: string | null | undefined = xml.querySelector(`[*|id=${this.canto}]`)?.getAttribute('next');
-      //console.log(next);
-      const prev: string | null | undefined = xml.querySelector(`[*|id=${this.canto}]`)?.getAttribute('prev');
-      //console.log(prev);
-      const active: string | null | undefined = xml.querySelector(`[*|id=${this.canto}]`)?.getAttribute('xml:id');
-      this.navigation = { active, next, prev };
-      // console.log(this.navigation)
-    });
+  /************************ */
+  parseXML(res: string): Document {
+    const parser: DOMParser = new DOMParser();
+    const formattedXML = this.minifyXml(res);
+    const xml: Document = parser.parseFromString(formattedXML, "application/xml");
+    return xml;
   }
+
+  setComedy(xml: Document) {
+    const commedyText: NodeListOf<Element> = xml.querySelectorAll(`[*|id=${this.canto}] [type=main-text] body`);
+    const commedyJson: Array<JsonNode> = Array.from(commedyText).map(e => this.serviceFetch.parseNode(e));
+    this.comedy_text = commedyJson[0];
+  }
+
+  setParaphrase(xml: Document) {
+    const paraphraseText: NodeListOf<Element> = xml.querySelectorAll(`[*|id=${this.canto}] [type=paraphrase] body`);
+    const paraphraseJson: Array<JsonNode> = Array.from(paraphraseText).map(e => this.serviceFetch.parseNode(e));
+    this.paraphrase_text = paraphraseJson[0];
+  }
+
+  setNotes(xml: Document) {
+    const notes: NodeListOf<Element> = xml.querySelectorAll(`[*|id=${this.canto}] list[type=notes]`);
+    const notesJson: Array<JsonNode> = Array.from(notes).map(e => this.serviceFetch.parseNode(e));
+    this.notes = notesJson[0];
+  }
+
+  setNavInfo(xml: Document) {
+    const next: string | null | undefined = xml.querySelector(`[*|id=${this.canto}]`)?.getAttribute('next');
+    const prev: string | null | undefined = xml.querySelector(`[*|id=${this.canto}]`)?.getAttribute('prev');
+    const active: string | null | undefined = xml.querySelector(`[*|id=${this.canto}]`)?.getAttribute('xml:id');
+    this.navigation = { active, next, prev };
+  }
+
 
   ngOnInit(): void {
     this.settings = this.serviceSettings.getSettings();
@@ -102,13 +109,17 @@ export class RouterContainerComponent implements OnInit, OnChanges{
       (paraphraseList: QueryList<ElementRef>) => {
         this.paraphraseList = paraphraseList;
         this.focusByScroll();
-        console.log(ScrollTrigger.getAll());
       }
     );
   }
 
   ngOnChanges(): void {
-    this.fetch();
+    this.serviceFetch.fetchData().subscribe(res => {
+      this.setComedy(this.parseXML(res));
+      this.setParaphrase(this.parseXML(res));
+      this.setNotes(this.parseXML(res));
+      this.setNavInfo(this.parseXML(res));
+    });
     ScrollTrigger.getAll().forEach(e => e.kill())
   }
 
@@ -118,9 +129,9 @@ export class RouterContainerComponent implements OnInit, OnChanges{
       const paraphrArray = this.paraphraseList.toArray().map(e => e.nativeElement);
       paraphrArray.forEach(e => this.renderer.removeClass(e, 'corresp'));
       this.renderer.addClass(paraphrFragment, 'corresp');
-      this.totalDistance = this.cumulativeOffset(el) - this.cumulativeOffset(paraphrFragment);
-      this.renderer.setStyle(this.paraphrColumn.nativeElement, 'transform', `translateY(${String(this.totalDistance)}px)`);
-      console.log(this.navigation?.active + ' ' + this.totalDistance);
+      const distance = this.cumulativeOffset(el) - this.cumulativeOffset(paraphrFragment);
+      this.renderer.setStyle(this.paraphrColumn.nativeElement, 'transform', `translateY(${String(distance)}px)`);
+      // console.log(this.navigation?.active + ' ' + distance);
     }
   }
 
