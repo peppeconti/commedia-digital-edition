@@ -260,7 +260,7 @@
                      </text>
                   </group>
                </text>
-               <text xml:id="inferno-2" type="canto" n="2" prev="#inferno-1" next="#inferno-3">
+               <text xml:id="inferno-2" type="canto" n="2" prev="#inferno-1" next="#purgatorio-1">
                   <group>
                      <head type="head-canto">Canto II</head>
                      <argument>
@@ -349,11 +349,49 @@
             </group>
          </text>
          <text xml:id="purgatorio" type="cantica">
-            <body>
-               <div>
-                  <p/>
-               </div>
-            </body>
+            <group>
+               <head type="head-cantica">Purgatorio</head>
+               <text xml:id="purgatorio-1" type="canto" n="1" prev="#inferno-2">
+                  <group>
+                     <head type="head-canto">Canto I</head>
+                     <argument>
+                        <list xml:id="purgatorio-1-notes" type="notes">
+                           <item xml:id="purgatorio-1-note-1">
+                              <hi rend="bold">Nel mezzo [...] vita</hi>: il poema dantesco si apre
+                              con una indicazione cronologica e autobiografica: la vicenda comincia
+                              quando il personaggio Dante ha 35 anni, e cioè nel 1300. Il poeta
+                              ritiene infatti che il punto centrale della vita umana sia da
+                              collocare tra il trentesimo e il quarantesimo anno e più precisamente,
+                              per i <hi rend="quote">perfettamente naturati</hi> (<hi rend="italic"
+                                 >Cv</hi>. IV, 23, 9), è il trentacinquesimo anno. Il convincimento
+                              di Dante si basa sulla Bibbia stessa: nel salmo 89, 10 si legge: <hi
+                                 rend="quote">La durata della nostra vita è, in sé,
+                                 settant’anni</hi>.</item>
+                           <item xml:id="purgatorio-1-note-2">Lorem ipsum dolor sit amet,
+                              consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                              labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                              dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                              proident, sunt in culpa qui officia deserunt mollit anim id est
+                              laborum.</item>
+                        </list>
+                     </argument>
+                     <text type="main-text">
+                        <body rend="terzine">
+                           <lg>
+                              <l/>
+                           </lg>
+                        </body>
+                     </text>
+                     <text type="paraphrase">
+                        <body rend="terzine-paraphrase">
+                           <div/>
+                        </body>
+                     </text>
+                  </group>
+               </text>
+            </group>
          </text>
          <text xml:id="paradiso" type="cantica">
             <body>
