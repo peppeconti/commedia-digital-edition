@@ -1,9 +1,9 @@
 <header class="container-fluid py-2 px-3 header d-flex align-items-center">
     <div class="col-4 d-flex align-items-center">
         <fa-icon class="menu-icon d-flex align-items-center" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-start" aria-controls="offcanvas-start" [icon]="'bars'"></fa-icon>
-        <h1>Inferno</h1>
+        <h1>{{ this.headers.cantica }}</h1>
     </div>
-    <h2 class="col-4 text-center">Canto I</h2>
+    <h2 class="col-4 text-center">{{ this.headers.canto }}</h2>
     <div class="col-4 text-end">
         <app-dropdown [switch_list]="switch_list"></app-dropdown>
     </div>

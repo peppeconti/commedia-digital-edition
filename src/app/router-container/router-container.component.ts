@@ -20,6 +20,7 @@ export class RouterContainerComponent implements OnInit, OnChanges {
   terzineList!: QueryList<ElementRef>;
   paraphraseList!: QueryList<ElementRef>;
   @Input() canto!: string;
+  headers: { cantica: string | null, canto: string | null } = { cantica: '', canto: '' };
   navigation?: { next: string | undefined | null, prev: string | undefined | null, active: string | undefined | null } = { active: null, next: null, prev: null };
   @ViewChild('scrollStart') scrollStart!: ElementRef;
   @ViewChild('paraphrColumn') paraphrColumn!: ElementRef;
@@ -90,6 +91,12 @@ export class RouterContainerComponent implements OnInit, OnChanges {
     this.notes = notesJson[0];
   }
 
+  setHeaders(xml: Document) {
+    const canticaHeader: string | null = (<HTMLElement>xml.querySelector(`[*|id=${this.canto.split('-')[0]}] head[type=head-cantica]`)).textContent;
+    const cantoHeader: string | null = (<HTMLElement>xml.querySelector(`[*|id=${this.canto}] head[type=head-canto]`)).textContent;
+    this.headers = {cantica: canticaHeader, canto: cantoHeader};
+  }
+
   setNavInfo(xml: Document) {
     const next: string | null | undefined = xml.querySelector(`[*|id=${this.canto}]`)?.getAttribute('next');
     const prev: string | null | undefined = xml.querySelector(`[*|id=${this.canto}]`)?.getAttribute('prev');
@@ -118,6 +125,7 @@ export class RouterContainerComponent implements OnInit, OnChanges {
       this.setComedy(this.parseXML(res));
       this.setParaphrase(this.parseXML(res));
       this.setNotes(this.parseXML(res));
+      this.setHeaders(this.parseXML(res));
       this.setNavInfo(this.parseXML(res));
     });
     ScrollTrigger.getAll().forEach(e => e.kill())
@@ -131,7 +139,6 @@ export class RouterContainerComponent implements OnInit, OnChanges {
       this.renderer.addClass(paraphrFragment, 'corresp');
       const distance = this.cumulativeOffset(el) - this.cumulativeOffset(paraphrFragment);
       this.renderer.setStyle(this.paraphrColumn.nativeElement, 'transform', `translateY(${String(distance)}px)`);
-      // console.log(this.navigation?.active + ' ' + distance);
     }
   }
 
