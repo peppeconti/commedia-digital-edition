@@ -7,7 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faBookOpen, faBook, faInfoCircle, faBars, faAngleDoubleLeft, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
+import { faBookOpen, faBook, faInfoCircle, faBars, faAngleDoubleLeft, faAngleDoubleRight, prefix } from '@fortawesome/free-solid-svg-icons';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ServiceSettings } from './shared/settings.service';
 import { ServiceFetch } from './shared/fetch.service';
@@ -22,6 +22,7 @@ import { RouterContainerComponent } from './router-container/router-container.co
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+  { path: '', redirectTo: "inferno/inferno-1", pathMatch: 'prefix' },
   { path: ':cantica/:canto', component: RouterContainerComponent }
 ];
 

@@ -120,6 +120,7 @@ export class RouterContainerComponent implements OnInit {
       const parFragDistance = this.cumulativeOffset(paraphrFragment);
       const totalDistance = elRefDistance - parFragDistance;
       this.renderer.setStyle(this.paraphrColumn.nativeElement, 'transform', `translateY(${String(totalDistance)}px)`);
+      console.log(totalDistance);
     }
   }
 

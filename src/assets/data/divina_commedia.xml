@@ -304,9 +304,17 @@
                      </text>
                      <text type="paraphrase">
                         <body>
-                           <div>
-                              <p/>
-                           </div>
+                        <div xml:id="inferno-2-paraphrase-terzina-1" rend="paraphrase-terzina"
+                           corresp="inferno-2-terzina-1">
+                           <p rend="terzina-paraphrase"><seg rend="paraphrase-fragment">Ma dopo
+                              che giunsi ai piedi di un colle, nel</seg>
+                              <lb/>
+                              <seg rend="paraphrase-fragment">luogo in cui finiva quella valle
+                                 che aveva</seg>
+                              <lb/>
+                              <seg rend="paraphrase-fragment">turbato di paura il mio
+                                 cuore,</seg></p>
+                        </div>
                         </body>
                      </text>
                   </group>
