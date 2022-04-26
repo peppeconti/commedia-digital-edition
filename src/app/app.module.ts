@@ -20,10 +20,11 @@ import { ComedyTextComponent } from './main-text/comedy-text/comedy-text.compone
 import { ParaphraseTextComponent } from './main-text/paraphrase-text/paraphrase-text.component';
 import { RouterContainerComponent } from './router-container/router-container.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ParamsHandlerComponent } from './params-handler/params-handler.component';
 
 const routes: Routes = [
   { path: '', redirectTo: "inferno/inferno-1", pathMatch: 'prefix' },
-  { path: ':cantica/:canto', component: RouterContainerComponent }
+  { path: ':cantica/:canto', component: ParamsHandlerComponent }
 ];
 
 @NgModule({
@@ -38,6 +39,7 @@ const routes: Routes = [
     ComedyTextComponent,
     ParaphraseTextComponent,
     RouterContainerComponent,
+    ParamsHandlerComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),

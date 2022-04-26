@@ -13,7 +13,7 @@ export class ComedyTextComponent extends MainTextComponent implements AfterViewI
   @Input() main_text: JsonNode | undefined;
   @Input() settings!: Settings;
   @ViewChildren('terzina') terzineGroup!: QueryList<ElementRef>;
-  
+
   showNote(attribute: string | undefined) {
     this.serviceEvt.passNoteText.emit(attribute);
   }

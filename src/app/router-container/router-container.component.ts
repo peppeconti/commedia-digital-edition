@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild, QueryList, Renderer2 } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, QueryList, Renderer2, Input, OnChanges } from '@angular/core';
 import { ServiceSettings } from '../shared/settings.service';
 import { ServiceFetch } from '../shared/fetch.service';
 import { ServiceEvent } from '../shared/event.service';
@@ -6,27 +6,25 @@ import { Settings } from '../shared/settings.model';
 import { JsonNode } from '../shared/jsonNode.model';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { gsap } from 'gsap';
-import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-router-container',
   templateUrl: './router-container.component.html',
   styleUrls: ['./router-container.component.css']
 })
-export class RouterContainerComponent implements OnInit {
+export class RouterContainerComponent implements OnInit, OnChanges {
   settings!: Settings;
   comedy_text?: JsonNode;
   paraphrase_text?: JsonNode;
   notes!: JsonNode;
   terzineList!: QueryList<ElementRef>;
   paraphraseList!: QueryList<ElementRef>;
-  cantica!: string;
-  canto!: string;
-  navigation?: { next: string | undefined | null, prev: string | undefined | null } = { next: null, prev: null } ;
+  @Input() canto!: string;
+  navigation?: { next: string | undefined | null, prev: string | undefined | null, active: string | undefined | null } = { active: null, next: null, prev: null };
   @ViewChild('scrollStart') scrollStart!: ElementRef;
   @ViewChild('paraphrColumn') paraphrColumn!: ElementRef;
 
-  constructor(private paramsRoute: ActivatedRoute, private serviceSettings: ServiceSettings, private serviceFetch: ServiceFetch, private serviceEvt: ServiceEvent, private renderer: Renderer2) {
+  constructor(private serviceSettings: ServiceSettings, private serviceFetch: ServiceFetch, private serviceEvt: ServiceEvent, private renderer: Renderer2) {
     gsap.registerPlugin(ScrollTrigger);
   }
 
@@ -62,41 +60,38 @@ export class RouterContainerComponent implements OnInit {
     return arg.replace('#', '');
   }
 
-  getCantica(arg: any){
+  getCantica(arg: any) {
     const ff = arg.split('-');
     return this.getCanto(ff[0]);
   }
 
-  fetch(){
+  fetch() {
     this.serviceFetch.fetchData().subscribe(res => {
       const parser: DOMParser = new DOMParser();
       const formattedXML = this.minifyXml(res);
       const xml: Document = parser.parseFromString(formattedXML, "application/xml");
-      const commedyText: NodeListOf<Element> = xml.querySelectorAll(`[*|id=${this.cantica}] [*|id=${this.canto}] [type=main-text] body`);
+      const commedyText: NodeListOf<Element> = xml.querySelectorAll(`[*|id=${this.canto}] [type=main-text] body`);
       const commedyJson: Array<JsonNode> = Array.from(commedyText).map(e => this.serviceFetch.parseNode(e));
       this.comedy_text = commedyJson[0];
-      const paraphraseText: NodeListOf<Element> = xml.querySelectorAll(`[*|id=${this.cantica}] [*|id=${this.canto}] [type=paraphrase] body`);
+      const paraphraseText: NodeListOf<Element> = xml.querySelectorAll(`[*|id=${this.canto}] [type=paraphrase] body`);
       const paraphraseJson: Array<JsonNode> = Array.from(paraphraseText).map(e => this.serviceFetch.parseNode(e));
       this.paraphrase_text = paraphraseJson[0];
-      const notes: NodeListOf<Element> = xml.querySelectorAll(`[*|id=${this.cantica}] [*|id=${this.canto}] list[type=notes]`);
+      const notes: NodeListOf<Element> = xml.querySelectorAll(`[*|id=${this.canto}] list[type=notes]`);
       const notesJson: Array<JsonNode> = Array.from(notes).map(e => this.serviceFetch.parseNode(e));
       this.notes = notesJson[0];
       const next: string | null | undefined = xml.querySelector(`[*|id=${this.canto}]`)?.getAttribute('next');
       //console.log(next);
       const prev: string | null | undefined = xml.querySelector(`[*|id=${this.canto}]`)?.getAttribute('prev');
       //console.log(prev);
-      this.navigation = { next, prev };
+      const active: string | null | undefined = xml.querySelector(`[*|id=${this.canto}]`)?.getAttribute('xml:id');
+      this.navigation = { active, next, prev };
+      // console.log(this.navigation)
     });
   }
 
   ngOnInit(): void {
     this.settings = this.serviceSettings.getSettings();
-    this.paramsRoute.params
-    .subscribe((params: Params) => {
-      this.cantica = params['cantica'];
-      this.canto = params['canto'];
-      this.fetch();
-    });
+    this.fetch();
     this.serviceEvt.passTerzine.subscribe(
       (terzineList: QueryList<ElementRef>) => {
         this.terzineList = terzineList;
@@ -108,6 +103,10 @@ export class RouterContainerComponent implements OnInit {
         this.focusByScroll();
       }
     );
+  }
+
+  ngOnChanges(): void {
+    this.fetch()
   }
 
   enterAction(el: HTMLElement) {
