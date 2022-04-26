@@ -256,6 +256,43 @@
                                  <seg rend="paraphrase-fragment">che conduce ogni uomo sulla giusta
                                     strada.</seg></p>
                            </div>
+                           <div xml:id="inferno-1-paraphrase-terzina-7" rend="paraphrase-terzina"
+                              corresp="inferno-1-terzina-7">
+                              <p rend="terzina-paraphrase"><seg rend="paraphrase-fragment">Allora si
+                                    acquietò un po’ la paura che a lungo</seg>
+                                 <lb/>
+                                 <seg rend="paraphrase-fragment">era rimasta nel profondo del mio
+                                    cuore</seg>
+                                 <lb/>
+                                 <seg rend="paraphrase-fragment">durante la notte trascorsa
+                                    nell’angoscia.</seg></p>
+                           </div>
+                           <div xml:id="inferno-1-paraphrase-terzina-8" rend="paraphrase-terzina"
+                              corresp="inferno-1-terzina-8">
+                              <p rend="terzina-paraphrase"><seg rend="paraphrase-fragment">E come
+                                    colui <add>il naufrago</add> che con respiro</seg>
+                                 <lb/>
+                                 <seg rend="paraphrase-fragment">affaticato,</seg>
+                                 <lb/>
+                                 <seg rend="paraphrase-fragment">uscito dal mare e giunto a
+                                    riva,</seg>
+                                 <lb/>
+                                 <seg rend="paraphrase-fragment">si volta verso le acque pericolose
+                                    e le guarda,</seg></p>
+                           </div>
+                           <div xml:id="inferno-1-paraphrase-terzina-9" rend="paraphrase-terzina"
+                              corresp="inferno-1-terzina-9">
+                              <p rend="terzina-paraphrase"><seg rend="paraphrase-fragment">così il
+                                    mio animo, che ancora era in fuga,</seg>
+                                 <lb/>
+                                 <seg rend="paraphrase-fragment">si voltò indietro a guardare quel
+                                    luogo</seg>
+                                 <lb/>
+                                 <seg rend="paraphrase-fragment">che non aveva mai lasciato passar
+                                    vivo alcun</seg>
+                                 <lb/>
+                                 <seg rend="paraphrase-fragment">uomo.</seg></p>
+                           </div>
                         </body>
                      </text>
                   </group>
@@ -265,17 +302,13 @@
                      <head type="head-canto">Canto II</head>
                      <argument>
                         <list xml:id="inferno-2-notes" type="notes">
-                           <item xml:id="inferno-2-note-1">
-                              <hi rend="bold">Nel mezzo [...] vita</hi>: il poema dantesco si apre
-                              con una indicazione cronologica e autobiografica: la vicenda comincia
-                              quando il personaggio Dante ha 35 anni, e cioè nel 1300. Il poeta
-                              ritiene infatti che il punto centrale della vita umana sia da
-                              collocare tra il trentesimo e il quarantesimo anno e più precisamente,
-                              per i <hi rend="quote">perfettamente naturati</hi> (<hi rend="italic"
-                                 >Cv</hi>. IV, 23, 9), è il trentacinquesimo anno. Il convincimento
-                              di Dante si basa sulla Bibbia stessa: nel salmo 89, 10 si legge: <hi
-                                 rend="quote">La durata della nostra vita è, in sé,
-                                 settant’anni</hi>.</item>
+                           <item xml:id="inferno-2-note-1">Lorem ipsum dolor sit amet, consectetur
+                              adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                              magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                              ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                              irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                              fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                              sunt in culpa qui officia deserunt mollit anim id est laborum.</item>
                            <item xml:id="inferno-2-note-2">Lorem ipsum dolor sit amet, consectetur
                               adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
                               magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -304,6 +337,45 @@
                               <l rend="endecasillabo" n="8">o mente che scrivesti ciò ch’io
                                  vidi,</l>
                               <l rend="endecasillabo" n="9">qui si parrà la tua nobilitate.</l>
+                           </lg>
+                           <lg xml:id="inferno-2-terzina-4" type="terzina">
+                              <l rend="endecasillabo" n="10">Io cominciai: «Poeta che mi guidi,</l>
+                              <l rend="endecasillabo" n="11">guarda la mia virtù s’ell’ è
+                                 possente,</l>
+                              <l rend="endecasillabo" n="12">prima ch’a l’alto passo tu mi fidi.</l>
+                           </lg>
+                           <lg xml:id="inferno-2-terzina-5" type="terzina">
+                              <l rend="endecasillabo" n="13">Tu dici che di Silvïo il parente,</l>
+                              <l rend="endecasillabo" n="14">corruttibile ancora, ad immortale</l>
+                              <l rend="endecasillabo" n="15">secolo andò, e fu sensibilmente.</l>
+                           </lg>
+                           <lg xml:id="inferno-2-terzina-6" type="terzina">
+                              <l rend="endecasillabo" n="16">Però, se l’avversario d’ogne male</l>
+                              <l rend="endecasillabo" n="17">cortese i fu, pensando l’alto
+                                 effetto</l>
+                              <l rend="endecasillabo" n="18">ch’uscir dovea di lui e ’l chi e ’l
+                                 quale</l>
+                           </lg>
+                           <lg xml:id="inferno-2-terzina-7" type="terzina">
+                              <l rend="endecasillabo" n="19">non pare indegno ad omo
+                                 d’intelletto;</l>
+                              <l rend="endecasillabo" n="20">ch’e’ fu de l’alma Roma e di suo
+                                 impero</l>
+                              <l rend="endecasillabo" n="21">ne l’empireo ciel per padre eletto:</l>
+                           </lg>
+                           <lg xml:id="inferno-2-terzina-8" type="terzina">
+                              <l rend="endecasillabo" n="22">la quale e ’l quale, a voler dir lo
+                                 vero,</l>
+                              <l rend="endecasillabo" n="23">fu stabilita per lo loco santo</l>
+                              <l rend="endecasillabo" n="24">u’ siede il successor del maggior
+                                 Piero.</l>
+                           </lg>
+                           <lg xml:id="inferno-2-terzina-9" type="terzina">
+                              <l rend="endecasillabo" n="25">Per quest’ andata onde li dai tu
+                                 vanto,</l>
+                              <l rend="endecasillabo" n="26">intese cose che furon cagione</l>
+                              <l rend="endecasillabo" n="27">di sua vittoria e del papale
+                                 ammanto.</l>
                            </lg>
                         </body>
                      </text>
@@ -342,6 +414,76 @@
                                  <seg rend="paraphrase-fragment">qui dovrai dimostrare il tuo
                                     valore.</seg></p>
                            </div>
+                           <div xml:id="inferno-2-paraphrase-terzina-4" rend="paraphrase-terzina"
+                              corresp="inferno-2-terzina-4">
+                              <p rend="terzina-paraphrase"><seg rend="paraphrase-fragment">Io
+                                    cominciai a dire: «Oh Poeta che mi guidi,</seg>
+                                 <lb/>
+                                 <seg rend="paraphrase-fragment">valuta se le mie capacità sono
+                                    adeguate a</seg>
+                                 <lb/>
+                                 <seg rend="paraphrase-fragment">ciò, prima di affidarmi a questo
+                                    arduo</seg>
+                                 <seg rend="paraphrase-fragment">viaggio.</seg></p>
+                           </div>
+                           <div xml:id="inferno-2-paraphrase-terzina-5" rend="paraphrase-terzina"
+                              corresp="inferno-2-terzina-5">
+                              <p rend="terzina-paraphrase"><seg rend="paraphrase-fragment">Tu dici
+                                    che il padre di Silvio <add>Enea</add>, ancora in</seg>
+                                 <lb/>
+                                 <seg rend="paraphrase-fragment">vita, andò nell'Aldilà, e lì vi
+                                    andò con tutto il</seg>
+                                 <lb/>
+                                 <seg rend="paraphrase-fragment">corpo.</seg></p>
+                           </div>
+                           <div xml:id="inferno-2-paraphrase-terzina-6" rend="paraphrase-terzina"
+                              corresp="inferno-2-terzina-6">
+                              <p rend="terzina-paraphrase"><seg rend="paraphrase-fragment">Perciò,
+                                    se il nemico di ogni male <add>Dio</add> fu</seg>
+                                 <lb/>
+                                 <seg rend="paraphrase-fragment">cortese verso di lui, pensando alla
+                                    grandiosa</seg>
+                                 <lb/>
+                                 <seg rend="paraphrase-fragment">conseguenza che doveva derivare da
+                                    lui, sia</seg>
+                                 <seg rend="paraphrase-fragment">la sua persona che le sue
+                                    qualità</seg></p>
+                           </div>
+                           <div xml:id="inferno-2-paraphrase-terzina-7" rend="paraphrase-terzina"
+                              corresp="inferno-2-terzina-7">
+                              <p rend="terzina-paraphrase"><seg rend="paraphrase-fragment">non
+                                    sembrano indegni a un uomo dotato di</seg>
+                                 <lb/>
+                                 <seg rend="paraphrase-fragment">intelletto; perché egli fu eletto
+                                    nell' Empireo</seg>
+                                 <lb/>
+                                 <seg rend="paraphrase-fragment">come fondatore della nobile Roma e
+                                    del suo</seg>
+                                 <seg rend="paraphrase-fragment">impero:</seg></p>
+                           </div>
+                           <div xml:id="inferno-2-paraphrase-terzina-8" rend="paraphrase-terzina"
+                              corresp="inferno-2-terzina-8">
+                              <p rend="terzina-paraphrase"><seg rend="paraphrase-fragment">e Roma e
+                                    il suo impero, a voler dire la verità,</seg>
+                                 <lb/>
+                                 <seg rend="paraphrase-fragment">furono stabiliti come il sacro
+                                    luogo dove</seg>
+                                 <lb/>
+                                 <seg rend="paraphrase-fragment">risiede il successore di San
+                                    Pietro.</seg></p>
+                           </div>
+                           <div xml:id="inferno-2-paraphrase-terzina-9" rend="paraphrase-terzina"
+                              corresp="inferno-2-terzina-9">
+                              <p rend="terzina-paraphrase"><seg rend="paraphrase-fragment">Grazie a
+                                    questo viaggio per mezzo del quale</seg>
+                                 <lb/>
+                                 <seg rend="paraphrase-fragment">tu gli conferisci onore,
+                                       <add>Enea</add> sentì cose che</seg>
+                                 <lb/>
+                                 <seg rend="paraphrase-fragment">furono motivo della sua vittoria e
+                                    del</seg>
+                                 <seg rend="paraphrase-fragment">manto papale.</seg></p>
+                           </div>
                         </body>
                      </text>
                   </group>
@@ -356,17 +498,14 @@
                      <head type="head-canto">Canto I</head>
                      <argument>
                         <list xml:id="purgatorio-1-notes" type="notes">
-                           <item xml:id="purgatorio-1-note-1">
-                              <hi rend="bold">Nel mezzo [...] vita</hi>: il poema dantesco si apre
-                              con una indicazione cronologica e autobiografica: la vicenda comincia
-                              quando il personaggio Dante ha 35 anni, e cioè nel 1300. Il poeta
-                              ritiene infatti che il punto centrale della vita umana sia da
-                              collocare tra il trentesimo e il quarantesimo anno e più precisamente,
-                              per i <hi rend="quote">perfettamente naturati</hi> (<hi rend="italic"
-                                 >Cv</hi>. IV, 23, 9), è il trentacinquesimo anno. Il convincimento
-                              di Dante si basa sulla Bibbia stessa: nel salmo 89, 10 si legge: <hi
-                                 rend="quote">La durata della nostra vita è, in sé,
-                                 settant’anni</hi>.</item>
+                           <item xml:id="purgatorio-1-note-1"> Lorem ipsum dolor sit amet,
+                              consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                              labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                              dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                              proident, sunt in culpa qui officia deserunt mollit anim id est
+                              laborum.</item>
                            <item xml:id="purgatorio-1-note-2">Lorem ipsum dolor sit amet,
                               consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                               labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -379,14 +518,88 @@
                      </argument>
                      <text type="main-text">
                         <body rend="terzine">
-                           <lg>
-                              <l/>
+                           <lg xml:id="purgatorio-1-terzina-1" type="terzina">
+                              <l rend="endecasillabo" n="1">Per correr miglior acque alza le
+                                 vele</l>
+                              <l rend="endecasillabo" n="2">omai la navicella del mio ingegno,</l>
+                              <l rend="endecasillabo" n="3">che lascia dietro a sé mar sì
+                                 crudele;</l>
+                           </lg>
+                           <lg xml:id="purgatorio-1-terzina-2" type="terzina">
+                              <l rend="endecasillabo" n="4">e canterò di quel secondo regno</l>
+                              <l rend="endecasillabo" n="5">dove l’umano spirito si purga</l>
+                              <l rend="endecasillabo" n="6">e di salire al ciel diventa degno.</l>
+                           </lg>
+                           <lg xml:id="purgatorio-1-terzina-3" type="terzina">
+                              <l rend="endecasillabo" n="7">Ma qui la morta poesì resurga,</l>
+                              <l rend="endecasillabo" n="8">o sante Muse, poi che vostro sono;</l>
+                              <l rend="endecasillabo" n="9">e qui Calïopè alquanto surga,</l>
+                           </lg>
+                           <lg xml:id="purgatorio-1-terzina-4" type="terzina">
+                              <l rend="endecasillabo" n="10">seguitando il mio canto con quel
+                                 suono</l>
+                              <l rend="endecasillabo" n="11">di cui le Piche misere sentiro</l>
+                              <l rend="endecasillabo" n="12">lo colpo tal, che disperar perdono.</l>
+                           </lg>
+                           <lg xml:id="purgatorio-1-terzina-5" type="terzina">
+                              <l rend="endecasillabo" n="13">Dolce color d’orïental zaffiro,</l>
+                              <l rend="endecasillabo" n="14">che s’accoglieva nel sereno aspetto</l>
+                              <l rend="endecasillabo" n="15">del mezzo, puro infino al primo
+                                 giro,</l>
+                           </lg>
+                           <lg xml:id="purgatorio-1-terzina-6" type="terzina">
+                              <l rend="endecasillabo" n="16">a li occhi miei ricominciò diletto,</l>
+                              <l rend="endecasillabo" n="17">tosto ch’io usci’ fuor de l’aura
+                                 morta</l>
+                              <l rend="endecasillabo" n="18">che m’avea contristati li occhi e ’l
+                                 petto.</l>
+                           </lg>
+                           <lg xml:id="purgatorio-1-terzina-7" type="terzina">
+                              <l rend="endecasillabo" n="19">Lo bel pianeto che d’amar conforta</l>
+                              <l rend="endecasillabo" n="20">faceva tutto rider l’orïente,</l>
+                              <l rend="endecasillabo" n="21">velando i Pesci ch’erano in sua
+                                 scorta.</l>
+                           </lg>
+                           <lg xml:id="purgatorio-1-terzina-8" type="terzina">
+                              <l rend="endecasillabo" n="22">I’ mi volsi a man destra, e puosi
+                                 mente</l>
+                              <l rend="endecasillabo" n="23">a l’altro polo, e vidi quattro
+                                 stelle</l>
+                              <l rend="endecasillabo" n="24">non viste mai fuor ch’a la prima
+                                 gente.</l>
+                           </lg>
+                           <lg xml:id="purgatorio-1-terzina-9" type="terzina">
+                              <l rend="endecasillabo" n="25">Goder pareva ’l ciel di lor
+                                 fiammelle:</l>
+                              <l rend="endecasillabo" n="26">oh settentrïonal vedovo sito,</l>
+                              <l rend="endecasillabo" n="27">poi che privato se’ di mirar
+                                 quelle!</l>
                            </lg>
                         </body>
                      </text>
                      <text type="paraphrase">
                         <body rend="terzine-paraphrase">
-                           <div/>
+                           <div xml:id="purgatorio-1-paraphrase-terzina-1" rend="paraphrase-terzina"
+                              corresp="purgatorio-1-terzina-1">
+                              <p rend="terzina-paraphrase"><seg rend="paraphrase-fragment">Per
+                                    solcare acque migliori alza ormai le vele</seg>
+                                 <lb/>
+                                 <seg rend="paraphrase-fragment">la piccola nave del mio ingegno,
+                                    che lascia</seg>
+                                 <lb/>
+                                 <seg rend="paraphrase-fragment">dietro a sé un mare così
+                                    crudele;</seg></p>
+                           </div>
+                           <div xml:id="purgatorio-1-paraphrase-terzina-2" rend="paraphrase-terzina"
+                              corresp="purgatorio-1-terzina-2">
+                              <p rend="terzina-paraphrase"><seg rend="paraphrase-fragment">e canterò
+                                    di quel secondo regno, dove</seg>
+                                 <lb/>
+                                 <seg rend="paraphrase-fragment">l’anima umana si purifica e diviene
+                                    degna di</seg>
+                                 <lb/>
+                                 <seg rend="paraphrase-fragment">salire al Cielo.</seg></p>
+                           </div>
                         </body>
                      </text>
                   </group>
