@@ -6,19 +6,21 @@ import { Settings } from '../shared/settings.model';
 import { JsonNode } from '../shared/jsonNode.model';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { gsap } from 'gsap';
+import { ActivationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-router-container',
   templateUrl: './router-container.component.html',
   styleUrls: ['./router-container.component.css']
 })
-export class RouterContainerComponent implements OnInit, OnChanges {
+export class RouterContainerComponent implements OnInit, OnChanges{
   settings!: Settings;
   comedy_text?: JsonNode;
   paraphrase_text?: JsonNode;
   notes!: JsonNode;
   terzineList!: QueryList<ElementRef>;
   paraphraseList!: QueryList<ElementRef>;
+  totalDistance?: number;
   @Input() canto!: string;
   navigation?: { next: string | undefined | null, prev: string | undefined | null, active: string | undefined | null } = { active: null, next: null, prev: null };
   @ViewChild('scrollStart') scrollStart!: ElementRef;
@@ -91,7 +93,6 @@ export class RouterContainerComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.settings = this.serviceSettings.getSettings();
-    this.fetch();
     this.serviceEvt.passTerzine.subscribe(
       (terzineList: QueryList<ElementRef>) => {
         this.terzineList = terzineList;
@@ -101,12 +102,14 @@ export class RouterContainerComponent implements OnInit, OnChanges {
       (paraphraseList: QueryList<ElementRef>) => {
         this.paraphraseList = paraphraseList;
         this.focusByScroll();
+        console.log(ScrollTrigger.getAll());
       }
     );
   }
 
   ngOnChanges(): void {
-    this.fetch()
+    this.fetch();
+    ScrollTrigger.getAll().forEach(e => e.kill())
   }
 
   enterAction(el: HTMLElement) {
@@ -115,11 +118,9 @@ export class RouterContainerComponent implements OnInit, OnChanges {
       const paraphrArray = this.paraphraseList.toArray().map(e => e.nativeElement);
       paraphrArray.forEach(e => this.renderer.removeClass(e, 'corresp'));
       this.renderer.addClass(paraphrFragment, 'corresp');
-      const elRefDistance = this.cumulativeOffset(el);
-      const parFragDistance = this.cumulativeOffset(paraphrFragment);
-      const totalDistance = elRefDistance - parFragDistance;
-      this.renderer.setStyle(this.paraphrColumn.nativeElement, 'transform', `translateY(${String(totalDistance)}px)`);
-      console.log(totalDistance);
+      this.totalDistance = this.cumulativeOffset(el) - this.cumulativeOffset(paraphrFragment);
+      this.renderer.setStyle(this.paraphrColumn.nativeElement, 'transform', `translateY(${String(this.totalDistance)}px)`);
+      console.log(this.navigation?.active + ' ' + this.totalDistance);
     }
   }
 

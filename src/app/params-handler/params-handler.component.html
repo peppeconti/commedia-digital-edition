@@ -1,1 +1,1 @@
-<app-router-container [canto]="canto"></app-router-container>
+<app-router-container [canto]="canto" *ngIf="this.canto === this.route.snapshot.params['canto']"></app-router-container>

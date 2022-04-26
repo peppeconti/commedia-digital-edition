@@ -9,7 +9,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class ParamsHandlerComponent implements OnInit {
   canto!: string;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(public route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.params
