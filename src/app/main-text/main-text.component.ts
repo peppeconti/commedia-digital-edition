@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { JsonNode } from '../shared/jsonNode.model';
 
 @Component({
   selector: 'app-main-text',
