@@ -41,7 +41,7 @@ export class RouterContainerComponent implements OnInit, OnChanges {
     return startPoint;
   }
 
-  cumulativeOffset(element: HTMLElement | null) {
+  cumulativeOffset(element: HTMLElement | null): number {
     let top = 0;
     do {
       top += element?.offsetTop || 0;
@@ -50,7 +50,7 @@ export class RouterContainerComponent implements OnInit, OnChanges {
     return top;
   };
 
-  minifyXml(xml: string) {
+  minifyXml(xml: string): string {
     let formatted = '';
     xml.split(/>\s*</).forEach(node => formatted += '<' + node + '>');
     const minified = formatted.substring(1, formatted.length - 3);
@@ -72,31 +72,31 @@ export class RouterContainerComponent implements OnInit, OnChanges {
     return xml;
   }
 
-  setComedy(xml: Document) {
+  setComedy(xml: Document): void {
     const commedyText: NodeListOf<Element> = xml.querySelectorAll(`[*|id=${this.canto}] [type=main-text] body`);
     const commedyJson: Array<JsonNode> = Array.from(commedyText).map(e => this.serviceFetch.parseNode(e));
     this.comedy_text = commedyJson[0];
   }
 
-  setParaphrase(xml: Document) {
+  setParaphrase(xml: Document): void {
     const paraphraseText: NodeListOf<Element> = xml.querySelectorAll(`[*|id=${this.canto}] [type=paraphrase] body`);
     const paraphraseJson: Array<JsonNode> = Array.from(paraphraseText).map(e => this.serviceFetch.parseNode(e));
     this.paraphrase_text = paraphraseJson[0];
   }
 
-  setNotes(xml: Document) {
+  setNotes(xml: Document): void {
     const notes: NodeListOf<Element> = xml.querySelectorAll(`[*|id=${this.canto}] list[type=notes]`);
     const notesJson: Array<JsonNode> = Array.from(notes).map(e => this.serviceFetch.parseNode(e));
     this.notes = notesJson[0];
   }
 
-  setHeaders(xml: Document) {
+  setHeaders(xml: Document): void {
     const canticaHeader: string | null = (<HTMLElement>xml.querySelector(`[*|id=${this.canto.split('-')[0]}] head[type=head-cantica]`)).textContent;
     const cantoHeader: string | null = (<HTMLElement>xml.querySelector(`[*|id=${this.canto}] head[type=head-canto]`)).textContent;
     this.headers = { cantica: canticaHeader, canto: cantoHeader };
   }
 
-  setNavInfo(xml: Document) {
+  setNavInfo(xml: Document): void {
     const next: string | null | undefined = xml.querySelector(`[*|id=${this.canto}]`)?.getAttribute('next');
     const prev: string | null | undefined = xml.querySelector(`[*|id=${this.canto}]`)?.getAttribute('prev');
     const active: string | null | undefined = xml.querySelector(`[*|id=${this.canto}]`)?.getAttribute('xml:id');
