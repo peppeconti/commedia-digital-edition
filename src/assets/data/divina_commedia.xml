@@ -131,10 +131,60 @@
                                  />.</l>
                            </lg>
                            <lg xml:id="inferno-1-terzina-2" type="terzina">
-                              <l rend="endecasillabo" n="4">Ahi, quanto a dir qual era è cosa
-                                 dura</l>
-                              <l rend="endecasillabo" n="5">esta selva selvaggia e aspra e forte</l>
-                              <l rend="endecasillabo" n="6">che nel pensier rinova la paura!</l>
+                              <l rend="endecasillabo" n="4">Ahi, <choice>
+                                    <seg rend="regular">quan</seg>
+                                    <seg rend="secondary-accent" function="metric">quàn</seg>
+                                 </choice><choice>
+                                    <seg rend="regular">to a</seg>
+                                    <seg rend="sinalefe-char" function="metric">t<hi rend="sinalefe"
+                                          >o&#8255;a</hi></seg>
+                                 </choice>&#160;<choice>
+                                    <seg rend="regular">dir</seg>
+                                    <seg rend="secondary-accent" function="metric">dìr</seg>
+                                 </choice> qual <choice>
+                                    <seg rend="regular">e</seg>
+                                    <seg rend="primary-accent" function="metric">è</seg>
+                                 </choice><choice>
+                                    <seg rend="regular">ra è </seg>
+                                    <seg function="metric">r<hi rend="sinalefe in cesura"
+                                       >a<caesura rend="caesura-with-sinalefe"/>è</hi>&#160;</seg>
+                                 </choice><choice>
+                                    <seg rend="regular">co</seg>
+                                    <seg rend="secondary-accent" function="metric">cò</seg>
+                                 </choice>sa <choice>
+                                    <seg rend="regular">du</seg>
+                                    <seg rend="primary-accent" function="metric">dù</seg>
+                                 </choice>ra</l>
+                              <l rend="endecasillabo" n="5"><choice>
+                                 <seg rend="regular">e</seg>
+                                 <seg rend="secondary-accent" function="metric">è</seg>
+                              </choice>sta <choice>
+                                 <seg rend="regular">sel</seg>
+                                 <seg rend="secondary-accent" function="metric">sél</seg>
+                              </choice>va sel<choice>
+                                 <seg rend="regular">vag</seg>
+                                 <seg rend="primary-accent" function="metric">vàg</seg>
+                              </choice><choice>
+                                 <seg rend="regular">gia e </seg>
+                                 <seg function="metric">g<hi rend="sinalefe in cesura"
+                                    >ia<caesura rend="caesura-with-sinalefe"/>e</hi>&#160;</seg>
+                              </choice> <choice>
+                                 <seg rend="regular">a</seg>
+                                 <seg rend="secondary-accent" function="metric">à</seg>
+                              </choice>spra e <choice>
+                                 <seg rend="regular">for</seg>
+                                 <seg rend="primary-accent" function="metric">fòr</seg>
+                              </choice>te</l>
+                              <l rend="endecasillabo" n="6">che nel pen<choice>
+                                 <seg rend="regular">sier </seg>
+                                 <seg rend="primary-accent" function="metric">sièr</seg>
+                              </choice><caesura/>ri<choice>
+                                 <seg rend="regular">no</seg>
+                                 <seg rend="secondary-accent" function="metric">nò</seg>
+                              </choice>va la <choice>
+                                 <seg rend="regular">pau</seg>
+                                 <seg rend="primary-accent" function="metric">paù</seg>
+                              </choice>ra!</l>
                            </lg>
                            <lg xml:id="inferno-1-terzina-3" type="terzina">
                               <l rend="endecasillabo" n="7">Tant’ è amara che poco è più morte;</l>
@@ -581,8 +631,7 @@
                            </lg>
                            <lg xml:id="purgatorio-1-terzina-10" type="terzina">
                               <l rend="endecasillabo" n="28">Com’io da loro sguardo fui partito,</l>
-                              <l rend="endecasillabo" n="29">un poco me volgendo a l‘altro
-                                 polo,</l>
+                              <l rend="endecasillabo" n="29">un poco me volgendo a l‘altro polo,</l>
                               <l rend="endecasillabo" n="30">là onde il Carro già era sparito,</l>
                            </lg>
                         </body>

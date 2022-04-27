@@ -17,9 +17,6 @@
             </app-comedy-text>
         </p>
     </ng-container>
-    <ng-container *ngSwitchCase="subtext.tagName === 'caesura'">
-        <span *ngIf="this.settings.showMetric">|</span>
-    </ng-container>
     <span *ngSwitchCase="subtext.tagName === 'choice'">
         <app-comedy-text *ngIf="!subtext.isText" [main_text]="subtext" [settings]="settings">
         </app-comedy-text>
@@ -39,12 +36,18 @@
         </span>
     </ng-container>
     <ng-container
-        *ngSwitchCase="subtext.tagName === 'hi' && (isSubset([{name: 'rend', value: 'sinalefe'}], subtext.attributes)||isSubset([{name: 'rend', value: 'sineresi'}], subtext.attributes))">
+        *ngSwitchCase="subtext.tagName === 'hi' && (isSubset([{name: 'rend', value: 'sinalefe'}], subtext.attributes)||isSubset([{name: 'rend', value: 'sineresi'}], subtext.attributes)||isSubset([{name: 'rend', value: 'sinalefe in cesura'}], subtext.attributes))">
         <span class="{{ findAttributeValue(subtext.attributes, 'rend') }}" *ngIf="this.settings.showMetric"
             placement="top" ngbTooltip="{{ findAttributeValue(subtext.attributes, 'rend') }}">
-            <app-comedy-text *ngIf="!subtext.isText" [main_text]="subtext">
+            <app-comedy-text *ngIf="!subtext.isText" [main_text]="subtext" [settings]="settings">
             </app-comedy-text>
         </span>
+    </ng-container>
+    <ng-container *ngSwitchCase="subtext.tagName === 'caesura' && (isSubset([{name: 'rend', value: 'caesura-with-sinalefe'}], subtext.attributes))">
+        <span class="{{ findAttributeValue(subtext.attributes, 'rend') }}" *ngIf="this.settings.showMetric">|<span class="sinalefe-in-caesura">&#860;</span></span>
+    </ng-container>
+    <ng-container *ngSwitchCase="subtext.tagName === 'caesura' && !(isSubset([{name: 'rend', value: 'caesura-with-sinalefe'}], subtext.attributes))">
+        <span *ngIf="this.settings.showMetric">|</span>
     </ng-container>
     <ng-container
         *ngSwitchCase="subtext.tagName === 'note' && isSubset([{name: 'type', value: 'note'}], subtext.attributes)">
