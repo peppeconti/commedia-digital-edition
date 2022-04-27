@@ -56,16 +56,15 @@ export class RouterContainerComponent implements OnInit, OnChanges {
     const minified = formatted.substring(1, formatted.length - 3);
     return minified;
   }
-  //**** SISTE;ARE */
-  getCanto(arg: any) {
-    return arg.replace('#', '');
+
+  getLink(arg: string | undefined | null): string | undefined {
+    if (arg) {
+      const canto = arg.replace('#', '');
+      const cantica = canto.split('-')[0];
+      return `/${cantica}/${canto}`;
+    } else return undefined
   }
 
-  getCantica(arg: any) {
-    const ff = arg.split('-');
-    return this.getCanto(ff[0]);
-  }
-  /************************ */
   parseXML(res: string): Document {
     const parser: DOMParser = new DOMParser();
     const formattedXML = this.minifyXml(res);
@@ -94,7 +93,7 @@ export class RouterContainerComponent implements OnInit, OnChanges {
   setHeaders(xml: Document) {
     const canticaHeader: string | null = (<HTMLElement>xml.querySelector(`[*|id=${this.canto.split('-')[0]}] head[type=head-cantica]`)).textContent;
     const cantoHeader: string | null = (<HTMLElement>xml.querySelector(`[*|id=${this.canto}] head[type=head-canto]`)).textContent;
-    this.headers = {cantica: canticaHeader, canto: cantoHeader};
+    this.headers = { cantica: canticaHeader, canto: cantoHeader };
   }
 
   setNavInfo(xml: Document) {
